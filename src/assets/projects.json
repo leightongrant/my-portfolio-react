@@ -54,5 +54,13 @@
         "desc": "This web application uses the thecocktaildb api to search and present details on your favourite cocktails.",
         "url": "https://misterouija.github.io/the-mixologist/",
         "repo": "https://github.com/misterouija/the-mixologist"
+    },
+    {
+        "title": "Hello Movie",
+        "img": "https://raw.githubusercontent.com/misterouija/my-portfolio-react/main/src/assets/hello-movie-ss.jpg",
+        "sdesc": "A Movie and TV recommendation App",
+        "desc": "This application is built in React 18. Its purpose is to suggest recommendations for movies or TVs shows based on a free text search you input.",
+        "url": "https://hellomovie.netlify.app",
+        "repo": "https://github.com/Computastar/HelloMovie"
     }
 ]

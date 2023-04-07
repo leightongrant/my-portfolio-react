@@ -4,7 +4,7 @@ import { BsArrowLeft } from 'react-icons/bs';
 // Routes
 import { LinkContainer } from 'react-router-bootstrap';
 
-function Thanks() {
+function Thanks(props) {
     return (
         <div
             className='thanks-page vh-100 d-flex align-items-center'

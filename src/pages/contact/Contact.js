@@ -21,7 +21,7 @@ import ContactForm from '../../components/contactform/ContactForm';
 import { GitHub, LinkedIn } from '../../components/social/Social';
 
 // Assets
-import Cv from '../../assets/leighton-cv.pdf';
+import Cv from '../../assets/CV--Leighton--Grant.pdf';
 
 const Contact = () => {
     useEffect(() => {
