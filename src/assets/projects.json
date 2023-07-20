@@ -1,66 +1,66 @@
 [
-    {
-        "title": "Console Finances",
-        "img": "https://raw.githubusercontent.com/misterouija/my-portfolio-react/main/src/assets/console-finances-ss.jpg",
-        "sdesc": "A Financial Analyzer App",
-        "desc": "Using JavaScript concepts to create a financial analysis tool.",
-        "url": "https://misterouija.github.io/Console-Finances/",
-        "repo": "https://github.com/misterouija/Console-Finances"
-    },
-    {
-        "title": "Weather Dashboard",
-        "img": "https://raw.githubusercontent.com/misterouija/my-portfolio-react/main/src/assets/weather-dashboard-ss.jpg",
-        "sdesc": "A Weather Dashboard App",
-        "desc": "A weather dashboard app that allows the users to see the weather forecast for cities of their choosing.",
-        "url": "https://misterouija.github.io/Weather-Dashboard/",
-        "repo": "https://github.com/misterouija/Weather-Dashboard"
-    },
-    {
-        "title": "Javascript Quiz",
-        "img": "https://raw.githubusercontent.com/misterouija/my-portfolio-react/main/src/assets/javascript-quiz-ss.jpg",
-        "sdesc": "A JavaScript Quip App",
-        "desc": "A Coding Quiz Challenge App that challenges the user to try to answer JavaScript code-related questions within the time limit. You get one point for each correct answer but keep in mind that incorrect answers will penalize your time by ten seconds!",
-        "url": "https://misterouija.github.io/Javascript-Quiz/",
-        "repo": "https://github.com/misterouija/Javascript-Quiz"
-    },
-    {
-        "title": "Password Generator",
-        "img": "https://raw.githubusercontent.com/misterouija/my-portfolio-react/main/src/assets/password-generator-ss.jpg",
-        "sdesc": "An Password Generator App",
-        "url": "https://misterouija.github.io/Password-Generator/",
-        "desc": "An app to generate a random password based on user criteria",
-        "repo": "https://github.com/misterouija/Password-Generator"
-    },
-    {
-        "title": "Workday Scheduler",
-        "img": "https://raw.githubusercontent.com/misterouija/my-portfolio-react/main/src/assets/workday-scheduler-ss.jpg",
-        "sdesc": "A Workday Scheduler App",
-        "desc": "A simple calendar application that runs in the browser. It allows a user to save planned events for each hour of the day.",
-        "url": "https://misterouija.github.io/Workday-Scheduler/",
-        "repo": "https://github.com/misterouija/Workday-Scheduler"
-    },
-    {
-        "title": "Team Generator",
-        "img": "https://raw.githubusercontent.com/misterouija/my-portfolio-react/main/src/assets/team-profile-generator-ss.jpg",
-        "sdesc": "A Team Profile Generator App",
-        "desc": "This is a Node.js command-line application. This application will take in information about employees on a software engineering team, then generates an HTML webpage that displays summaries for each employee.",
-        "url": "https://misterouija.github.io/team-profile-generator/",
-        "repo": "https://github.com/misterouija/team-profile-generator"
-    },
-    {
-        "title": "The Mixologist",
-        "img": "https://raw.githubusercontent.com/misterouija/my-portfolio-react/main/src/assets/the-mixologist-ss.jpg",
-        "sdesc": "A Cocktail Finder App",
-        "desc": "This web application uses the thecocktaildb api to search and present details on your favourite cocktails.",
-        "url": "https://misterouija.github.io/the-mixologist/",
-        "repo": "https://github.com/misterouija/the-mixologist"
-    },
-    {
-        "title": "Hello Movie",
-        "img": "https://raw.githubusercontent.com/misterouija/my-portfolio-react/main/src/assets/hello-movie-ss.jpg",
-        "sdesc": "A Movie and TV recommendation App",
-        "desc": "This application is built in React 18. Its purpose is to suggest recommendations for movies or TVs shows based on a free text search you input.",
-        "url": "https://hellomovie.netlify.app",
-        "repo": "https://github.com/Computastar/HelloMovie"
-    }
+  {
+    "title": "Console Finances",
+    "img": "https://raw.githubusercontent.com/leightongrant/my-portfolio-react/main/src/assets/console-finances-ss.jpg",
+    "sdesc": "A Financial Analyzer App",
+    "desc": "Using JavaScript concepts to create a financial analysis tool.",
+    "url": "https://leightongrant.github.io/Console-Finances/",
+    "repo": "https://github.com/leightongrant/Console-Finances"
+  },
+  {
+    "title": "Weather Dashboard",
+    "img": "https://raw.githubusercontent.com/leightongrant/my-portfolio-react/main/src/assets/weather-dashboard-ss.jpg",
+    "sdesc": "A Weather Dashboard App",
+    "desc": "A weather dashboard app that allows the users to see the weather forecast for cities of their choosing.",
+    "url": "https://leightongrant.github.io/Weather-Dashboard/",
+    "repo": "https://github.com/leightongrant/Weather-Dashboard"
+  },
+  {
+    "title": "Javascript Quiz",
+    "img": "https://raw.githubusercontent.com/leightongrant/my-portfolio-react/main/src/assets/javascript-quiz-ss.jpg",
+    "sdesc": "A JavaScript Quip App",
+    "desc": "A Coding Quiz Challenge App that challenges the user to try to answer JavaScript code-related questions within the time limit. You get one point for each correct answer but keep in mind that incorrect answers will penalize your time by ten seconds!",
+    "url": "https://leightongrant.github.io/Javascript-Quiz/",
+    "repo": "https://github.com/leightongrant/Javascript-Quiz"
+  },
+  {
+    "title": "Password Generator",
+    "img": "https://raw.githubusercontent.com/leightongrant/my-portfolio-react/main/src/assets/password-generator-ss.jpg",
+    "sdesc": "An Password Generator App",
+    "url": "https://leightongrant.github.io/Password-Generator/",
+    "desc": "An app to generate a random password based on user criteria",
+    "repo": "https://github.com/leightongrant/Password-Generator"
+  },
+  {
+    "title": "Workday Scheduler",
+    "img": "https://raw.githubusercontent.com/leightongrant/my-portfolio-react/main/src/assets/workday-scheduler-ss.jpg",
+    "sdesc": "A Workday Scheduler App",
+    "desc": "A simple calendar application that runs in the browser. It allows a user to save planned events for each hour of the day.",
+    "url": "https://leightongrant.github.io/Workday-Scheduler/",
+    "repo": "https://github.com/leightongrant/Workday-Scheduler"
+  },
+  {
+    "title": "Team Generator",
+    "img": "https://raw.githubusercontent.com/leightongrant/my-portfolio-react/main/src/assets/team-profile-generator-ss.jpg",
+    "sdesc": "A Team Profile Generator App",
+    "desc": "This is a Node.js command-line application. This application will take in information about employees on a software engineering team, then generates an HTML webpage that displays summaries for each employee.",
+    "url": "https://leightongrant.github.io/team-profile-generator/",
+    "repo": "https://github.com/leightongrant/team-profile-generator"
+  },
+  {
+    "title": "The Mixologist",
+    "img": "https://raw.githubusercontent.com/leightongrant/my-portfolio-react/main/src/assets/the-mixologist-ss.jpg",
+    "sdesc": "A Cocktail Finder App",
+    "desc": "This web application uses the thecocktaildb api to search and present details on your favourite cocktails.",
+    "url": "https://leightongrant.github.io/the-mixologist/",
+    "repo": "https://github.com/leightongrant/the-mixologist"
+  },
+  {
+    "title": "Hello Movie",
+    "img": "https://raw.githubusercontent.com/leightongrant/my-portfolio-react/main/src/assets/hello-movie-ss.jpg",
+    "sdesc": "A Movie and TV recommendation App",
+    "desc": "This application is built in React 18. Its purpose is to suggest recommendations for movies or TVs shows based on a free text search you input.",
+    "url": "https://hellomovie.netlify.app",
+    "repo": "https://github.com/Computastar/HelloMovie"
+  }
 ]
