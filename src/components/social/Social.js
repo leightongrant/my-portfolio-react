@@ -11,10 +11,10 @@ function Social() {
   return (
     <div className=''>
       <div className='social-links  d-inline-flex gap-2'>
-        <a href={github} target='_blank'>
+        <a href={github} target='_blank' rel='noreferrer'>
           <BsGithub />
         </a>
-        <a href={linkedin} target='_blank'>
+        <a href={linkedin} target='_blank' rel='noreferrer'>
           <BsLinkedin />
         </a>
         <a href='mailto:oneal.grant@outlook.com'>
@@ -30,7 +30,7 @@ function Social() {
 
 function LinkedIn() {
   return (
-    <a href={linkedin} target='_blank' className='social-button'>
+    <a href={linkedin} target='_blank' className='social-button' rel='noreferrer'>
       <BsLinkedin />
     </a>
   );
@@ -38,7 +38,7 @@ function LinkedIn() {
 
 function GitHub() {
   return (
-    <a href={github} target='_blank' className='social-button'>
+    <a href={github} target='_blank' className='social-button' rel='noreferrer'>
       <BsGithub />
     </a>
   );
