@@ -15,7 +15,7 @@ const Hero = () => {
   }, [])
 
   return (
-    <section id="hero" className="d-flex align-items-center mt-5">
+    <section id="hero" className="d-flex align-items-center">
       <div
         className="container d-flex flex-column align-items-center hero-info"
         data-aos="zoom-in"
