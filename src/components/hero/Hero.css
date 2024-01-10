@@ -1,26 +1,27 @@
 #hero {
-    background-image: url('../../assets/bg.jpg');
-    background-position: center;
-    background-size: cover;
-    min-height: calc(100vh - 56px);
-    padding: 20px;
+  background-image: url('../../assets/bg.jpg');
+  background-position: center;
+  background-size: cover;
+  min-height: calc(100vh - 55.954px);
+
+  padding: 20px;
 }
 #hero h1 {
-    color: #22223b;
-    font-size: 3.5em !important;
+  color: #22223b;
+  font-size: 3.5em !important;
 }
 
 .HeroButton {
-    color: #fff;
-    background-color: #22223b;
+  color: #fff;
+  background-color: #22223b;
 }
 
 .HeroButton:hover {
-    color: #fff;
-    background-color: #4a4e69;
+  color: #fff;
+  background-color: #4a4e69;
 }
 
 .hero-info {
-    background-color: rgba(255, 255, 255, 0.6);
-    padding: 40px 0;
+  background-color: rgba(255, 255, 255, 0.6);
+  padding: 40px 0;
 }

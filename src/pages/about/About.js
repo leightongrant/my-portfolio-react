@@ -16,11 +16,8 @@ function About() {
     AOS.init()
   }, [])
   return (
-    <section
-      className="about-page pb-3 py-md-3 px-2"
-      data-aos="fade-up"
-      data-aos-delay="200">
-      <div className="">
+    <section className="about-page pb-3 py-md-3 px-2">
+      <div className="about-inner" data-aos="fade-up" data-aos-delay="200">
         <div className="container my-5">
           <div className="row">
             <div className="col">
