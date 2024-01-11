@@ -5,6 +5,9 @@ import './Header.css'
 import { TiThMenu } from 'react-icons/ti'
 import { Social } from '../social/Social'
 
+// Logo
+import logo from '../../assets/lg-logo.png'
+
 // Routing
 import { LinkContainer } from 'react-router-bootstrap'
 
@@ -16,7 +19,7 @@ const Header = () => {
           <div>
             <LinkContainer to="/">
               <a className="navbar-brand" href="/">
-                <img src={'lg-logo.png'} alt="leighton grant logo" />
+                <img src={logo} alt="leighton grant logo" />
               </a>
             </LinkContainer>
           </div>
