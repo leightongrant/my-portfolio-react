@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 
 // Routes
-import { Route, Routes } from 'react-router-dom'
+import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom'
 
 // Pages
 import About from './pages/about/About'
@@ -19,23 +19,51 @@ import Header from './components/header/Header'
 import Hero from './components/hero/Hero'
 import { Thanks } from './components/modals/Thanks'
 
-function App() {
+// Router
+const router = createBrowserRouter([
+  {
+    path: '*',
+    element: <Layout />,
+    children: [
+      {
+        path: '/*',
+        element: <Hero />,
+      },
+      {
+        path: 'about/*',
+        element: <About />,
+      },
+      {
+        path: 'contact/*',
+        element: <Contact />,
+      },
+      {
+        path: 'projects/*',
+        element: <Projects />,
+      },
+      {
+        path: 'projects/:id',
+        element: <ProjectDetails />,
+      },
+      {
+        path: 'thanks/*',
+        element: <Thanks />,
+      },
+    ],
+  },
+])
+
+// Layout
+function Layout() {
   return (
     <>
       <Header />
-      <div id="App-content">
-        <Routes>
-          <Route path="/" element={<Hero />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/projects/:id" element={<ProjectDetails />} />
-          <Route path="/thanks" element={<Thanks />} />
-        </Routes>
-      </div>
+      <Outlet />
       <Footer />
     </>
   )
 }
 
-export default App
+export default function App() {
+  return <RouterProvider router={router} />
+}
