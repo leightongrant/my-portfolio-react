@@ -12,16 +12,16 @@ function Social() {
     <div className=''>
       <div className='social-links  d-inline-flex gap-2'>
         <a href={github} target='_blank' rel='noreferrer'>
-          <BsGithub />
+          <BsGithub className="fs-3"/>
         </a>
         <a href={linkedin} target='_blank' rel='noreferrer'>
-          <BsLinkedin />
+          <BsLinkedin className="fs-3" />
         </a>
-        <a href='mailto:oneal.grant@outlook.com'>
-          <BsEnvelopeFill />
+        <a href='mailto:dev@leightongrant.me'>
+          <BsEnvelopeFill className="fs-3" />
         </a>
-        <a href='tel:07886028826'>
-          <BsPhoneFill />
+        <a href='tel:+447886028826'>
+          <BsPhoneFill className="fs-3" />
         </a>
       </div>
     </div>

@@ -36,10 +36,10 @@ const Contact = () => {
         <div className="row">
           <div className="col">
             <h2 className="title contact-title text-center my-5">Contact Me</h2>
-            <p className="intro contacts-intro text-center fs-5">
+            <p className="intro contacts-intro text-center">
               If you are interested in working with me or have any questions,
               please feel free to contact me using the form or any of the other
-              options below. I look forward to hearing from you soon!
+              options below. <br />I look forward to hearing from you soon!
             </p>
             <hr className="bg bg-light" />
           </div>
@@ -69,9 +69,9 @@ const Contact = () => {
                   <div className="border border-top-3 border-secondary w-50"></div>
                   <p className="card-text">
                     <a
-                      href="mailto:oneal.grant@outlook.com"
+                      href="mailto:dev@leightongrant.me"
                       style={{ textDecoration: 'none' }}>
-                      oneal.grant@outlook.com
+                      dev@leightongrant.me
                     </a>
                   </p>
                 </div>
@@ -107,11 +107,11 @@ const Contact = () => {
                       <BsFilePdfFill />
                     </a>
                   </span>
-                  <h6 className="card-title">MY CV</h6>
+                  <h6 className="card-title">CV</h6>
                   <div className="border border-top-3 border-secondary w-50"></div>
                   <p className="card-text">
                     <a href={Cv} download style={{ textDecoration: 'none' }}>
-                      Leighton's CV <BsDownload />
+                      <BsDownload />
                     </a>
                   </p>
                 </div>
