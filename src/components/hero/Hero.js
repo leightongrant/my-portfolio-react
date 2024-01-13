@@ -24,7 +24,7 @@ const Hero = () => {
           src={ProfilePhoto}
           alt="Leighton Grant"
           className="img-fluid rounded-circle img-thumbnail"
-          style={{ width: '100px' }}
+          style={{ width: '120px', backgroundColor: '#22223B' }}
         />
         <h1 className="fw-bold my-2 fs-1 text-center">Leighton Grant</h1>
         <h2 className="fs-4 fw-light my-2 text-center">

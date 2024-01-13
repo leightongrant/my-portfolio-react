@@ -4,3 +4,11 @@
   background-image: var(--bs-gradient);
   margin-top: 0;
 }
+.key-skills {
+  background-color: rgb(108, 126, 179);
+  background-image: url('../../../src/assets/texture-overlay.png');
+  background-position: left;
+}
+.key-skills ul {
+  line-height: 2;
+}
