@@ -15,7 +15,10 @@ const Hero = () => {
   }, [])
 
   return (
-    <section id="hero" className="d-flex align-items-center">
+    <section
+      id="hero"
+      className="d-flex align-items-center"
+      style={{ paddingTop: '80px' }}>
       <div
         className="container d-flex flex-column align-items-center hero-info"
         data-aos="zoom-in"
