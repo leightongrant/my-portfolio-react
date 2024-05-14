@@ -1,23 +1,13 @@
 // Styles
 import './About.css'
 
-// Hooks
-import { useEffect } from 'react'
-
-// Libraries
-import AOS from 'aos'
-import 'aos/dist/aos.css'
-
 // Assets
 import profile from '../../assets/leightongrant_profile.jpg'
 
 function About() {
-  useEffect(() => {
-    AOS.init()
-  }, [])
   return (
-    <section className="about-page pb-3 py-md-3 px-2">
-      <div className="about-inner" data-aos="fade-up" data-aos-delay="200">
+    <section className="about-page pb-3 py-md-3 px-2" data-aos="fade-up">
+      <div className="about-inner">
         <div className="container my-5">
           <div className="row">
             <div className="col">
@@ -33,7 +23,9 @@ function About() {
         </div>
         <div className="container my-5">
           <div className="row mb-5">
-            <div className="col-12 col-md-4 about-img text-center">
+            <div
+              className="col-12 col-md-4 about-img text-center"
+              data-aos="fade-in">
               <img
                 className="img-fluid rounded"
                 src={profile}
@@ -41,7 +33,9 @@ function About() {
               />
             </div>
 
-            <div className="col-12 col-md-8 about-info mt-5 mt-md-0">
+            <div
+              className="col-12 col-md-8 about-info mt-5 mt-md-0"
+              data-aos="fade-in">
               <h3>Front-end Web Developer</h3>
               <p className="lead mt-4">
                 Trained through the Harvard and MIT-created course provider,
@@ -66,7 +60,7 @@ function About() {
           </div>
           <hr />
         </div>
-        <div className="container my-5">
+        <div className="container my-5" data-aos="fade-up">
           <div className="row">
             <div className="col p-5 rounded key-skills text-light">
               <h2 className="title about-title text-center mb-5">Key Skills</h2>

@@ -9,13 +9,6 @@ import {
   BsDownload,
 } from 'react-icons/bs'
 
-// Libraries
-import AOS from 'aos'
-import 'aos/dist/aos.css'
-
-// Hooks
-import { useEffect } from 'react'
-
 // Components
 import ContactForm from '../../components/contactform/ContactForm'
 import { GitHub, LinkedIn } from '../../components/social/Social'
@@ -24,9 +17,6 @@ import { GitHub, LinkedIn } from '../../components/social/Social'
 import Cv from '../../assets/LeightonGrant.pdf'
 
 const Contact = () => {
-  useEffect(() => {
-    AOS.init()
-  }, [])
   return (
     <section
       className="contact-page pb-3 py-md-3 px-2"

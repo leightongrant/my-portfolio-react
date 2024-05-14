@@ -3,8 +3,17 @@ body {
   font-family: -apple-system, 'Ubuntu', 'Droid Sans', BlinkMacSystemFont,
     'Segoe UI', 'Roboto', 'Oxygen', 'Cantarell', 'Fira Sans', 'Helvetica Neue',
     sans-serif;
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+h1 {
+  font-size: 3.2em;
+}
+
+h2 {
+  font-size: 3em;
 }
 
 code {
