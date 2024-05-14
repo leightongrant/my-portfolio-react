@@ -33,7 +33,9 @@ const Projects = () => {
       <div className="container my-5">
         <div className="row">
           <div className="col">
-            <h2 className="title projects-title text-center my-5">Projects</h2>
+            <h1 className="title projects-title text-center my-5">
+              My Projects
+            </h1>
             <p className="intro projects-intro text-center">
               Projects I've completed during my{' '}
               <span className="fw-bold fst-italic">

@@ -1,19 +1,30 @@
 body {
-  margin: 0;
-  font-family: -apple-system, 'Ubuntu', 'Droid Sans', BlinkMacSystemFont,
-    'Segoe UI', 'Roboto', 'Oxygen', 'Cantarell', 'Fira Sans', 'Helvetica Neue',
-    sans-serif;
-
+  font-family: 'Lato', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Abril Fatface', serif;
 }
 
 h1 {
   font-size: 3.2em;
+  letter-spacing: 0.05em;
 }
 
 h2 {
   font-size: 3em;
+}
+h3 {
+  font-size: 2.8em;
+}
+p {
+  font-size: 1.125em;
 }
 
 code {
