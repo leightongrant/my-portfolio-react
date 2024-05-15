@@ -1,10 +1,3 @@
-.contact-page {
-  min-height: calc(100vh - 55.954px);
-  background-image: var(--bs-gradient);
-  background-color: #e8e7e6;
-  background-position: center;
-  background-size: cover;
-}
 .contact-social a {
   font-size: 2em;
 }
@@ -35,4 +28,8 @@
 
 a.social-button {
   line-height: 0;
+}
+
+#contact-details {
+  background-color: var(--lg-light);
 }

@@ -5,20 +5,13 @@ import './Projects.css'
 import projects from '../../assets/projects.json'
 
 // Components
-import { ProjectCard } from '../../components/projectscard/ProjectCard'
+import { ProjectCard } from './ProjectCard'
+import PageBanner from '../../components/pagebanner/PageBanner'
 
-// Libraries
-import AOS from 'aos'
-import 'aos/dist/aos.css'
-
-// Hooks
-import { useEffect } from 'react'
+// Banner Background
+import bg from '../../assets/projects-bg.jpg'
 
 const Projects = () => {
-  useEffect(() => {
-    AOS.init()
-  }, [])
-
   function formatTitle(title) {
     return title.toLowerCase().split(' ').join('-')
   }
@@ -38,31 +31,17 @@ const Projects = () => {
   })
 
   return (
-    <section
-      className="projects-page pb-3 py-md-3 px-2 bg-gradient"
-      data-aos="fade-up"
-      data-aos-delay="300">
-      <div className="container my-5">
-        <div className="row">
-          <div className="col">
-            <h2 className="title projects-title text-center my-5">Projects</h2>
-            <p className="intro projects-intro text-center">
-              Projects I've completed during my{' '}
-              <span className="fw-bold fst-italic">
-                Trilogy Skills Bootcamp in Front-End Web Development
-              </span>{' '}
-              course.
-            </p>
-            <hr />
+    <>
+      <PageBanner pageTitle="My Projects" bannerBg={bg} />
+      <section id="skills-bootcamp" className="padding-lg">
+        <div className="container" data-aos="fade-up">
+          <h2 className="section-title">Skills Bootcamp Projects</h2>
+          <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-5 d-flex justify-content-center my-projects h-100">
+            {myProjects}
           </div>
         </div>
-      </div>
-      <div className="container my-5">
-        <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-5 d-flex justify-content-center my-projects h-100">
-          {myProjects}
-        </div>
-      </div>
-    </section>
+      </section>
+    </>
   )
 }
 

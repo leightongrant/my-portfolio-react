@@ -1,9 +1,3 @@
-// Styles
-import './App.css'
-//Bootstrap
-import 'bootstrap/dist/css/bootstrap.min.css'
-import 'bootstrap/dist/js/bootstrap.bundle.min.js'
-
 // Routes
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom'
 
@@ -58,7 +52,9 @@ function Layout() {
   return (
     <>
       <Header />
-      <Outlet />
+      <div>
+        <Outlet />
+      </div>
       <Footer />
     </>
   )

@@ -2,18 +2,13 @@
   background-image: url('../../assets/bg.jpg');
   background-position: center;
   background-size: cover;
-  min-height: calc(100vh - 55.954px);
-
-  padding: 20px;
-}
-#hero h1 {
-  color: #22223b;
-  font-size: 3.5em !important;
+  min-height: calc(100vh - 144px);
 }
 
 .HeroButton {
-  color: #fff;
-  background-color: #22223b;
+  color: var(--lg-light);
+  background-color: var(--lg-dark);
+  text-transform: uppercase;
 }
 
 .HeroButton:hover {
