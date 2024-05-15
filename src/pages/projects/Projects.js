@@ -36,7 +36,7 @@ const Projects = () => {
       <section id="skills-bootcamp" className="padding-lg">
         <div className="container" data-aos="fade-up">
           <h2 className="section-title">Skills Bootcamp Projects</h2>
-          <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-5 d-flex justify-content-center my-projects h-100">
+          <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4">
             {myProjects}
           </div>
         </div>

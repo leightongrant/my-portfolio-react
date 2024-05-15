@@ -10,7 +10,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   padding-top: 88px;
   font-size: 1.25em;
-  min-width: 375px;
+  /* min-width: 375px; */
 }
 h1,
 h2,
@@ -23,7 +23,7 @@ h6 {
 }
 
 h1 {
-  font-size: 3.2em;
+  font-size: 3.4em;
   letter-spacing: 0.05em;
 }
 
@@ -71,6 +71,6 @@ code {
 }
 /* Sections */
 .section-title {
-  margin-bottom: 80px;
+  padding-bottom: 2em;
   text-align: center;
 }

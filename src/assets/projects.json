@@ -1,5 +1,6 @@
 [
   {
+    "id": "0",
     "title": "Console Finances",
     "img": "https://raw.githubusercontent.com/leightongrant/my-portfolio-react/main/src/assets/console-finances-ss.jpg",
     "sdesc": "A Financial Analyzer App",
@@ -8,6 +9,7 @@
     "repo": "https://github.com/leightongrant/Console-Finances"
   },
   {
+    "id": "1",
     "title": "Weather Dashboard",
     "img": "https://raw.githubusercontent.com/leightongrant/my-portfolio-react/main/src/assets/weather-dashboard-ss.jpg",
     "sdesc": "A Weather Dashboard App",
@@ -16,6 +18,7 @@
     "repo": "https://github.com/leightongrant/Weather-Dashboard"
   },
   {
+    "id": "2",
     "title": "Javascript Quiz",
     "img": "https://raw.githubusercontent.com/leightongrant/my-portfolio-react/main/src/assets/javascript-quiz-ss.jpg",
     "sdesc": "A JavaScript Quip App",
@@ -24,6 +27,7 @@
     "repo": "https://github.com/leightongrant/Javascript-Quiz"
   },
   {
+    "id": "3",
     "title": "Password Generator",
     "img": "https://raw.githubusercontent.com/leightongrant/my-portfolio-react/main/src/assets/password-generator-ss.jpg",
     "sdesc": "An Password Generator App",
@@ -32,6 +36,7 @@
     "repo": "https://github.com/leightongrant/Password-Generator"
   },
   {
+    "id": "4",
     "title": "Workday Scheduler",
     "img": "https://raw.githubusercontent.com/leightongrant/my-portfolio-react/main/src/assets/workday-scheduler-ss.jpg",
     "sdesc": "A Workday Scheduler App",
@@ -40,6 +45,7 @@
     "repo": "https://github.com/leightongrant/Workday-Scheduler"
   },
   {
+    "id": "5",
     "title": "Team Generator",
     "img": "https://raw.githubusercontent.com/leightongrant/my-portfolio-react/main/src/assets/team-profile-generator-ss.jpg",
     "sdesc": "A Team Profile Generator App",
@@ -48,6 +54,7 @@
     "repo": "https://github.com/leightongrant/team-profile-generator"
   },
   {
+    "id": "6",
     "title": "The Mixologist",
     "img": "https://raw.githubusercontent.com/leightongrant/my-portfolio-react/main/src/assets/the-mixologist-ss.jpg",
     "sdesc": "A Cocktail Finder App",
@@ -56,6 +63,7 @@
     "repo": "https://github.com/leightongrant/the-mixologist"
   },
   {
+    "id": "7",
     "title": "Hello Movie",
     "img": "https://raw.githubusercontent.com/leightongrant/my-portfolio-react/main/src/assets/hello-movie-ss.jpg",
     "sdesc": "A Movie and TV recommendation App",

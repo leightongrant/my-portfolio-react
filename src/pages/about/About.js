@@ -68,24 +68,30 @@ function About() {
             Key Skills
           </h2>
           <div className="d-flex justify-content-around">
-            <ul>
-              <li>
+            <ul className="list-group list-group-flush">
+              <li className="list-group-item">
                 Proficient in HTML, CSS, JavaScript, TypeScript, React, Nodejs
               </li>
-              <li>Strong understanding of responsive web design techniques</li>
-              <li>
+              <li className="list-group-item">
+                Strong understanding of responsive web design techniques
+              </li>
+              <li className="list-group-item">
                 An understanding of version control systems such as Git/GitHub
               </li>
-              <li>
+              <li className="list-group-item">
                 Knowledge of performance testing frameworks including Mocha and
                 Jest
               </li>
-              <li>
+              <li className="list-group-item">
                 Experience with browser-based debugging and performance testing
                 software
               </li>
-              <li>Excellent problem-solving skills</li>
-              <li>Strong verbal and written communication skills</li>
+              <li className="list-group-item">
+                Excellent problem-solving skills
+              </li>
+              <li className="list-group-item">
+                Strong verbal and written communication skills
+              </li>
             </ul>
           </div>
         </div>

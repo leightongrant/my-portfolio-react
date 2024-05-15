@@ -13,7 +13,7 @@ import { LinkContainer } from 'react-router-bootstrap'
 
 const Header = () => {
   return (
-    <header className="header bg-light fixed-top py-3 shadow">
+    <header className="header bg-light fixed-top py-3 shadow w-100">
       <nav className="navbar navbar-expand-lg">
         <div className="container-fluid d-flex justify-content-between align-items-center">
           <div>
