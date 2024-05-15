@@ -5,7 +5,11 @@ import './Projects.css'
 import projects from '../../assets/projects.json'
 
 // Components
-import { ProjectCard } from '../../components/projectscard/ProjectCard'
+import { ProjectCard } from './ProjectCard'
+import PageBanner from '../../components/pagebanner/PageBanner'
+
+// Banner Background
+import bg from '../../assets/projects-bg.jpg'
 
 const Projects = () => {
   function formatTitle(title) {
@@ -27,32 +31,17 @@ const Projects = () => {
   })
 
   return (
-    <section
-      className="projects-page pb-3 py-md-3 px-2 bg-gradient"
-      data-aos="fade-up">
-      <div className="container my-5">
-        <div className="row">
-          <div className="col">
-            <h1 className="title projects-title text-center my-5">
-              My Projects
-            </h1>
-            <p className="intro projects-intro text-center">
-              Projects I've completed during my{' '}
-              <span className="fw-bold fst-italic">
-                Trilogy Skills Bootcamp in Front-End Web Development
-              </span>{' '}
-              course.
-            </p>
-            <hr />
+    <>
+      <PageBanner pageTitle="My Projects" bannerBg={bg} />
+      <section id="skills-bootcamp" className="padding-lg">
+        <div className="container" data-aos="fade-up">
+          <h2 className="section-title">Skills Bootcamp Projects</h2>
+          <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-5 d-flex justify-content-center my-projects h-100">
+            {myProjects}
           </div>
         </div>
-      </div>
-      <div className="container my-5">
-        <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-5 d-flex justify-content-center my-projects h-100">
-          {myProjects}
-        </div>
-      </div>
-    </section>
+      </section>
+    </>
   )
 }
 

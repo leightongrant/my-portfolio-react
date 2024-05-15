@@ -1,7 +1,16 @@
+:root {
+  --lg-dark: #292b3a;
+  --lg-light: #f8f9fa;
+  --lg-hover: #6c626b;
+  --lg-active: #405069;
+}
 body {
   font-family: 'Lato', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  padding-top: 88px;
+  font-size: 1.25em;
+  min-width: 375px;
 }
 h1,
 h2,
@@ -10,6 +19,7 @@ h4,
 h5,
 h6 {
   font-family: 'Abril Fatface', serif;
+  color: var(--lg-dark);
 }
 
 h1 {
@@ -23,11 +33,44 @@ h2 {
 h3 {
   font-size: 2.8em;
 }
-p {
-  font-size: 1.125em;
-}
 
+a {
+  color: var(--lg-dark);
+}
+a:hover {
+  color: var(--lg-hover);
+}
+button {
+  background-color: var(--lg-dark);
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+/* Paddings */
+.padding-lg {
+  padding-top: 8em;
+  padding-bottom: 8em;
+}
+
+/* Main Nav */
+.nav-link {
+  font-weight: 900;
+  color: var(--lg-dark);
+  font-size: 1em;
+  text-transform: uppercase;
+}
+.nav-link:hover {
+  color: var(--lg-hover);
+}
+.nav-link.active {
+  color: var(--lg-light) !important;
+  background-color: var(--lg-dark) !important;
+  border-radius: 5px;
+}
+/* Sections */
+.section-title {
+  margin-bottom: 80px;
+  text-align: center;
 }

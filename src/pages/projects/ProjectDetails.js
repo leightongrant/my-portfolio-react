@@ -2,7 +2,7 @@
 import projects from '../../assets/projects.json'
 
 // Components
-import { Details } from '../../components/projectscard/ProjectCard'
+import { Details } from './ProjectCard'
 
 // Hooks
 import { useParams } from 'react-router-dom'
@@ -41,18 +41,9 @@ function ProjectDetails() {
   })
 
   return (
-    <section
-      className="projects-page py-md-3"
-      data-aos="fade-up"
-      data-aos-delay="300">
-      <div className="container my-5">
-        <div className="row">
-          <div className="col-12">
-            <h2 className="title projects-title text-center mt-5">
-              {formatTitle(id)} Details
-            </h2>
-          </div>
-        </div>
+    <section className="padding-lg" data-aos="fade-up">
+      <div className="container">
+        <h2 className="section-title">{formatTitle(id)} Details</h2>
       </div>
       <div className="container my-5">
         <div className="d-flex justify-content-center">{myProjectDetails}</div>
