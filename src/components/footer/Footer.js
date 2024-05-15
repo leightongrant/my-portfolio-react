@@ -4,10 +4,7 @@ const Footer = () => {
     <footer id="footer" className="py-3">
       <div className="container d-flex justify-content-center align-items-center">
         <div className="copyright">
-          © Copyright 2024
-          <strong>
-            <span> Leighton Grant</span>
-          </strong>
+          <small>© Copyright 2024</small> <strong>Leighton Grant</strong>
         </div>
       </div>
     </footer>

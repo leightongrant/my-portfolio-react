@@ -9,7 +9,7 @@ import { LinkContainer } from 'react-router-bootstrap'
 
 function ProjectCard(props) {
   return (
-    <div className="col">
+    <div className="col mb-4">
       <div className="card shadow">
         <img src={props.img} className="card-img-top" alt={props.title} />
         <div className="card-body">

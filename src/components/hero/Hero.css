@@ -2,7 +2,7 @@
   background-image: url('../../assets/bg.jpg');
   background-position: center;
   background-size: cover;
-  min-height: calc(100vh - 144px);
+  min-height: calc(100vh - 150px);
 }
 
 .HeroButton {
@@ -12,8 +12,8 @@
 }
 
 .HeroButton:hover {
-  color: #fff;
-  background-color: #4a4e69;
+  color: var(--lg-light);
+  background-color: var(--lg-dark);
 }
 
 .hero-info {
