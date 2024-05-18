@@ -11,7 +11,6 @@ import {
 
 // Components
 import ContactForm from '../../components/contactform/ContactForm'
-import { GitHub, LinkedIn } from '../../components/social/Social'
 import PageBanner from '../../components/pagebanner/PageBanner'
 
 // Assets
