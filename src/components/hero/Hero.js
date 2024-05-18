@@ -11,11 +11,12 @@ const Hero = () => {
       id="hero"
       className="d-flex flex-column align-items-center justify-content-center hero-info">
       <img
+        id="heroImage"
         src={ProfilePhoto}
         alt="Leighton Grant"
-        className="img-fluid rounded-circle img-thumbnail"
-        width={120}
-        style={{ backgroundColor: '#22223B' }}
+        className="img-fluid rounded-circle"
+        width={140}
+        // style={{ backgroundColor: '#22223B' }}
         data-aos="zoom-in"
       />
 

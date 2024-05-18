@@ -8,9 +8,10 @@ body {
   font-family: 'Lato', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  padding-top: 88px;
+  /* padding-top: 88px; */
   font-size: 1.25em;
-  min-width: 375px;
+  /* min-width: 375px; */
+  /* min-height: calc(100vh); */
 }
 h1,
 h2,
@@ -61,6 +62,11 @@ code {
 .padding-lg {
   padding-top: 8em;
   padding-bottom: 8em;
+}
+
+/* Margins */
+.banner-margin {
+  margin-top: 83px;
 }
 
 /* Main Nav */
