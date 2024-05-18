@@ -1,8 +1,16 @@
 .project-card {
-    position: relative;
+  position: relative;
 }
 .card-img-overlay {
-    background-color: rgba(0, 0, 0, 0.9);
-    border-radius: 0;
-    height: 50%;
+  background-color: rgba(0, 0, 0, 0.9);
+  border-radius: 0;
+  height: 50%;
+}
+.projectBtn {
+  background-color: var(--lg-dark);
+  color: var(--lg-light);
+}
+.projectBtn:hover {
+  background-color: var(--lg-hover);
+  color: var(--lg-light);
 }

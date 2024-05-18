@@ -94,7 +94,7 @@ const Contact = () => {
               </div>
             </div>
           </div>
-          <div className="container">
+          {/* <div className="container">
             <div className="row">
               <div className="col d-flex justify-content-center gap-3">
                 <span className="social-buttons">
@@ -105,7 +105,7 @@ const Contact = () => {
                 </span>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
     </>
