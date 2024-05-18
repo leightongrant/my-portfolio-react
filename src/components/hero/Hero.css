@@ -13,7 +13,7 @@
 
 .HeroButton:hover {
   color: var(--lg-light);
-  background-color: var(--lg-dark);
+  background-color: var(--lg-hover);
 }
 
 .hero-info {

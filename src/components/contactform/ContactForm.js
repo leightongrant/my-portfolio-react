@@ -1,9 +1,6 @@
 // Styles
 import './ContactForm.css'
 
-// Icons
-import { MdSend } from 'react-icons/md'
-
 // Hooks
 import { useNavigate } from 'react-router-dom'
 
@@ -33,7 +30,7 @@ const ContactForm = () => {
       <div data-aos="fade-up">
         <h2 className="section-title">Get in touch</h2>
         <div
-          className="bg-white p-3 p-md-5 border rounded"
+          className="bg-light p-3 p-md-5 border rounded"
           style={{ maxWidth: 800, margin: 'auto' }}>
           <h3 className="mb-5 text-center fs-2">Contact Form</h3>
           <form
@@ -84,7 +81,7 @@ const ContactForm = () => {
             <button
               className="btn form-btn rounded px-5 py-3 my-4 w-100 "
               type="submit">
-              Send Message <MdSend />
+              Send Message
             </button>
           </form>
         </div>
