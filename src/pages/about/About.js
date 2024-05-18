@@ -20,9 +20,7 @@ function About() {
             <h2 className="text-center section-title">
               Frontend Web Developer
             </h2>
-            <div
-              className="col-12 col-md-4 about-img text-center"
-              data-aos="fade-in">
+            <div className="col-12 col-md-4 mb-5" data-aos="fade-in">
               <img
                 className="img-fluid rounded"
                 src={profile}
@@ -30,10 +28,8 @@ function About() {
               />
             </div>
 
-            <div
-              className="col-12 col-md-8 about-info mt-5 mt-md-0"
-              data-aos="fade-in">
-              <p className="lead mt-4">
+            <div className="col-12 col-md-8 about-info" data-aos="fade-in">
+              <p className="lead">
                 Hi, my name is Leighton Grant and I am a qualified front-end
                 developer residing in the UK. I am excited to join a company
                 that has an innovative and supportive spirit.

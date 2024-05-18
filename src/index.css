@@ -10,7 +10,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   padding-top: 88px;
   font-size: 1.25em;
-  /* min-width: 375px; */
+  min-width: 375px;
 }
 h1,
 h2,
@@ -73,4 +73,39 @@ code {
 .section-title {
   padding-bottom: 2em;
   text-align: center;
+}
+
+/* Media Queries */
+@media (max-width: 576px) {
+  h1 {
+    font-size: 2.4em;
+  }
+  h2 {
+    font-size: 2em;
+  }
+  .padding-lg {
+    padding-top: 2em;
+    padding-bottom: 2em;
+  }
+  .section-title {
+    padding-bottom: 1em;
+  }
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.8em;
+  }
+  h2 {
+    font-size: 2.4em;
+  }
+  .padding-lg {
+    padding-top: 4em;
+    padding-bottom: 4em;
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+  .section-title {
+    padding-bottom: 1.4em;
+  }
 }
