@@ -11,7 +11,6 @@ import {
 
 // Components
 import ContactForm from '../../components/contactform/ContactForm'
-import { GitHub, LinkedIn } from '../../components/social/Social'
 import PageBanner from '../../components/pagebanner/PageBanner'
 
 // Assets
@@ -94,7 +93,7 @@ const Contact = () => {
               </div>
             </div>
           </div>
-          <div className="container">
+          {/* <div className="container">
             <div className="row">
               <div className="col d-flex justify-content-center gap-3">
                 <span className="social-buttons">
@@ -105,7 +104,7 @@ const Contact = () => {
                 </span>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
     </>

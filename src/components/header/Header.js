@@ -2,8 +2,10 @@
 import './Header.css'
 
 // Icons
-import { TiThMenu } from 'react-icons/ti'
+// import { TiThMenu } from 'react-icons/ti'
 import { Social } from '../social/Social'
+import { IconContext } from 'react-icons'
+import { HiMenu, HiOutlineX } from 'react-icons/hi'
 
 // Logo
 import logo from '../../assets/lg-logo.png'
@@ -11,9 +13,13 @@ import logo from '../../assets/lg-logo.png'
 // Routing
 import { LinkContainer } from 'react-router-bootstrap'
 
+// State
+import { useState } from 'react'
+
 const Header = () => {
+  const [menu, setMenu] = useState(true)
   return (
-    <header className="header bg-light fixed-top py-3 shadow w-100">
+    <header className="header bg-light fixed-top py-3 px-2 shadow w-100">
       <nav className="navbar navbar-expand-lg">
         <div className="container-fluid d-flex justify-content-between align-items-center">
           <div>
@@ -24,9 +30,7 @@ const Header = () => {
             </LinkContainer>
           </div>
 
-          <div
-            className="collapse navbar-collapse flex-grow-0"
-            id="navbarNavAltMarkup">
+          <div className="collapse navbar-collapse flex-grow-0" id="main-nav">
             <div className="navbar-nav gap-lg-4 NavLinks">
               <LinkContainer to="/">
                 <a className="nav-link" aria-current="page" href="/">
@@ -53,17 +57,23 @@ const Header = () => {
           </div>
 
           <Social />
-
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNavAltMarkup"
-            aria-controls="navbarNavAltMarkup"
-            aria-expanded="false"
-            aria-label="Toggle navigation">
-            <TiThMenu />
-          </button>
+          <IconContext.Provider
+            value={{
+              color: '#292b3a',
+              size: '1.7em',
+            }}>
+            <div
+              className="d-lg-none"
+              typeof="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#main-nav"
+              aria-controls="main-nav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+              onClick={() => setMenu(!menu)}>
+              {menu ? <HiMenu /> : <HiOutlineX />}
+            </div>
+          </IconContext.Provider>
         </div>
       </nav>
     </header>

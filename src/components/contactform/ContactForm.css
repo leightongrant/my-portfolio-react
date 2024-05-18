@@ -1,8 +1,9 @@
 .form-btn {
-  background-color: #22223b;
+  background-color: var(--lg-dark);
   color: white;
+  text-transform: uppercase;
 }
 .form-btn:hover {
-  background-color: #4a4e69;
+  background-color: var(--lg-hover);
   color: white;
 }

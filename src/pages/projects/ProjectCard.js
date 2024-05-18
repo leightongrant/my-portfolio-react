@@ -13,26 +13,26 @@ function ProjectCard(props) {
       <div className="card shadow">
         <img src={props.img} className="card-img-top" alt={props.title} />
         <div className="card-body">
-          <h4 className="card-title">{props.title}</h4>
+          <h6 className="card-title">{props.title}</h6>
           <p className="card-text">{props.sdesc}</p>
           <a
             href={props.url}
             target="_blank"
             rel="noreferrer"
-            className="btn btn-sm btn-secondary">
+            className="btn btn-sm projectBtn">
             App <RiExternalLinkFill />
           </a>
           <a
             href={props.repo}
             target="_blank"
             rel="noreferrer"
-            className="btn btn-sm btn-secondary ms-2">
+            className="btn btn-sm projectBtn ms-2">
             Repo <RiExternalLinkFill />
           </a>
           <LinkContainer to={props.title}>
             <a
               href={'projects/' + props.title}
-              className="btn btn-sm btn-secondary ms-2">
+              className="btn btn-sm projectBtn ms-2">
               Details
             </a>
           </LinkContainer>

@@ -1,7 +1,7 @@
 :root {
   --lg-dark: #292b3a;
   --lg-light: #f8f9fa;
-  --lg-hover: #6c626b;
+  --lg-hover: #363336;
   --lg-active: #405069;
 }
 body {
@@ -10,7 +10,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   padding-top: 88px;
   font-size: 1.25em;
-  /* min-width: 375px; */
+  min-width: 375px;
 }
 h1,
 h2,
@@ -32,6 +32,15 @@ h2 {
 }
 h3 {
   font-size: 2.8em;
+}
+h4 {
+  font-size: 2em;
+}
+h5 {
+  font-size: 1.5em;
+}
+h6 {
+  font-size: 1.2em;
 }
 
 a {
@@ -73,4 +82,44 @@ code {
 .section-title {
   padding-bottom: 2em;
   text-align: center;
+}
+
+/* Media Queries */
+@media (max-width: 576px) {
+  h1 {
+    font-size: 2.4em;
+  }
+  h2 {
+    font-size: 2em;
+  }
+  .padding-lg {
+    padding-top: 2em;
+    padding-bottom: 2em;
+  }
+  .section-title {
+    padding-bottom: 1em;
+  }
+}
+
+@media (max-width: 992px) {
+  h1 {
+    font-size: 2.8em;
+  }
+  h2 {
+    font-size: 2.4em;
+  }
+  .padding-lg {
+    padding-top: 4em;
+    padding-bottom: 4em;
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+  .section-title {
+    padding-bottom: 1.4em;
+  }
+  .nav-link {
+    padding-left: 1em !important;
+    margin-top: 10px;
+    text-align: center;
+  }
 }
