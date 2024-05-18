@@ -8,7 +8,7 @@ export default function PageBanner({ pageTitle, bannerBg }) {
     backgroundColor: 'rgba(0,0,0,0.7)',
   }
   return (
-    <section className="page-banner">
+    <section className="page-banner banner-margin">
       <div className="" style={bgStyles}>
         <div className="padding-lg" style={overlay}>
           <h1 className="text-center text-light">{pageTitle}</h1>

@@ -2,7 +2,12 @@
   background-image: url('../../assets/bg.jpg');
   background-position: center;
   background-size: cover;
-  min-height: calc(100vh - 150px);
+  min-height: calc(100vh - 62px);
+}
+
+#heroImage {
+  outline: 5px solid var(--lg-dark);
+  margin-top: 83px;
 }
 
 .HeroButton {
