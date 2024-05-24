@@ -65,6 +65,7 @@ code {
 }
 
 /* Margins */
+.title-margin,
 .banner-margin {
   margin-top: 83px;
 }

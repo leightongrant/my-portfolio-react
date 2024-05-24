@@ -16,7 +16,7 @@ import { LinkContainer } from 'react-router-bootstrap'
 // State
 import { useState } from 'react'
 
-const Header = () => {
+const Header = ({ bootcampProjects, setBootcampProjects }) => {
   const [menu, setMenu] = useState(true)
   return (
     <header className="header bg-light fixed-top py-3 px-2 shadow w-100">
@@ -56,7 +56,11 @@ const Header = () => {
             </div>
           </div>
 
-          <Social />
+          <Social
+            bootcampProjects={bootcampProjects}
+            setBootcampProjects={setBootcampProjects}
+          />
+
           <IconContext.Provider
             value={{
               color: '#292b3a',
