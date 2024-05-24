@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { supabase } from '../../utils/supabase'
-import { useEffect, useRef } from 'react'
+import { useEffect } from 'react'
 
 let formDataObj = {
   title: '',
@@ -14,7 +14,6 @@ let formDataObj = {
 
 export default function AddProject({ bootcampProjects, setBootcampProjects }) {
   const [formData, setFormData] = useState(formDataObj)
-  const formRef = useRef()
 
   useEffect(() => {
     if (bootcampProjects.mode === 'edit') {
@@ -127,7 +126,7 @@ export default function AddProject({ bootcampProjects, setBootcampProjects }) {
               aria-label="Close"></button>
           </div>
           <div className="modal-body">
-            <form className="fs-6" onSubmit={handleSubmit} ref={formRef}>
+            <form className="fs-6" onSubmit={handleSubmit}>
               <div className="form-floating mb-3">
                 <input
                   type="text"

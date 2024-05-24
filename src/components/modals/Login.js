@@ -2,7 +2,6 @@ import { Auth } from '@supabase/auth-ui-react'
 import { ThemeSupa } from '@supabase/auth-ui-shared'
 import { supabase } from '../../utils/supabase'
 import { useEffect, useRef } from 'react'
-import { RiLockPasswordLine } from 'react-icons/ri'
 
 export default function Login({ bootcampProjects }) {
   const modalRef = useRef()
@@ -63,9 +62,4 @@ export default function Login({ bootcampProjects }) {
       </div>
     </div>
   )
-}
-{
-  /* <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Launch demo modal
-</button> */
 }

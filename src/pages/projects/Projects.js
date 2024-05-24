@@ -11,7 +11,7 @@ import { useOutletContext } from 'react-router-dom'
 const Projects = () => {
   const [bootcampProjects, setBootcampProjects] = useOutletContext()
 
-  const { data, error, status } = bootcampProjects
+  const { data, error } = bootcampProjects
 
   async function handleAdd() {
     setBootcampProjects((obj) => ({ ...obj, mode: 'add' }))

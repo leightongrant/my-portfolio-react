@@ -16,13 +16,8 @@ import { useOutletContext } from 'react-router-dom'
 // Supabase
 import { supabase } from '../../utils/supabase'
 
-// Hooks
-import { useEffect, useRef } from 'react'
-
 function ProjectCard(props) {
   const [bootcampProjects, setBootcampProjects] = useOutletContext()
-  const { selected, mode } = bootcampProjects
-  const editRef = useRef()
 
   async function handleDelete(id) {
     try {
@@ -84,8 +79,7 @@ function ProjectCard(props) {
                 data-bs-toggle="modal"
                 data-bs-target="#AddProject"
                 data-bs-type="edit"
-                onClick={(e) => handleEdit(e, props.id)}
-                ref={editRef}>
+                onClick={(e) => handleEdit(e, props.id)}>
                 Edit Project
               </button>
             </div>
