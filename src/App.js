@@ -11,7 +11,13 @@ import ProjectDetails from './pages/projects/ProjectDetails'
 import Footer from './components/footer/Footer'
 import Header from './components/header/Header'
 import Hero from './components/hero/Hero'
+import AddProject from './components/modals/AddProject'
 import { Thanks } from './components/modals/Thanks'
+import { useState, useEffect } from 'react'
+import Login from './components/modals/Login'
+
+// Supabase
+import { supabase } from './utils/supabase'
 
 // Router
 const router = createBrowserRouter([
@@ -49,12 +55,62 @@ const router = createBrowserRouter([
 
 // Layout
 function Layout() {
+  // const [session, setSession] = useState(null)
+  const [bootcampProjects, setBootcampProjects] = useState({
+    data: null,
+    error: null,
+    status: null,
+    selected: '',
+    mode: '',
+    session: null,
+  })
+
+  useEffect(() => {
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      // setSession(session)
+      setBootcampProjects((obj) => ({ ...obj, session: session }))
+    })
+
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange((_event, session) => {
+      // setSession(session)
+      setBootcampProjects((obj) => ({ ...obj, session: session }))
+    })
+
+    return () => subscription.unsubscribe()
+  }, [])
+
+  useEffect(() => {
+    try {
+      async function fetchProjects() {
+        const res = await supabase.from('bootcamp').select()
+        if (res.status === 200) {
+          setBootcampProjects((obj) => ({ ...obj, data: res.data }))
+        }
+        if (res.error) {
+          setBootcampProjects((obj) => ({ ...obj, error: res.error }))
+        }
+      }
+      fetchProjects()
+    } catch (e) {
+      console.log(e)
+    } finally {
+      setBootcampProjects((obj) => ({ ...obj, status: null }))
+    }
+  }, [bootcampProjects.status])
   return (
     <>
-      <Header />
-
-      <Outlet />
-
+      <Header
+        bootcampProjects={bootcampProjects}
+        setBootcampProjects={setBootcampProjects}
+      />
+      <Outlet context={[bootcampProjects, setBootcampProjects]} />
+      <AddProject
+        bootcampProjects={bootcampProjects}
+        setBootcampProjects={setBootcampProjects}
+      />
+      <Login bootcampProjects={bootcampProjects} />
       <Footer />
     </>
   )
