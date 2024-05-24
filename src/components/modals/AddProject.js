@@ -19,6 +19,7 @@ export default function AddProject({ bootcampProjects, setBootcampProjects }) {
     if (bootcampProjects.mode === 'edit') {
       handleSelect()
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [bootcampProjects.mode])
 
   async function handleSelect(id) {
