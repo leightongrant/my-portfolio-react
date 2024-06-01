@@ -1,11 +1,20 @@
 // Routes
-import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom'
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Outlet,
+  BrowserRouter,
+  Routes,
+  Route,
+} from 'react-router-dom'
 
 // Pages
 import About from './pages/about/About'
 import Projects from './pages/projects/Projects'
 import Contact from './pages/contact/Contact'
 import ProjectDetails from './pages/projects/ProjectDetails'
+import SiteAdmin from './pages/admin/SiteAdmin'
+import NotFound from './pages/notfound/NotFound'
 
 // Components
 import Footer from './components/footer/Footer'
@@ -19,43 +28,8 @@ import Login from './components/modals/Login'
 // Supabase
 import { supabase } from './utils/supabase'
 
-// Router
-const router = createBrowserRouter([
-  {
-    path: '*',
-    element: <Layout />,
-    children: [
-      {
-        path: '/*',
-        element: <Hero />,
-      },
-      {
-        path: 'about/*',
-        element: <About />,
-      },
-      {
-        path: 'contact/*',
-        element: <Contact />,
-      },
-      {
-        path: 'projects/*',
-        element: <Projects />,
-      },
-      {
-        path: 'projects/:id',
-        element: <ProjectDetails />,
-      },
-      {
-        path: 'thanks/*',
-        element: <Thanks />,
-      },
-    ],
-  },
-])
-
 // Layout
 function Layout() {
-  // const [session, setSession] = useState(null)
   const [bootcampProjects, setBootcampProjects] = useState({
     data: null,
     error: null,
@@ -67,14 +41,12 @@ function Layout() {
 
   useEffect(() => {
     supabase.auth.getSession().then(({ data: { session } }) => {
-      // setSession(session)
       setBootcampProjects((obj) => ({ ...obj, session: session }))
     })
 
     const {
       data: { subscription },
     } = supabase.auth.onAuthStateChange((_event, session) => {
-      // setSession(session)
       setBootcampProjects((obj) => ({ ...obj, session: session }))
     })
 
@@ -117,5 +89,19 @@ function Layout() {
 }
 
 export default function App() {
-  return <RouterProvider router={router} />
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route element={<Layout />}>
+          <Route path="/" element={<Hero />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/projects/:id" element={<ProjectDetails />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/*" element={<NotFound />} />
+        </Route>
+        <Route path="/admin/*" element={<SiteAdmin />} />
+      </Routes>
+    </BrowserRouter>
+  )
 }
