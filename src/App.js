@@ -91,6 +91,7 @@ export default function App() {
           <Route path="/projects" element={<Projects />} />
           <Route path="/projects/:id" element={<ProjectDetails />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/thanks" element={<Thanks />} />
           <Route path="/*" element={<NotFound />} />
         </Route>
         <Route path="/admin/*" element={<SiteAdmin />} />

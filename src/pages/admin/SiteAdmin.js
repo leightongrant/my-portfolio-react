@@ -2,12 +2,6 @@
 import {
   Admin,
   Resource,
-  ListGuesser,
-  EditGuesser,
-  ShowGuesser,
-  defaultTheme,
-  radiantLightTheme,
-  radiantDarkTheme,
   houseLightTheme,
   houseDarkTheme,
   LoadingPage,

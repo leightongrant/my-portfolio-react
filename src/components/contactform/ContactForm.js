@@ -49,7 +49,7 @@ const ContactForm = () => {
                 type="text"
                 id="name"
                 name="name"
-                pattern="[A-Za-z]*"
+                pattern="[A-Za-z ]*"
                 required
               />
             </div>
