@@ -5,8 +5,8 @@ export default () => (
   <Card>
     <Title title="Welcome to the administration" />
     <CardContent>
-      <h1>Welcome to the Dashboard</h1>
-      <p>Lorem ipsum sic dolor amet...</p>
+      <h1 className="text-center">Welcome to the Dashboard</h1>
+      <p className="text-center">Lorem ipsum sic dolor amet...</p>
     </CardContent>
   </Card>
 )
