@@ -1,12 +1,5 @@
 // Routes
-import {
-  createBrowserRouter,
-  RouterProvider,
-  Outlet,
-  BrowserRouter,
-  Routes,
-  Route,
-} from 'react-router-dom'
+import { Outlet, BrowserRouter, Routes, Route } from 'react-router-dom'
 
 // Pages
 import About from './pages/about/About'

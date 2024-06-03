@@ -23,7 +23,6 @@ import { dataProvider } from '../../utils/dataProvider'
 import { authProvider } from '../../utils/authProvider'
 import Dashboard from './Dashboard'
 import { LoginPage } from 'ra-supabase-ui-materialui'
-import LabelIcon from '@mui/icons-material/Label'
 import EngineeringIcon from '@mui/icons-material/Engineering'
 
 export default function SiteAdmin() {
