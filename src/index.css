@@ -64,10 +64,8 @@ code {
   padding-bottom: 8em;
 }
 
-/* Margins */
-.title-margin,
-.banner-margin {
-  margin-top: 83px;
+.banner-padding {
+  padding-top: calc(8em + 83px);
 }
 
 /* Main Nav */
