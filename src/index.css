@@ -101,6 +101,9 @@ code {
     padding-top: 2em;
     padding-bottom: 2em;
   }
+  .banner-padding {
+    padding-top: calc(2em + 83px);
+  }
   .section-title {
     padding-bottom: 1em;
   }
@@ -118,6 +121,9 @@ code {
     padding-bottom: 4em;
     padding-left: 1em;
     padding-right: 1em;
+  }
+  .banner-padding {
+    padding-top: calc(4em + 83px);
   }
   .section-title {
     padding-bottom: 1.4em;
