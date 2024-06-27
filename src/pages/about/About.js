@@ -10,9 +10,18 @@ import PageBanner from '../../components/pagebanner/PageBanner'
 // Banner Background
 import bg from '../../assets/about-bg.jpg'
 
+import { Helmet } from 'react-helmet-async'
+
 function About() {
   return (
     <>
+      <Helmet>
+        <meta
+          name="keywords"
+          content="HTML, CSS, JavaScript, React, Portfolio"
+        />
+        <title>Leighton Grant's Portfolio | About</title>
+      </Helmet>
       <PageBanner pageTitle="About me" bannerBg={bg} />
       <main className="about-page padding-lg" id="about-me">
         <div className="container" data-aos="fade-in">

@@ -8,6 +8,8 @@ import bg from '../../assets/projects-bg.jpg'
 // React Router Context
 import { useOutletContext } from 'react-router-dom'
 
+import { Helmet } from 'react-helmet-async'
+
 const Projects = () => {
   const [bootcampProjects, setBootcampProjects] = useOutletContext()
 
@@ -37,6 +39,13 @@ const Projects = () => {
 
   return (
     <>
+      <Helmet>
+        <meta
+          name="keywords"
+          content="HTML, CSS, JavaScript, React, Portfolio"
+        />
+        <title>Leighton Grant's Portfolio | Projects</title>
+      </Helmet>
       <PageBanner pageTitle="My Projects" bannerBg={bg} />
       <main id="skills-bootcamp" className="padding-lg">
         <div className="container" data-aos="fade-in">

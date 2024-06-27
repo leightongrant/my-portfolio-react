@@ -25,7 +25,12 @@ const Header = ({ bootcampProjects, setBootcampProjects }) => {
           <div>
             <LinkContainer to="/">
               <a className="navbar-brand" href="/">
-                <img src={logo} alt="leighton grant logo" />
+                <img
+                  src={logo}
+                  alt="leighton grant logo"
+                  width={53}
+                  height={35}
+                />
               </a>
             </LinkContainer>
           </div>
