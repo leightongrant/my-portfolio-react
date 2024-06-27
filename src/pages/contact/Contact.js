@@ -25,7 +25,7 @@ const Contact = () => {
       <PageBanner pageTitle="Contact Me" bannerBg={bg} />
       <ContactForm />
       <section id="contact-details" className="padding-lg">
-        <div data-aos="fade-up">
+        <div data-aos="fade-in">
           <h2 className="section-title">Other Contact Info</h2>
           <div className="container my-5 contact-info">
             <div className="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-3  d-flex justify-content-between">

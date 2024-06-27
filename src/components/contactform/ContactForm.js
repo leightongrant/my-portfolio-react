@@ -26,9 +26,9 @@ const ContactForm = () => {
   }
 
   return (
-    <section className="container contact-form padding-lg">
-      <div data-aos="fade-up">
-        <h2 className="section-title">Get in touch</h2>
+    <main className="container contact-form padding-lg">
+      <div data-aos="fade-in">
+        <h1 className="section-title">Get in touch</h1>
         <div
           className="bg-light p-3 p-md-5 border rounded"
           style={{ maxWidth: 800, margin: 'auto' }}>
@@ -86,7 +86,7 @@ const ContactForm = () => {
           </form>
         </div>
       </div>
-    </section>
+    </main>
   )
 }
 export default ContactForm

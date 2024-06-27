@@ -32,16 +32,16 @@ function ProjectDetails() {
   if (!data) return <h2>Loading...</h2>
   if (error) return <h2>{error}</h2>
   return (
-    <section className="padding-lg" data-aos="fade-up">
+    <main className="padding-lg" data-aos="fade-in">
       <div className="container">
-        <h2 className="section-title text-capitalize title-margin">
+        <h1 className="section-title text-capitalize title-margin">
           {id.replaceAll('-', ' ')}
-        </h2>
+        </h1>
       </div>
       <div className="container my-5">
         <div className="d-flex justify-content-center">{projectDetails}</div>
       </div>
-    </section>
+    </main>
   )
 }
 

@@ -72,7 +72,7 @@ code {
 .nav-link {
   font-weight: 900;
   color: var(--lg-dark);
-  font-size: 1em;
+  font-size: 0.8em;
   text-transform: uppercase;
 }
 .nav-link:hover {
@@ -82,6 +82,10 @@ code {
   color: var(--lg-light) !important;
   background-color: var(--lg-dark) !important;
   border-radius: 5px;
+}
+.loginBtn,
+.logoutBtn:hover {
+  cursor: pointer;
 }
 /* Sections */
 .section-title {

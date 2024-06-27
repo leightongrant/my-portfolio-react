@@ -38,9 +38,9 @@ const Projects = () => {
   return (
     <>
       <PageBanner pageTitle="My Projects" bannerBg={bg} />
-      <section id="skills-bootcamp" className="padding-lg">
-        <div className="container" data-aos="fade-up">
-          <h2 className="section-title">Skills Bootcamp Projects</h2>
+      <main id="skills-bootcamp" className="padding-lg">
+        <div className="container" data-aos="fade-in">
+          <h1 className="section-title">Skills Bootcamp Projects</h1>
 
           {bootcampProjects.session && (
             <button
@@ -57,7 +57,7 @@ const Projects = () => {
             {myProjects}
           </div>
         </div>
-      </section>
+      </main>
     </>
   )
 }

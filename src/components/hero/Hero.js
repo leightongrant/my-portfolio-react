@@ -7,7 +7,7 @@ import ProfilePhoto from '../../assets/leightongrant_profile.jpg'
 
 const Hero = () => {
   return (
-    <section
+    <main
       id="hero"
       className="d-flex flex-column align-items-center justify-content-center hero-info">
       <img
@@ -16,7 +16,6 @@ const Hero = () => {
         alt="Leighton Grant"
         className="img-fluid rounded-circle"
         width={140}
-        // style={{ backgroundColor: '#22223B' }}
         data-aos="zoom-in"
       />
 
@@ -38,7 +37,7 @@ const Hero = () => {
       </LinkContainer>
 
       {/* </div> */}
-    </section>
+    </main>
   )
 }
 

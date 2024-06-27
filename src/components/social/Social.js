@@ -9,8 +9,11 @@ import {
   BsEnvelopeFill,
 } from 'react-icons/bs'
 
+import { BiLogInCircle, BiLogOutCircle } from 'react-icons/bi'
+
 import { supabase } from '../../utils/supabase'
 import { useEffect } from 'react'
+import { IconContext } from 'react-icons'
 
 const linkedin = 'https://www.linkedin.com/in/leightongrant/'
 const github = 'https://github.com/leightongrant'
@@ -37,7 +40,7 @@ function Social({ bootcampProjects, setBootcampProjects }) {
 
   return (
     <div className="">
-      <div className="social-links  d-inline-flex gap-2">
+      <div className="social-links  d-inline-flex gap-2 align-items-center">
         <a href={github} target="_blank" rel="noreferrer">
           <BsGithub className="fs-3" />
         </a>
@@ -51,21 +54,17 @@ function Social({ bootcampProjects, setBootcampProjects }) {
           <BsPhoneFill className="fs-3" />
         </a>
         {!bootcampProjects.session ? (
-          <button
-            type="button"
-            className="btn btn-success btn-sm "
-            data-bs-toggle="modal"
-            data-bs-target="#loginModal"
-            onClick={handleClick}>
-            Login
-          </button>
+          <IconContext.Provider value={{ className: 'text-success loginBtn' }}>
+            <BiLogInCircle
+              data-bs-toggle="modal"
+              data-bs-target="#loginModal"
+              onClick={handleClick}
+            />
+          </IconContext.Provider>
         ) : (
-          <button
-            type="button"
-            className="btn btn-danger btn-sm"
-            onClick={signOut}>
-            Log Out
-          </button>
+          <IconContext.Provider value={{ className: 'text-warning logoutBtn' }}>
+            <BiLogOutCircle onClick={signOut} />
+          </IconContext.Provider>
         )}
       </div>
     </div>
