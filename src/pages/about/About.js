@@ -14,12 +14,12 @@ function About() {
   return (
     <>
       <PageBanner pageTitle="About me" bannerBg={bg} />
-      <section className="about-page padding-lg" id="about-me">
-        <div className="container" data-aos="fade-up">
+      <main className="about-page padding-lg" id="about-me">
+        <div className="container" data-aos="fade-in">
           <div className="row">
-            <h2 className="text-center section-title">
+            <h1 className="text-center section-title">
               Frontend Web Developer
-            </h2>
+            </h1>
             <div className="col-12 col-md-4 mb-5" data-aos="fade-in">
               <img
                 className="img-fluid rounded"
@@ -56,10 +56,10 @@ function About() {
             </div>
           </div>
         </div>
-      </section>
+      </main>
 
       <section id="key-skills" className="bg-light padding-lg">
-        <div className="container" data-aos="fade-up">
+        <div className="container" data-aos="fade-in">
           <h2 className="title about-title text-center section-title">
             Key Skills
           </h2>

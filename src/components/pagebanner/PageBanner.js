@@ -11,7 +11,7 @@ export default function PageBanner({ pageTitle, bannerBg }) {
     <section className="page-banner">
       <div className="" style={bgStyles}>
         <div className="padding-lg banner-padding" style={overlay}>
-          <h1 className="text-center text-light">{pageTitle}</h1>
+          <h2 className="text-center text-light">{pageTitle}</h2>
         </div>
       </div>
     </section>

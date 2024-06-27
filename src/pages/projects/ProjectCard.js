@@ -38,7 +38,14 @@ function ProjectCard(props) {
   return (
     <div className="col mb-4">
       <div className="card shadow">
-        <img src={props.img} className="card-img-top" alt={props.title} />
+        <img
+          src={props.img}
+          className="card-img-top"
+          alt={props.title}
+          width={259}
+          height={194}
+          style={{ objectFit: 'cover', objectPosition: '0 0' }}
+        />
         <div className="card-body">
           <h6 className="card-title">{props.title}</h6>
           <p className="card-text fs-6">{props.about}</p>
