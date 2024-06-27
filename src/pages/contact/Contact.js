@@ -19,9 +19,18 @@ import Cv from '../../assets/LeightonGrant.pdf'
 // Banner Background
 import bg from '../../assets/contact-bg.jpg'
 
+import { Helmet } from 'react-helmet-async'
+
 const Contact = () => {
   return (
     <>
+      <Helmet>
+        <meta
+          name="keywords"
+          content="HTML, CSS, JavaScript, React, Portfolio"
+        />
+        <title>Leighton Grant's Portfolio | Contact</title>
+      </Helmet>
       <PageBanner pageTitle="Contact Me" bannerBg={bg} />
       <ContactForm />
       <section id="contact-details" className="padding-lg">

@@ -10,6 +10,8 @@ import { useParams } from 'react-router-dom'
 //Utilities
 import slugify from '../../utils/slugify'
 
+import { Helmet } from 'react-helmet-async'
+
 function ProjectDetails() {
   const [bootcampProjects] = useOutletContext()
   const { data, error } = bootcampProjects
@@ -32,16 +34,25 @@ function ProjectDetails() {
   if (!data) return <h2>Loading...</h2>
   if (error) return <h2>{error}</h2>
   return (
-    <main className="padding-lg" data-aos="fade-in">
-      <div className="container">
-        <h1 className="section-title text-capitalize title-margin">
-          {id.replaceAll('-', ' ')}
-        </h1>
-      </div>
-      <div className="container my-5">
-        <div className="d-flex justify-content-center">{projectDetails}</div>
-      </div>
-    </main>
+    <>
+      <Helmet>
+        <meta
+          name="keywords"
+          content="HTML, CSS, JavaScript, React, Portfolio"
+        />
+        <title>Leighton Grant's Portfolio | {id.replaceAll('-', ' ')}</title>
+      </Helmet>
+      <main className="padding-lg" data-aos="fade-in">
+        <div className="container">
+          <h1 className="section-title text-capitalize title-margin">
+            {id.replaceAll('-', ' ')}
+          </h1>
+        </div>
+        <div className="container my-5">
+          <div className="d-flex justify-content-center">{projectDetails}</div>
+        </div>
+      </main>
+    </>
   )
 }
 
