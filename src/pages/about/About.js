@@ -20,6 +20,7 @@ function About() {
           name="keywords"
           content="HTML, CSS, JavaScript, React, Portfolio"
         />
+        <link rel="canonical" href="https://leightongrant.me/about" />
         <title>Leighton Grant's Portfolio | About</title>
       </Helmet>
       <PageBanner pageTitle="About me" bannerBg={bg} />

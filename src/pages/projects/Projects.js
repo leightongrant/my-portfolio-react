@@ -44,6 +44,7 @@ const Projects = () => {
           name="keywords"
           content="HTML, CSS, JavaScript, React, Portfolio"
         />
+        <link rel="canonical" href="https://leightongrant.me/projects" />
         <title>Leighton Grant's Portfolio | Projects</title>
       </Helmet>
       <PageBanner pageTitle="My Projects" bannerBg={bg} />
