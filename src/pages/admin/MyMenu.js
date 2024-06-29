@@ -4,7 +4,7 @@ import DashboardIcon from '@mui/icons-material/Dashboard'
 import MusicIcon from '@mui/icons-material/MusicNote'
 import PeopleIcon from '@mui/icons-material/People'
 
-const MyMenu = () => (
+export const MyMenu = () => (
   <IconMenu variant="categories">
     <IconMenu.Item
       name="dashboard"
