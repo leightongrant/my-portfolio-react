@@ -36,7 +36,6 @@ const ContactForm = () => {
           <form
             name="contact"
             method="POST"
-            data-netlify="true"
             onSubmit={handleSubmit}
             className="w-100">
             <input type="hidden" name="form-name" value="contact" />
@@ -47,7 +46,6 @@ const ContactForm = () => {
               <input
                 className="form-control py-3"
                 type="text"
-                id="name"
                 name="name"
                 pattern="[A-Za-z ]*"
                 required
@@ -60,7 +58,6 @@ const ContactForm = () => {
               <input
                 className="form-control py-3"
                 type="email"
-                id="email"
                 name="email"
                 pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
                 required
@@ -72,11 +69,9 @@ const ContactForm = () => {
               </label>
               <textarea
                 className="form-control"
-                id="message"
                 name="message"
                 rows={10}
-                required
-              />
+                required></textarea>
             </div>
             <button
               className="btn form-btn rounded px-5 py-3 my-4 w-100 "
