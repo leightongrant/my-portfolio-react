@@ -15,6 +15,7 @@ const Hero = () => {
           name="keywords"
           content="HTML, CSS, JavaScript, React, Portfolio"
         />
+        <link rel="canonical" href="https://leightongrant.me" />
         <title>Leighton Grant's Portfolio | Home</title>
       </Helmet>
       <main

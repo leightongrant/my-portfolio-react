@@ -20,9 +20,9 @@ export default function Login({ bootcampProjects }) {
       <div className="modal-dialog modal-dialog-centered">
         <div className="modal-content">
           <div className="modal-header">
-            <h1 className="modal-title fs-5" id="loginModalLabel">
+            <h2 className="modal-title fs-5" id="loginModalLabel">
               Login
-            </h1>
+            </h2>
             <button
               type="button"
               className="btn-close"
