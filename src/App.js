@@ -17,7 +17,7 @@ import { useState, useEffect } from 'react'
 import Login from './components/modals/Login'
 
 // Supabase
-import { supabase } from './utils/supabase'
+import supabaseClient from './lib/supabase'
 
 // Layout
 function Layout() {
@@ -31,13 +31,13 @@ function Layout() {
 	})
 
 	useEffect(() => {
-		supabase.auth.getSession().then(({ data: { session } }) => {
+		supabaseClient.auth.getSession().then(({ data: { session } }) => {
 			setBootcampProjects(obj => ({ ...obj, session: session }))
 		})
 
 		const {
 			data: { subscription },
-		} = supabase.auth.onAuthStateChange((_event, session) => {
+		} = supabaseClient.auth.onAuthStateChange((_event, session) => {
 			setBootcampProjects(obj => ({ ...obj, session: session }))
 		})
 
@@ -45,23 +45,19 @@ function Layout() {
 	}, [])
 
 	useEffect(() => {
-		try {
-			async function fetchProjects() {
-				const res = await supabase.from('bootcamp').select()
-				if (res.status === 200) {
-					setBootcampProjects(obj => ({ ...obj, data: res.data }))
-				}
-				if (res.error) {
-					setBootcampProjects(obj => ({ ...obj, error: res.error }))
-				}
-			}
-			fetchProjects()
-		} catch (e) {
-			console.log(e)
-		} finally {
-			setBootcampProjects(obj => ({ ...obj, status: null }))
-		}
+		fetchProjects()
 	}, [bootcampProjects.status])
+
+	async function fetchProjects() {
+		const res = await supabaseClient.from('bootcamp').select()
+		if (res.status === 200) {
+			setBootcampProjects(obj => ({ ...obj, data: res.data }))
+		}
+		if (res.error) {
+			setBootcampProjects(obj => ({ ...obj, error: res.error }))
+		}
+	}
+
 	return (
 		<>
 			<Header
