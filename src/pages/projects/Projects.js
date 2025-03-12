@@ -16,7 +16,7 @@ const Projects = () => {
 		setBootcampProjects(obj => ({ ...obj, mode: 'add' }))
 	}
 
-	const { data, error } = bootcampProjects
+	const { data } = bootcampProjects
 
 	if (!data) return <h2>Loading...</h2>
 
