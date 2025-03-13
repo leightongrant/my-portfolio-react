@@ -1,6 +1,7 @@
 import { Outlet, BrowserRouter, Routes, Route } from 'react-router-dom'
 
 // Pages
+import Home from './pages/home/Home'
 import About from './pages/about/About'
 import Projects from './pages/projects/Projects'
 import Contact from './pages/contact/Contact'
@@ -10,7 +11,6 @@ import NotFound from './pages/notfound/NotFound'
 // Components
 import Footer from './components/footer/Footer'
 import Header from './components/header/Header'
-import Hero from './components/hero/Hero'
 import AddProject from './components/modals/AddProject'
 import { Thanks } from './components/modals/Thanks'
 import { useState, useEffect } from 'react'
@@ -46,15 +46,18 @@ function Layout() {
 
 	useEffect(() => {
 		fetchProjects()
-	}, [bootcampProjects.status])
+	}, [])
 
 	async function fetchProjects() {
 		const res = await supabaseClient.from('bootcamp').select()
-		if (res.status === 200) {
+		if (res.status > 199 && res.status < 300) {
 			setBootcampProjects(obj => ({ ...obj, data: res.data }))
 		}
-		if (res.error) {
+		if (res.status > 299 && res.status < 600) {
 			setBootcampProjects(obj => ({ ...obj, error: res.error }))
+		}
+		if (res.status === 0) {
+			setBootcampProjects(obj => ({ ...obj, error: 0 }))
 		}
 	}
 
@@ -64,13 +67,24 @@ function Layout() {
 				bootcampProjects={bootcampProjects}
 				setBootcampProjects={setBootcampProjects}
 			/>
-			<Outlet context={[bootcampProjects, setBootcampProjects]} />
+			<div
+				style={{
+					display: 'grid',
+					gridTemplateRows: '1fr auto',
+					minHeight: '100dvh',
+				}}
+			>
+				<div>
+					<Outlet context={[bootcampProjects, setBootcampProjects]} />
+				</div>
+				<Footer />
+			</div>
 			<AddProject
 				bootcampProjects={bootcampProjects}
 				setBootcampProjects={setBootcampProjects}
 			/>
+
 			<Login bootcampProjects={bootcampProjects} />
-			<Footer />
 		</>
 	)
 }
@@ -85,7 +99,7 @@ export default function App() {
 		>
 			<Routes>
 				<Route element={<Layout />}>
-					<Route path='/' element={<Hero />} />
+					<Route path='/' element={<Home />} />
 					<Route path='/about' element={<About />} />
 					<Route path='/projects' element={<Projects />} />
 					<Route path='/projects/:id' element={<ProjectDetails />} />
