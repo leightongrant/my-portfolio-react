@@ -1,27 +1,27 @@
 #hero {
-  background-image: url('../../assets/bg.jpg');
-  background-position: center;
-  background-size: cover;
-  min-height: calc(95.3vh);
+	background-image: url('../../assets/bg.jpg');
+	background-position: center;
+	background-size: cover;
+	min-height: 100%;
 }
 
 #heroImage {
-  outline: 5px solid var(--lg-dark);
-  margin-top: 83px;
+	outline: 5px solid var(--lg-dark);
+	margin-top: 83px;
 }
 
 .HeroButton {
-  color: var(--lg-light);
-  background-color: var(--lg-dark);
-  text-transform: uppercase;
+	color: var(--lg-light);
+	background-color: var(--lg-dark);
+	text-transform: uppercase;
 }
 
 .HeroButton:hover {
-  color: var(--lg-light);
-  background-color: var(--lg-hover);
+	color: var(--lg-light);
+	background-color: var(--lg-hover);
 }
 
 .hero-info {
-  background-color: rgba(255, 255, 255, 0.6);
-  padding: 40px 0;
+	background-color: rgba(255, 255, 255, 0.6);
+	padding: 40px 0;
 }
