@@ -1,19 +1,9 @@
-// Style
 import './ProjectCard.css'
-// Icons
 import { RiExternalLinkFill } from 'react-icons/ri'
 import { HiArrowNarrowLeft, HiLink } from 'react-icons/hi'
-
-// Routing
 import { LinkContainer } from 'react-router-bootstrap'
-
-// Utilites
 import slugify from '../../utils/slugify'
-
-// React Router Context
 import { useOutletContext } from 'react-router-dom'
-
-// Supabase
 import supabaseClient from '../../lib/supabase'
 
 function ProjectCard(props) {
@@ -37,7 +27,7 @@ function ProjectCard(props) {
 
 	return (
 		<div className='col mb-4'>
-			<div className='card shadow'>
+			<div className='card shadow bg-light'>
 				<img
 					src={props.img}
 					className='card-img-top'

@@ -1,13 +1,9 @@
-// Components
 import { ProjectCard } from './ProjectCard'
 import PageBanner from '../../components/pagebanner/PageBanner'
-// Banner Background
 import bg from '../../assets/projects-bg.jpg'
-
-// React Router Context
 import { useOutletContext } from 'react-router-dom'
-
 import { Helmet } from 'react-helmet-async'
+import { LuServerOff } from 'react-icons/lu'
 
 const Projects = () => {
 	const [bootcampProjects, setBootcampProjects] = useOutletContext()
@@ -16,7 +12,22 @@ const Projects = () => {
 		setBootcampProjects(obj => ({ ...obj, mode: 'add' }))
 	}
 
-	const { data } = bootcampProjects
+	const { data, error } = bootcampProjects
+
+	if (error !== null) {
+		return (
+			<div style={{ marginTop: '88px' }}>
+				<div className='container h-75 d-flex flex-column align-items-center justify-content-center gap-5'>
+					<LuServerOff style={{ fontSize: '4em' }} />
+					<h5 style={{ textWrap: 'balance' }} className='text-center'>
+						{error === 0
+							? 'There was a problem with the server. Please try again later.'
+							: error}
+					</h5>
+				</div>
+			</div>
+		)
+	}
 
 	if (!data) return <h2>Loading...</h2>
 
@@ -48,7 +59,7 @@ const Projects = () => {
 			<PageBanner pageTitle='My Projects' bannerBg={bg} />
 			<main id='skills-bootcamp' className='padding-lg'>
 				<div className='container' data-aos='fade-in'>
-					<h1 className='section-title'>Skills Bootcamp Projects</h1>
+					<h2 className='section-title'>Skills Bootcamp Projects</h2>
 
 					{bootcampProjects.session && (
 						<button
