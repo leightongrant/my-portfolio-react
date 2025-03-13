@@ -1,17 +1,21 @@
 export default function PageBanner({ pageTitle, bannerBg }) {
-	const bgStyles = {
-		backgroundImage: `url(${bannerBg})`,
+	const bgImage = {
+		backgroundImage: bannerBg
+			? `url(${bannerBg})`
+			: `linear-gradient(to left,hsla(240, 10%, 90%, 1), hsla(240, 15%, 19%, 1))`,
 		backgroundSize: 'cover',
 		backgroundPosition: 'bottom',
 	}
 	const overlay = {
-		backgroundColor: 'rgba(0,0,0,0.7)',
+		backgroundColor: 'hsla(240, 15%, 19%, 0.7)',
 	}
 	return (
-		<section className='page-banner'>
-			<div className='' style={bgStyles}>
-				<div className='padding-lg banner-padding' style={overlay}>
-					<h2 className='text-center text-light'>{pageTitle}</h2>
+		<section className='banner-margin-top'>
+			<div style={bgImage}>
+				<div className='banner-padding ' style={overlay}>
+					<div className='container'>
+						<h1 className=' text-light text-capitalize'>{pageTitle}</h1>
+					</div>
 				</div>
 			</div>
 		</section>
