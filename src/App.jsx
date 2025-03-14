@@ -7,7 +7,7 @@ import supabaseClient from './lib/supabase'
 import { lazy } from 'react'
 
 const Projects = lazy(() => import('./pages/projects/Projects'))
-const Thanks = lazy(() => import('./components/modals/Thanks'))
+const Thanks = lazy(() => import('./pages/thanks/Thanks'))
 const NotFound = lazy(() => import('./pages/notfound/NotFound'))
 const ProjectDetails = lazy(() => import('./pages/projects/ProjectDetails'))
 const Contact = lazy(() => import('./pages/contact/Contact'))
@@ -95,12 +95,12 @@ export default function App() {
 			<Routes>
 				<Route element={<Layout />}>
 					<Route path='/' element={<Home />} />
-					<Route path='/about' element={<About />} />
-					<Route path='/projects' element={<Projects />} />
-					<Route path='/projects/:id' element={<ProjectDetails />} />
-					<Route path='/contact' element={<Contact />} />
-					<Route path='/thanks' element={<Thanks />} />
-					<Route path='/*' element={<NotFound />} />
+					<Route path='about' element={<About />} />
+					<Route path='projects' element={<Projects />} />
+					<Route path='projects/:id' element={<ProjectDetails />} />
+					<Route path='contact' element={<Contact />} />
+					<Route path='thanks' element={<Thanks />} />
+					<Route path='*' element={<NotFound />} />
 				</Route>
 			</Routes>
 		</BrowserRouter>
