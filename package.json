@@ -26,8 +26,7 @@
 		"react-router-dom": "^6.23.1",
 		"vite": "^6.2.1",
 		"vite-plugin-svgr": "^4.3.0",
-		"vite-tsconfig-paths": "^5.1.4",
-		"web-vitals": "^2.1.4"
+		"vite-tsconfig-paths": "^5.1.4"
 	},
 	"scripts": {
 		"dev": "vite",
