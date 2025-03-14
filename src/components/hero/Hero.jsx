@@ -1,6 +1,6 @@
 import './Hero.css'
 import { LinkContainer } from 'react-router-bootstrap'
-import ProfilePhoto from '../../assets/leightongrant_profile.jpg'
+import ProfilePhoto from '../../assets/profile_thumb.webp'
 import { Helmet } from 'react-helmet-async'
 
 const Hero = () => {

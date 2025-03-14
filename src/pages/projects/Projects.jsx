@@ -1,6 +1,6 @@
 import { ProjectCard } from './ProjectCard'
 import PageBanner from '../../components/pagebanner/PageBanner'
-import bg from '../../assets/projects-bg.jpg'
+import bg from '../../assets/projects-bg.webp'
 import { useOutletContext } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import { LuServerOff } from 'react-icons/lu'

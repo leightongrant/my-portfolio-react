@@ -22,9 +22,9 @@ If you have any questions about the repo, open an issue or contact me directly.
 
 Contact me directly at: oneal.grant@outlook.com
 
-Find more info about my work at: [misterouija](https://github.com/misterouija/)
+Find more info about my work at: [leightongrant](https://github.com/leightongrant/)
 
-View my portfolio on: [Netlify](https://leighton-portfolio.netlify.app) or on: [GitHub Pages](https://misterouija.github.io/my-portfolio-react/)
+View my portfolio on: [Leighton Grant](https://leightongrant.me)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -38,4 +38,4 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 ## Screenshot
 
-![screenshot](/src/assets/screenshot.jpeg)
+![screenshot](/src/assets/screenshot.webp)

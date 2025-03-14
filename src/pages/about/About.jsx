@@ -1,15 +1,7 @@
-// Styles
 import './About.css'
-
-// Assets
-import profile from '../../assets/leightongrant_profile.jpg'
-
-// Components
+import profile from '../../assets/profile_thumb.webp'
 import PageBanner from '../../components/pagebanner/PageBanner'
-
-// Banner Background
-import bg from '../../assets/about-bg.jpg'
-
+import bg from '../../assets/about-bg.webp'
 import { Helmet } from 'react-helmet-async'
 
 function About() {
