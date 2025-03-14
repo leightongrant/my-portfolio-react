@@ -49,5 +49,11 @@
 	"devDependencies": {
 		"jsdom": "^26.0.0",
 		"vitest": "^3.0.8"
+	},
+	"pnpm": {
+		"onlyBuiltDependencies": [
+			"@swc/core",
+			"esbuild"
+		]
 	}
 }

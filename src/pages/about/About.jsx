@@ -22,15 +22,17 @@ function About() {
 						<h2 className='text-center section-title'>
 							Frontend Web Developer
 						</h2>
-						<div className='col-12 col-md-4 mb-5' data-aos='fade-in'>
+						<div className='col-12 col-lg-6 mb-5' data-aos='fade-in'>
 							<img
 								className='img-fluid rounded'
 								src={profile}
-								alt='Leighton Grant - Front-End Web Developer'
+								alt='Leighton Grant Frontend Web Developer'
+								width={800}
+								height={800}
 							/>
 						</div>
 
-						<div className='col-12 col-md-8 about-info' data-aos='fade-in'>
+						<div className='col-12 col-lg-6 about-info' data-aos='fade-in'>
 							<p className='lead'>
 								Hi, my name is Leighton Grant and I am a qualified front-end
 								developer residing in the UK. I am excited to join a company
