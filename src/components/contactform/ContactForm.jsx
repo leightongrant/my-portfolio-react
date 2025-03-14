@@ -1,8 +1,5 @@
-// Styles
 import './ContactForm.css'
-
-// Hooks
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router'
 
 const ContactForm = () => {
 	const navigate = useNavigate()
