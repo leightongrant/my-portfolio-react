@@ -1,25 +1,20 @@
 import { Outlet, BrowserRouter, Routes, Route } from 'react-router-dom'
-
-// Pages
 import Home from './pages/home/Home'
-import About from './pages/about/About'
-import Projects from './pages/projects/Projects'
-import Contact from './pages/contact/Contact'
-import ProjectDetails from './pages/projects/ProjectDetails'
-import NotFound from './pages/notfound/NotFound'
-
-// Components
 import Footer from './components/footer/Footer'
 import Header from './components/header/Header'
-import AddProject from './components/modals/AddProject'
-import { Thanks } from './components/modals/Thanks'
 import { useState, useEffect } from 'react'
-import Login from './components/modals/Login'
-
-// Supabase
 import supabaseClient from './lib/supabase'
+import { lazy } from 'react'
 
-// Layout
+const Projects = lazy(() => import('./pages/projects/Projects'))
+const Thanks = lazy(() => import('./components/modals/Thanks'))
+const NotFound = lazy(() => import('./pages/notfound/NotFound'))
+const ProjectDetails = lazy(() => import('./pages/projects/ProjectDetails'))
+const Contact = lazy(() => import('./pages/contact/Contact'))
+const About = lazy(() => import('./pages/about/About'))
+const AddProject = lazy(() => import('./components/modals/AddProject'))
+const Login = lazy(() => import('./components/modals/Login'))
+
 function Layout() {
 	const [bootcampProjects, setBootcampProjects] = useState({
 		data: null,
