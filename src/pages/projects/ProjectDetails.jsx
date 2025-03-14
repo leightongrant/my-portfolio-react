@@ -7,8 +7,11 @@ import PageBanner from '../../components/pagebanner/PageBanner'
 
 function ProjectDetails() {
 	const [bootcampProjects] = useOutletContext()
-	const { data, error } = bootcampProjects
+	const { data, error, status } = bootcampProjects
 	const { id } = useParams()
+
+	if (!data) return <h2>Loading...</h2>
+	if (error) return <h2>{error}</h2>
 
 	const projectDetails = data
 		.filter(project => slugify(project.title) === id)
@@ -23,8 +26,7 @@ function ProjectDetails() {
 				key={project.id}
 			/>
 		))
-	if (!data) return <h2>Loading...</h2>
-	if (error) return <h2>{error}</h2>
+
 	return (
 		<>
 			<Helmet>

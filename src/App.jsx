@@ -44,9 +44,14 @@ function Layout() {
 	}, [])
 
 	async function fetchProjects() {
+		setBootcampProjects(obj => ({ ...obj, status: 'loading' }))
 		const res = await supabaseClient.from('bootcamp').select()
 		if (res.status > 199 && res.status < 300) {
-			setBootcampProjects(obj => ({ ...obj, data: res.data }))
+			setBootcampProjects(obj => ({
+				...obj,
+				data: res.data,
+				status: res.status,
+			}))
 		}
 		if (res.status > 299 && res.status < 600) {
 			setBootcampProjects(obj => ({ ...obj, error: res.error }))
