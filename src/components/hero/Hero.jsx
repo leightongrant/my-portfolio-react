@@ -1,5 +1,4 @@
 import './Hero.css'
-import { LinkContainer } from 'react-router-bootstrap'
 import ProfilePhoto from '../../assets/profile_thumb.webp'
 import { Helmet } from 'react-helmet-async'
 
@@ -36,15 +35,13 @@ const Hero = () => {
 					Frontend Web Developer
 				</p>
 
-				<LinkContainer to='/about'>
-					<a
-						href='/about'
-						className='btn btn-about rounded px-5 py-3 my-4 HeroButton'
-						data-aos='zoom-in'
-					>
-						About Me
-					</a>
-				</LinkContainer>
+				<a
+					href='/about'
+					className='btn btn-about rounded px-5 py-3 my-4 HeroButton'
+					data-aos='zoom-in'
+				>
+					About Me
+				</a>
 			</main>
 		</>
 	)
