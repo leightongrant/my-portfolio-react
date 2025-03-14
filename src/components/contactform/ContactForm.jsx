@@ -1,4 +1,3 @@
-import './ContactForm.css'
 import { useNavigate } from 'react-router'
 
 const ContactForm = () => {

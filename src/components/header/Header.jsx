@@ -1,4 +1,3 @@
-import './Header.css'
 import { Social } from '../social/Social'
 import { IconContext } from 'react-icons'
 import { HiMenu, HiOutlineX } from 'react-icons/hi'

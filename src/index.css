@@ -16,8 +16,9 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: 'Abril Fatface', serif;
+	font-family: 'Young Serif', serif;
 	color: var(--lg-dark);
+	font-weight: 400;
 }
 
 h1 {
@@ -138,4 +139,105 @@ code {
 		margin-top: 10px;
 		text-align: center;
 	}
+}
+
+/* Contact Form */
+.form-btn {
+	background-color: var(--lg-dark);
+	color: white;
+	text-transform: uppercase;
+}
+.form-btn:hover {
+	background-color: var(--lg-hover);
+	color: white;
+}
+
+/* Footer */
+#footer {
+	background-color: var(--lg-dark);
+	color: var(--lg-light);
+}
+/* Projects */
+.project-card {
+	position: relative;
+}
+.card-img-overlay {
+	background-color: rgba(0, 0, 0, 0.9);
+	border-radius: 0;
+	height: 50%;
+}
+.projectBtn {
+	background-color: var(--lg-dark);
+	color: var(--lg-light);
+}
+.projectBtn:hover {
+	background-color: var(--lg-hover);
+	color: var(--lg-light);
+}
+
+/* Hero */
+#hero {
+	background-image: url('./assets/hero-1.webp');
+	background-position: center;
+	background-size: cover;
+	min-height: 100%;
+}
+
+#heroImage {
+	outline: 5px solid var(--lg-dark);
+	margin-top: 83px;
+}
+
+.HeroButton {
+	color: var(--lg-light);
+	background-color: var(--lg-dark);
+	text-transform: uppercase;
+}
+
+.HeroButton:hover {
+	color: var(--lg-light);
+	background-color: var(--lg-hover);
+}
+
+.hero-info {
+	background-color: rgba(255, 255, 255, 0.6);
+	padding: 40px 0;
+}
+
+/* Contact */
+
+.contact-social a {
+	font-size: 2em;
+}
+
+.contact-social a {
+	margin-left: 35px;
+}
+.contact-info {
+	color: #4a4e69;
+}
+.social-buttons {
+	font-size: 2em;
+	background-color: #22223b;
+	border-radius: 50%;
+	width: 60px;
+	height: 60px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 5px;
+}
+
+.contact-info .card {
+	border: none;
+	border-bottom: 10px solid #22223b;
+	border-radius: 5px;
+}
+
+a.social-button {
+	line-height: 0;
+}
+
+#contact-details {
+	background-color: var(--lg-light);
 }

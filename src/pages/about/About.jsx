@@ -1,4 +1,3 @@
-import './About.css'
 import profile from '../../assets/profile_thumb.webp'
 import PageBanner from '../../components/pagebanner/PageBanner'
 import bg from '../../assets/about-bg.webp'

@@ -1,16 +1,10 @@
-// Styles
-import './Social.css'
-
-// Icons
 import {
 	BsLinkedin,
 	BsGithub,
 	BsPhoneFill,
 	BsEnvelopeFill,
 } from 'react-icons/bs'
-
 import { BiLogInCircle, BiLogOutCircle } from 'react-icons/bi'
-
 import { useEffect } from 'react'
 import { IconContext } from 'react-icons'
 import supabaseClient from '../../lib/supabase'

@@ -1,4 +1,3 @@
-import './Hero.css'
 import ProfilePhoto from '../../assets/profile_thumb.webp'
 import { Helmet } from 'react-helmet-async'
 

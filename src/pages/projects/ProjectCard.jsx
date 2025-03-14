@@ -1,4 +1,3 @@
-import './ProjectCard.css'
 import { RiExternalLinkFill } from 'react-icons/ri'
 import { HiArrowNarrowLeft, HiLink } from 'react-icons/hi'
 import slugify from '../../utils/slugify'
