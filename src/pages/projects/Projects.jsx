@@ -1,13 +1,12 @@
 import { ProjectCard } from './ProjectCard'
 import PageBanner from '../../components/pagebanner/PageBanner'
 import bg from '../../assets/projects-bg.webp'
-import { useOutletContext } from 'react-router-dom'
+import { useOutletContext } from 'react-router'
 import { Helmet } from 'react-helmet-async'
 import { LuServerOff } from 'react-icons/lu'
 
 const Projects = () => {
 	const [bootcampProjects, setBootcampProjects] = useOutletContext()
-
 	async function handleAddPorject() {
 		setBootcampProjects(obj => ({ ...obj, mode: 'add' }))
 	}

@@ -1,6 +1,6 @@
-import { useOutletContext } from 'react-router-dom'
+import { useOutletContext } from 'react-router'
 import { Details } from './ProjectCard'
-import { useParams } from 'react-router-dom'
+import { useParams } from 'react-router'
 import slugify from '../../utils/slugify'
 import { Helmet } from 'react-helmet-async'
 import PageBanner from '../../components/pagebanner/PageBanner'
@@ -8,7 +8,6 @@ import PageBanner from '../../components/pagebanner/PageBanner'
 function ProjectDetails() {
 	const [bootcampProjects] = useOutletContext()
 	const { data, error } = bootcampProjects
-
 	const { id } = useParams()
 
 	const projectDetails = data

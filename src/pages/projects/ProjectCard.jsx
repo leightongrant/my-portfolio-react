@@ -1,13 +1,14 @@
 import './ProjectCard.css'
 import { RiExternalLinkFill } from 'react-icons/ri'
 import { HiArrowNarrowLeft, HiLink } from 'react-icons/hi'
-import { LinkContainer } from 'react-router-bootstrap'
 import slugify from '../../utils/slugify'
-import { useOutletContext } from 'react-router-dom'
+import { useOutletContext } from 'react-router'
 import supabaseClient from '../../lib/supabase'
+import { useNavigate } from 'react-router'
 
 function ProjectCard(props) {
 	const [bootcampProjects, setBootcampProjects] = useOutletContext()
+	const navigate = useNavigate()
 
 	async function handleDelete(id) {
 		try {
@@ -58,11 +59,16 @@ function ProjectCard(props) {
 						>
 							Repo <RiExternalLinkFill />
 						</a>
-						<LinkContainer to={slugify(props.title)}>
-							<a href={slugify(props.title)} className='btn btn-sm projectBtn'>
-								Details <HiLink />
-							</a>
-						</LinkContainer>
+						<button
+							type='button'
+							className='btn btn-sm projectBtn'
+							onClick={e => {
+								e.preventDefault()
+								navigate(`/projects/${slugify(props.title)}`)
+							}}
+						>
+							Details <HiLink />
+						</button>
 					</div>
 					{bootcampProjects.session && (
 						<div className='d-flex justify-content-center gap-2 mt-2'>
@@ -92,6 +98,7 @@ function ProjectCard(props) {
 }
 
 function Details(props) {
+	const navigate = useNavigate()
 	return (
 		<div className='' style={{ maxWidth: '800px', height: 'auto' }}>
 			<div>
@@ -122,11 +129,14 @@ function Details(props) {
 				>
 					Repo <RiExternalLinkFill />
 				</a>
-				<LinkContainer to='/projects'>
-					<a href='/projects' className='btn btn-sm projectBtn ms-2'>
-						<HiArrowNarrowLeft /> Back to Projects
-					</a>
-				</LinkContainer>
+
+				<button
+					type='button'
+					className='btn btn-sm projectBtn ms-2'
+					onClick={() => navigate('/projects')}
+				>
+					<HiArrowNarrowLeft /> Back to Projects
+				</button>
 			</div>
 		</div>
 	)
