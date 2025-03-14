@@ -8,10 +8,7 @@ body {
 	font-family: 'Lato', sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	/* padding-top: 88px; */
 	font-size: 1.25em;
-	/* min-width: 375px; */
-	/* min-height: calc(100vh); */
 }
 h1,
 h2,
@@ -73,7 +70,7 @@ code {
 
 /* Main Nav */
 .nav-link {
-	font-weight: 900;
+	font-weight: 400;
 	color: var(--lg-dark);
 	font-size: 0.8em;
 	text-transform: uppercase;

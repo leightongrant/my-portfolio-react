@@ -33,19 +33,32 @@ const Header = ({ bootcampProjects, setBootcampProjects }) => {
 
 					<div className='collapse navbar-collapse flex-grow-0' id='main-nav'>
 						<div className='navbar-nav gap-lg-4 NavLinks'>
-							<a className='nav-link' aria-current='page' href='/'>
+							<a
+								className={`nav-link ${path === '/' && 'active'}`}
+								aria-current='page'
+								href='/'
+							>
 								Home
 							</a>
 
-							<a className='nav-link' href='/about'>
+							<a
+								className={`nav-link ${path === '/about' && 'active'}`}
+								href='/about'
+							>
 								About
 							</a>
 
-							<a className='nav-link' href='/projects' data-bs-toggle='show'>
+							<a
+								className={`nav-link ${path === '/projects' && 'active'}`}
+								href='/projects'
+							>
 								Projects
 							</a>
 
-							<a className='nav-link' href='/contact'>
+							<a
+								className={`nav-link ${path === '/contact' && 'active'}`}
+								href='/contact'
+							>
 								Contact
 							</a>
 						</div>
