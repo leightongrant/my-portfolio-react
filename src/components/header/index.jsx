@@ -7,6 +7,7 @@ import Container from 'react-bootstrap/Container'
 import Image from 'react-bootstrap/Image'
 import { HiMenu, HiOutlineX } from 'react-icons/hi'
 import { useState } from 'react'
+import { Link } from 'react-router'
 
 const Header = ({ bootcampProjects }) => {
 	const path = useResolvedPath().pathname
@@ -57,18 +58,29 @@ const Header = ({ bootcampProjects }) => {
 					className='justify-content-center text-uppercase fs-6'
 				>
 					<Nav>
-						<Nav.Link href='/' active={path === '/'}>
+						<Link to='/' className={`nav-link ${path === '/' && 'active'}`}>
 							Home
-						</Nav.Link>
-						<Nav.Link href='about' active={path === '/about'}>
+						</Link>
+						<Link
+							to='/about'
+							className={`nav-link ${path === '/about' && 'active'}`}
+						>
 							About
-						</Nav.Link>
-						<Nav.Link href='projects' active={path === '/projects'}>
+						</Link>
+
+						<Link
+							to='/projects'
+							className={`nav-link ${path === '/projects' && 'active'}`}
+						>
 							Projects
-						</Nav.Link>
-						<Nav.Link href='contact' active={path === '/contact'}>
+						</Link>
+
+						<Link
+							to='/contact'
+							className={`nav-link ${path === '/contact' && 'active'}`}
+						>
 							Contact
-						</Nav.Link>
+						</Link>
 					</Nav>
 					<div className='d-md-none'>
 						<hr />

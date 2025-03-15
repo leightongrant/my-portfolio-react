@@ -2,7 +2,7 @@ import { useOutletContext } from 'react-router'
 import { Details } from './ProjectCard'
 import { useParams } from 'react-router'
 import slugify from '../../utils/slugify'
-import { Helmet } from 'react-helmet-async'
+// import { Helmet } from 'react-helmet-async'
 import PageBanner from '../../components/pagebanner/PageBanner'
 
 function ProjectDetails() {
@@ -29,15 +29,15 @@ function ProjectDetails() {
 
 	return (
 		<>
-			<Helmet>
+			{/* <Helmet>
 				<meta
 					name='keywords'
 					content='HTML, CSS, JavaScript, React, Portfolio'
 				/>
 				<title>Leighton Grant's Portfolio | {id.replaceAll('-', ' ')}</title>
-			</Helmet>
+			</Helmet> */}
 			<PageBanner pageTitle={id.replaceAll('-', ' ')} />
-			<main className='padding-lg' data-aos='fade-in'>
+			<main className='padding-lg'>
 				<div className='container'></div>
 				<div className='container my-5'>
 					<div className='d-flex justify-content-center'>{projectDetails}</div>

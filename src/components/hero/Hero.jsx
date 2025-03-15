@@ -1,17 +1,9 @@
 import ProfilePhoto from '../../assets/profile_thumb.webp'
-import { Helmet } from 'react-helmet-async'
+import { Link } from 'react-router'
 
 const Hero = () => {
 	return (
 		<>
-			<Helmet>
-				<meta
-					name='keywords'
-					content='HTML, CSS, JavaScript, React, Portfolio'
-				/>
-				<link rel='canonical' href='https://leightongrant.me' />
-				<title>Leighton Grant's Portfolio | Home</title>
-			</Helmet>
 			<main
 				id='hero'
 				className='d-flex flex-column align-items-center justify-content-center hero-info'
@@ -23,24 +15,24 @@ const Hero = () => {
 					className='img-fluid rounded-circle'
 					width={150}
 					height={150}
-					data-aos='zoom-in'
+					data-aos='fade-in'
 				/>
 
-				<h1 className='fw-bold my-2 text-center' data-aos='zoom-in'>
+				<h1 className='fw-bold my-2 text-center' data-aos='fade-in'>
 					Leighton Grant
 				</h1>
 
-				<p className='fs-4 fw-light my-2 text-center' data-aos='zoom-in'>
+				<p className='fs-4 fw-light my-2 text-center' data-aos='fade-in'>
 					Frontend Web Developer
 				</p>
 
-				<a
-					href='/about'
+				<Link
+					to='/about'
 					className='btn btn-about rounded px-5 py-3 my-4 HeroButton'
-					data-aos='zoom-in'
+					data-aos='fade-in'
 				>
 					About Me
-				</a>
+				</Link>
 			</main>
 		</>
 	)

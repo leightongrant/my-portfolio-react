@@ -1,27 +1,27 @@
 import profile from '../../assets/profile_thumb.webp'
 import PageBanner from '../../components/pagebanner/PageBanner'
 import bg from '../../assets/about-bg.webp'
-import { Helmet } from 'react-helmet-async'
+// import { Helmet } from 'react-helmet-async'
 
 function About() {
 	return (
 		<>
-			<Helmet>
+			{/* <Helmet>
 				<meta
 					name='keywords'
 					content='HTML, CSS, JavaScript, React, Portfolio'
 				/>
 				<link rel='canonical' href='https://leightongrant.me/about' />
 				<title>Leighton Grant's Portfolio | About</title>
-			</Helmet>
+			</Helmet> */}
 			<PageBanner pageTitle='About me' bannerBg={bg} />
 			<main className='about-page padding-lg' id='about-me'>
-				<div className='container' data-aos='fade-in'>
+				<div className='container'>
 					<div className='row'>
 						<h2 className='text-center section-title'>
 							Frontend Web Developer
 						</h2>
-						<div className='col-12 col-lg-6 mb-5' data-aos='fade-in'>
+						<div className='col-12 col-lg-6 mb-5'>
 							<img
 								className='img-fluid rounded'
 								src={profile}
@@ -31,7 +31,7 @@ function About() {
 							/>
 						</div>
 
-						<div className='col-12 col-lg-6 about-info' data-aos='fade-in'>
+						<div className='col-12 col-lg-6 about-info'>
 							<p className='lead'>
 								Hi, my name is Leighton Grant and I am a qualified front-end
 								developer residing in the UK. I am excited to join a company
@@ -62,7 +62,7 @@ function About() {
 			</main>
 
 			<section id='key-skills' className='bg-light padding-lg'>
-				<div className='container' data-aos='fade-in'>
+				<div className='container'>
 					<h2 className='title about-title text-center section-title'>
 						Key Skills
 					</h2>

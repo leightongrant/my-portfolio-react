@@ -23,7 +23,7 @@ const ContactForm = () => {
 
 	return (
 		<main className='container contact-form padding-lg'>
-			<div data-aos='fade-in'>
+			<div>
 				<h2 className='section-title'>Get in touch</h2>
 				<div
 					className='bg-light p-3 p-md-5 border rounded'

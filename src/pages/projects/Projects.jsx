@@ -2,7 +2,7 @@ import { ProjectCard } from './ProjectCard'
 import PageBanner from '../../components/pagebanner/PageBanner'
 import bg from '../../assets/projects-bg.webp'
 import { useOutletContext } from 'react-router'
-import { Helmet } from 'react-helmet-async'
+// import { Helmet } from 'react-helmet-async'
 import { LuServerOff } from 'react-icons/lu'
 
 const Projects = () => {
@@ -47,17 +47,17 @@ const Projects = () => {
 
 	return (
 		<>
-			<Helmet>
+			{/* <Helmet>
 				<meta
 					name='keywords'
 					content='HTML, CSS, JavaScript, React, Portfolio'
 				/>
 				<link rel='canonical' href='https://leightongrant.me/projects' />
 				<title>Leighton Grant's Portfolio | Projects</title>
-			</Helmet>
+			</Helmet> */}
 			<PageBanner pageTitle='My Projects' bannerBg={bg} />
 			<main id='skills-bootcamp' className='padding-lg'>
-				<div className='container' data-aos='fade-in'>
+				<div className='container'>
 					<h2 className='section-title'>Skills Bootcamp Projects</h2>
 
 					{bootcampProjects.session && (

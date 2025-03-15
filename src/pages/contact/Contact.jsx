@@ -8,23 +8,23 @@ import ContactForm from '../../components/contactform/ContactForm'
 import PageBanner from '../../components/pagebanner/PageBanner'
 import Cv from '../../assets/LeightonGrant.pdf'
 import bg from '../../assets/contact-bg.webp'
-import { Helmet } from 'react-helmet-async'
+// import { Helmet } from 'react-helmet-async'
 
 const Contact = () => {
 	return (
 		<>
-			<Helmet>
+			{/* <Helmet>
 				<meta
 					name='keywords'
 					content='HTML, CSS, JavaScript, React, Portfolio'
 				/>
 				<link rel='canonical' href='https://leightongrant.me/contact' />
 				<title>Leighton Grant's Portfolio | Contact</title>
-			</Helmet>
+			</Helmet> */}
 			<PageBanner pageTitle='Contact Me' bannerBg={bg} />
 			<ContactForm />
 			<section id='contact-details' className='padding-lg'>
-				<div data-aos='fade-in'>
+				<div>
 					<h2 className='section-title'>Other Contact Info</h2>
 					<div className='container my-5 contact-info'>
 						<div className='row row-cols-1 row-cols-md-2 row-cols-lg-4 g-3  d-flex justify-content-between'>
