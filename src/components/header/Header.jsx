@@ -6,7 +6,7 @@ import { useState } from 'react'
 import clsx from 'clsx'
 import { useResolvedPath } from 'react-router'
 
-const Header = ({ bootcampProjects, setBootcampProjects }) => {
+const OldHeader = ({ bootcampProjects, setBootcampProjects }) => {
 	const [menu, setMenu] = useState(true)
 	const path = useResolvedPath().pathname
 
@@ -93,4 +93,4 @@ const Header = ({ bootcampProjects, setBootcampProjects }) => {
 	)
 }
 
-export default Header
+export default OldHeader

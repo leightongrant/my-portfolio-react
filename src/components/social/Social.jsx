@@ -2,69 +2,48 @@ import {
 	BsLinkedin,
 	BsGithub,
 	BsPhoneFill,
-	BsEnvelopeFill,
+	BsEnvelopePaperFill,
 } from 'react-icons/bs'
-import { BiLogInCircle, BiLogOutCircle } from 'react-icons/bi'
-import { useEffect } from 'react'
-import { IconContext } from 'react-icons'
-import supabaseClient from '../../lib/supabase'
 
 const linkedin = 'https://www.linkedin.com/in/leightongrant/'
 const github = 'https://github.com/leightongrant'
 
-function Social({ bootcampProjects, setBootcampProjects }) {
-	useEffect(() => {
-		const authBtn = document.querySelector('.supabase-auth-ui_ui-button')
-		authBtn.setAttribute('data-bs-dismiss', 'modal')
-	}, [])
-
-	async function signOut() {
-		try {
-			const { error } = await supabaseClient.auth.signOut()
-			if (error) console.log(error)
-		} catch (error) {
-			console.log(error)
-		}
-	}
-
-	function handleClick() {
-		const authBtn = document.querySelector('.supabase-auth-ui_ui-button')
-		authBtn.setAttribute('data-bs-dismiss', 'modal')
-	}
-
+function Social() {
 	return (
 		<div className=''>
-			<div className='social-links  d-inline-flex gap-2 align-items-center'>
+			<div className='d-flex gap-3 align-items-center justify-content-center'>
 				<a href={github} target='_blank' rel='noreferrer'>
-					<BsGithub className='fs-3' />
+					<BsGithub className='fs-4' target='_blank' href={github} />
 				</a>
 				<a href={linkedin} target='_blank' rel='noreferrer'>
-					<BsLinkedin className='fs-3' />
+					<BsLinkedin className='fs-4' />
 				</a>
 				<a href='mailto:dev@leightongrant.me'>
-					<BsEnvelopeFill className='fs-3' />
+					<BsEnvelopePaperFill className='fs-4' />
 				</a>
 				<a href='tel:+447886028826'>
-					<BsPhoneFill className='fs-3' />
+					<BsPhoneFill className='fs-4' />
 				</a>
-				{!bootcampProjects.session ? (
-					<IconContext.Provider value={{ className: 'text-success loginBtn' }}>
-						<BiLogInCircle
-							data-bs-toggle='modal'
-							data-bs-target='#loginModal'
-							onClick={handleClick}
-						/>
-					</IconContext.Provider>
-				) : (
-					<IconContext.Provider value={{ className: 'text-warning logoutBtn' }}>
-						<BiLogOutCircle onClick={signOut} />
-					</IconContext.Provider>
-				)}
 			</div>
 		</div>
 	)
 }
 
+function Phone() {
+	return (
+		<a href='tel:+447886028826' className='social-button'>
+			<BsPhoneFill />
+		</a>
+	)
+}
+
+function Email() {
+	return (
+		<a href='mailto:dev@leightongrant.me' className='social-button'>
+			<BsEnvelopePaperFill />
+		</a>
+	)
+}
 function LinkedIn() {
 	return (
 		<a
@@ -77,7 +56,6 @@ function LinkedIn() {
 		</a>
 	)
 }
-
 function GitHub() {
 	return (
 		<a href={github} target='_blank' className='social-button' rel='noreferrer'>
@@ -86,4 +64,4 @@ function GitHub() {
 	)
 }
 
-export { Social, LinkedIn, GitHub }
+export { Social, LinkedIn, GitHub, Phone, Email }
