@@ -11,11 +11,24 @@ import { useState } from 'react'
 const Header = ({ bootcampProjects }) => {
 	const path = useResolvedPath().pathname
 	const [isOpen, setIsOpen] = useState(false)
+
+	const navBarToggleStyle = {
+		backgroundColor: 'transparent',
+		border: 'none',
+		color: '#292b3a',
+		fontSize: '2em',
+		display: 'flex',
+		alignItems: 'center',
+		justifyContent: 'center',
+	}
+
 	const handleOpen = () => {
 		setIsOpen(!isOpen)
 	}
+
 	return (
 		<Navbar
+			id='main-nav'
 			as={'header'}
 			fixed='top'
 			expand='md'
@@ -35,26 +48,35 @@ const Header = ({ bootcampProjects }) => {
 					aria-controls='navbar-nav'
 					children={isOpen ? <HiOutlineX /> : <HiMenu />}
 					onClick={handleOpen}
+					bsPrefix='navbar-toggler-custom'
+					className='d-md-none'
+					style={navBarToggleStyle}
 				/>
 				<Navbar.Collapse
 					id='navbar-nav'
 					className='justify-content-center text-uppercase fs-6'
 				>
 					<Nav>
-						<Nav.Link href='/'>Home</Nav.Link>
-						<Nav.Link href='about' active>
+						<Nav.Link href='/' active={path === '/'}>
+							Home
+						</Nav.Link>
+						<Nav.Link href='about' active={path === '/about'}>
 							About
 						</Nav.Link>
-						<Nav.Link href='projects'>Projects</Nav.Link>
-						<Nav.Link href='contact'>Contact</Nav.Link>
+						<Nav.Link href='projects' active={path === '/projects'}>
+							Projects
+						</Nav.Link>
+						<Nav.Link href='contact' active={path === '/contact'}>
+							Contact
+						</Nav.Link>
 					</Nav>
 					<div className='d-md-none'>
 						<hr />
-						<SignIn bootcampProjects={bootcampProjects} />
+						{bootcampProjects && <SignIn bootcampProjects={bootcampProjects} />}
 					</div>
 				</Navbar.Collapse>
 				<div className='d-none d-md-block'>
-					<SignIn bootcampProjects={bootcampProjects} />
+					{bootcampProjects && <SignIn bootcampProjects={bootcampProjects} />}
 				</div>
 			</Container>
 		</Navbar>

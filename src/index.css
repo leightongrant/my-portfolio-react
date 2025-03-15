@@ -65,29 +65,22 @@ code {
 .banner-padding {
 	padding: 2em 0;
 }
-.banner-margin-top {
-	margin-top: 83px;
+
+/* Nav */
+
+.nav-link.active,
+.nav-link:hover {
+	text-decoration-line: underline;
+	text-underline-offset: 21px;
+	text-decoration-thickness: 4px;
+	text-decoration-color: var(--lg-dark);
 }
 
-/* Main Nav */
-/* .nav-link {
-	font-weight: 400;
-	color: var(--lg-dark);
-	font-size: 0.8em;
-	text-transform: uppercase;
-}
-.nav-link:hover {
-	color: var(--lg-hover);
-}
-.nav-link.active {
-	color: var(--lg-light);
-	background-color: var(--lg-dark);
-	border-radius: 1px;
-} */
 .loginBtn,
 .logoutBtn:hover {
 	cursor: pointer;
 }
+
 /* Sections */
 .section-title {
 	padding-bottom: 2em;
