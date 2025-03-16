@@ -4,11 +4,22 @@ import bg from '../../assets/projects-bg.webp'
 import { useOutletContext } from 'react-router'
 // import { Helmet } from 'react-helmet-async'
 import { LuServerOff } from 'react-icons/lu'
+import Button from 'react-bootstrap/Button'
+import { useModalStore } from '../../lib/zustand'
+import { useToastStore } from '../../lib/zustand'
 
 const Projects = () => {
 	const [bootcampProjects, setBootcampProjects] = useOutletContext()
 	async function handleAddPorject() {
 		setBootcampProjects(obj => ({ ...obj, mode: 'add' }))
+	}
+
+	const { showModal, setMode } = useModalStore()
+	const { result } = useToastStore()
+
+	const handleAddProject = () => {
+		setMode('addProject')
+		showModal()
 	}
 
 	const { data, error } = bootcampProjects
@@ -59,6 +70,10 @@ const Projects = () => {
 			<main id='skills-bootcamp' className='padding-lg'>
 				<div className='container'>
 					<h2 className='section-title'>Skills Bootcamp Projects</h2>
+					<Button onClick={handleAddProject} className='add-project-btn'>
+						Add a new project
+					</Button>
+					<p>{result.message}</p>
 
 					{bootcampProjects.session && (
 						<button

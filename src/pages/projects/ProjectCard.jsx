@@ -4,25 +4,34 @@ import slugify from '../../utils/slugify'
 import { useOutletContext } from 'react-router'
 import supabaseClient from '../../lib/supabase'
 import { useNavigate } from 'react-router'
+import { useModalStore } from '../../lib/zustand'
+import { useToastStore } from '../../lib/zustand'
 
 function ProjectCard(props) {
-	const [bootcampProjects, setBootcampProjects] = useOutletContext()
+	const [bootcampProjects] = useOutletContext()
 	const navigate = useNavigate()
+	const { showModal, setMode, setProjectId } = useModalStore()
+	const { showToast, setResult } = useToastStore()
 
 	async function handleDelete(id) {
-		try {
-			const res = await supabaseClient.from('bootcamp').select()
-			if (res.status === 200) {
-				setBootcampProjects(obj => ({ ...obj, status: res.status }))
-				await supabaseClient.from('bootcamp').delete().eq('id', id)
-			}
-		} catch (error) {
-			console.log(error)
+		const res = await supabaseClient.from('bootcamp').select()
+		if (res.status === 200) {
+			await supabaseClient.from('bootcamp').delete().eq('id', id)
+			setResult({
+				message: `Project deleted successfully`,
+				status: 'success',
+			})
+			showToast()
+			return
 		}
+		setResult({ message: res.error.message, status: res.status })
+		showToast()
 	}
 
-	async function handleEdit(e, id) {
-		setBootcampProjects(obj => ({ ...obj, selected: id, mode: 'edit' }))
+	async function handleEdit(_, id) {
+		setMode('editProject')
+		setProjectId(id)
+		showModal()
 	}
 
 	return (
@@ -81,9 +90,6 @@ function ProjectCard(props) {
 							<button
 								type='button'
 								className='btn btn-warning btn-sm'
-								data-bs-toggle='modal'
-								data-bs-target='#AddProject'
-								data-bs-type='edit'
 								onClick={e => handleEdit(e, props.id)}
 							>
 								Edit Project
