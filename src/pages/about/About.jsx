@@ -1,6 +1,12 @@
 import profile from '../../assets/profile_thumb.webp'
 import PageBanner from '../../components/pagebanner/PageBanner'
 import bg from '../../assets/about-bg.webp'
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
+import Image from 'react-bootstrap/Image'
+import keySkills from '../../../src/assets/key-skills.webp'
+import ListGroup from 'react-bootstrap/ListGroup'
 // import { Helmet } from 'react-helmet-async'
 
 function About() {
@@ -16,22 +22,20 @@ function About() {
 			</Helmet> */}
 			<PageBanner pageTitle='About me' bannerBg={bg} />
 			<main className='about-page padding-lg' id='about-me'>
-				<div className='container'>
-					<div className='row'>
-						<h2 className='text-center section-title'>
-							Frontend Web Developer
-						</h2>
-						<div className='col-12 col-lg-6 mb-5'>
-							<img
+				<Container>
+					<h2 className='text-center section-title'>Frontend Web Developer</h2>
+					<Row className='row-cols-1 row-cols-lg-2 g-5'>
+						<Col>
+							<Image
 								className='img-fluid rounded'
 								src={profile}
 								alt='Leighton Grant Frontend Web Developer'
 								width={800}
 								height={800}
 							/>
-						</div>
+						</Col>
 
-						<div className='col-12 col-lg-6 about-info'>
+						<Col className=' about-info'>
 							<p className='lead'>
 								Hi, my name is Leighton Grant and I am a qualified front-end
 								developer residing in the UK. I am excited to join a company
@@ -56,44 +60,68 @@ function About() {
 								pursue front-end development professionally, I am ready for the
 								next chapter in my career.
 							</p>
-						</div>
-					</div>
-				</div>
+						</Col>
+					</Row>
+				</Container>
 			</main>
 
 			<section id='key-skills' className='bg-light padding-lg'>
-				<div className='container'>
+				<Container>
 					<h2 className='title about-title text-center section-title'>
 						Key Skills
 					</h2>
-					<div className='d-flex justify-content-around'>
-						<ul className='list-group list-group-flush'>
-							<li className='list-group-item'>
-								Proficient in HTML, CSS, JavaScript, TypeScript, React, Nodejs
-							</li>
-							<li className='list-group-item'>
-								Strong understanding of responsive web design techniques
-							</li>
-							<li className='list-group-item'>
-								An understanding of version control systems such as Git/GitHub
-							</li>
-							<li className='list-group-item'>
-								Knowledge of performance testing frameworks including Mocha and
-								Jest
-							</li>
-							<li className='list-group-item'>
-								Experience with browser-based debugging and performance testing
-								software
-							</li>
-							<li className='list-group-item'>
-								Excellent problem-solving skills
-							</li>
-							<li className='list-group-item'>
-								Strong verbal and written communication skills
-							</li>
-						</ul>
-					</div>
-				</div>
+					<Row className='row-cols-1 row-cols-lg-2 g-5'>
+						<Col>
+							<ListGroup>
+								<ListGroup.Item
+									active
+									style={{
+										fontWeight: 'bold',
+										backgroundColor: 'var(--lg-dark)',
+										textAlign: 'center',
+										border: 'none',
+									}}
+									as={'h3'}
+									className='fs-4'
+								>
+									My Skills
+								</ListGroup.Item>
+								<ListGroup.Item>
+									Proficient in HTML, CSS, JavaScript, TypeScript, React, Nodejs
+								</ListGroup.Item>
+								<ListGroup.Item>
+									Strong understanding of responsive web design techniques
+								</ListGroup.Item>
+								<ListGroup.Item>
+									An understanding of version control systems such as Git/GitHub
+								</ListGroup.Item>
+								<ListGroup.Item>
+									Knowledge of performance testing frameworks including Mocha
+									and Jest
+								</ListGroup.Item>
+								<ListGroup.Item>
+									Experience with browser-based debugging and performance
+									testing software
+								</ListGroup.Item>
+								<ListGroup.Item>
+									Excellent problem-solving skills
+								</ListGroup.Item>
+								<ListGroup.Item>
+									Strong verbal and written communication skills
+								</ListGroup.Item>
+							</ListGroup>
+						</Col>
+						<Col>
+							<Image
+								src={keySkills}
+								alt='Leighton Grant Frontend Web Developer'
+								width={800}
+								height={800}
+								className='img-fluid rounded'
+							/>
+						</Col>
+					</Row>
+				</Container>
 			</section>
 		</>
 	)
