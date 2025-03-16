@@ -8,6 +8,7 @@ import ContactForm from '../../components/contactform/ContactForm'
 import PageBanner from '../../components/pagebanner/PageBanner'
 import Cv from '../../assets/LeightonGrant.pdf'
 import bg from '../../assets/contact-bg.webp'
+import Container from 'react-bootstrap/Container'
 // import { Helmet } from 'react-helmet-async'
 
 const Contact = () => {
@@ -22,9 +23,14 @@ const Contact = () => {
 				<title>Leighton Grant's Portfolio | Contact</title>
 			</Helmet> */}
 			<PageBanner pageTitle='Contact Me' bannerBg={bg} />
-			<ContactForm />
+			<main>
+				<Container>
+					<ContactForm />
+				</Container>
+			</main>
+
 			<section id='contact-details' className='padding-lg'>
-				<div>
+				<Container>
 					<h2 className='section-title'>Other Contact Info</h2>
 					<div className='container my-5 contact-info'>
 						<div className='row row-cols-1 row-cols-md-2 row-cols-lg-4 g-3  d-flex justify-content-between'>
@@ -96,19 +102,7 @@ const Contact = () => {
 							</div>
 						</div>
 					</div>
-					{/* <div className="container">
-            <div className="row">
-              <div className="col d-flex justify-content-center gap-3">
-                <span className="social-buttons">
-                  <LinkedIn />
-                </span>
-                <span className="social-buttons">
-                  <GitHub />
-                </span>
-              </div>
-            </div>
-          </div> */}
-				</div>
+				</Container>
 			</section>
 		</>
 	)

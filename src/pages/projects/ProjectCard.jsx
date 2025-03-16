@@ -46,7 +46,7 @@ function ProjectCard(props) {
 
 	return (
 		<Col className='mb-4'>
-			<Card className='shadow bg-light'>
+			<Card className='shadow bg-light project-card'>
 				<Card.Img
 					src={props.img}
 					className='card-img-top'
@@ -69,7 +69,7 @@ function ProjectCard(props) {
 							to={props.app_url}
 							target='_blank'
 							rel='noreferrer'
-							className='btn btn-sm projectBtn flex-grow-1'
+							className='btn btn-sm projectBtn flex-grow-1 border-0'
 						>
 							App <RiExternalLinkFill />
 						</Link>
@@ -77,13 +77,13 @@ function ProjectCard(props) {
 							to={props.repo_url}
 							target='_blank'
 							rel='noreferrer'
-							className='btn btn-sm projectBtn flex-grow-1'
+							className='btn btn-sm projectBtn flex-grow-1 border-0'
 						>
 							Repo <RiExternalLinkFill />
 						</Link>
 						<Button
 							type='button'
-							className='btn btn-sm projectBtn flex-grow-1'
+							className='btn btn-sm projectBtn flex-grow-1 border-0'
 							onClick={e => {
 								e.preventDefault()
 								navigate(`/projects/${slugify(props.title)}`)

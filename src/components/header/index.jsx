@@ -57,7 +57,7 @@ const Header = ({ bootcampProjects }) => {
 					id='navbar-nav'
 					className='justify-content-center text-uppercase fs-6'
 				>
-					<Nav>
+					<Nav className='gap-3'>
 						<Link to='/' className={`nav-link ${path === '/' && 'active'}`}>
 							Home
 						</Link>

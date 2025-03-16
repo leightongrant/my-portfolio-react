@@ -114,8 +114,9 @@ code {
 	color: var(--lg-light);
 }
 /* Projects */
-.project-card {
-	position: relative;
+.project-card:hover {
+	transform: scale(1.05);
+	transition: all 0.5s ease-in-out;
 }
 .card-img-overlay {
 	background-color: rgba(0, 0, 0, 0.9);

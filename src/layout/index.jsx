@@ -6,7 +6,6 @@ import { lazy } from 'react'
 import Header from '../components/header'
 import { useToastStore } from '../lib/zustand'
 
-const AddProject = lazy(() => import('../components/modals/AddProject'))
 const Login = lazy(() => import('../components/modals/Login'))
 const MainModal = lazy(() => import('../components/modals'))
 const MainToast = lazy(() => import('../components/toasts'))
@@ -77,10 +76,6 @@ function MainLayout() {
 				</div>
 				<Footer />
 			</div>
-			<AddProject
-				bootcampProjects={bootcampProjects}
-				setBootcampProjects={setBootcampProjects}
-			/>
 			<Login bootcampProjects={bootcampProjects} />
 			<MainModal />
 			<MainToast />
