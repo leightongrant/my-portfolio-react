@@ -10,8 +10,12 @@ import { useToastStore } from '../../lib/zustand'
 function ProjectCard(props) {
 	const [bootcampProjects] = useOutletContext()
 	const navigate = useNavigate()
-	const { showModal, setMode, setProjectId } = useModalStore()
-	const { showToast, setResult } = useToastStore()
+
+	const showToast = useToastStore(state => state.showToast)
+	const setResult = useToastStore(state => state.setResult)
+	const showModal = useModalStore(state => state.showModal)
+	const setMode = useModalStore(state => state.setMode)
+	const setProjectId = useModalStore(state => state.setProjectId)
 
 	async function handleDelete(id) {
 		const res = await supabaseClient.from('bootcamp').select()

@@ -8,7 +8,7 @@ function MainToast() {
 	const { show, closeToast, result } = useToastStore()
 
 	return (
-		<ToastContainer position='bottom-start' className='p-3'>
+		<ToastContainer position='bottom-center' className='p-3'>
 			<Row>
 				<Col>
 					<Toast

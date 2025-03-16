@@ -3,8 +3,9 @@ import { useModalStore } from '../../lib/zustand'
 import ProjectForm from '../forms/ProjectForm'
 
 function MainModal() {
-	const { show, closeModal, mode } = useModalStore()
-
+	const show = useModalStore(state => state.show)
+	const closeModal = useModalStore(state => state.closeModal)
+	const mode = useModalStore(state => state.mode)
 	return (
 		<>
 			<Modal show={show} onHide={closeModal}>

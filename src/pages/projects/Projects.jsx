@@ -6,7 +6,6 @@ import { useOutletContext } from 'react-router'
 import { LuServerOff } from 'react-icons/lu'
 import Button from 'react-bootstrap/Button'
 import { useModalStore } from '../../lib/zustand'
-import { useToastStore } from '../../lib/zustand'
 
 const Projects = () => {
 	const [bootcampProjects, setBootcampProjects] = useOutletContext()
@@ -14,8 +13,8 @@ const Projects = () => {
 		setBootcampProjects(obj => ({ ...obj, mode: 'add' }))
 	}
 
-	const { showModal, setMode } = useModalStore()
-	const { result } = useToastStore()
+	const showModal = useModalStore(state => state.showModal)
+	const setMode = useModalStore(state => state.setMode)
 
 	const handleAddProject = () => {
 		setMode('addProject')
@@ -73,7 +72,6 @@ const Projects = () => {
 					<Button onClick={handleAddProject} className='add-project-btn'>
 						Add a new project
 					</Button>
-					<p>{result.message}</p>
 
 					{bootcampProjects.session && (
 						<button
