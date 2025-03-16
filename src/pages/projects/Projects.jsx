@@ -6,12 +6,13 @@ import { useOutletContext } from 'react-router'
 import { LuServerOff } from 'react-icons/lu'
 import Button from 'react-bootstrap/Button'
 import { useModalStore } from '../../lib/zustand'
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import { MdAdd } from 'react-icons/md'
+import { Stack } from 'react-bootstrap'
 
 const Projects = () => {
-	const [bootcampProjects, setBootcampProjects] = useOutletContext()
-	async function handleAddPorject() {
-		setBootcampProjects(obj => ({ ...obj, mode: 'add' }))
-	}
+	const [bootcampProjects] = useOutletContext()
 
 	const showModal = useModalStore(state => state.showModal)
 	const setMode = useModalStore(state => state.setMode)
@@ -67,28 +68,19 @@ const Projects = () => {
 			</Helmet> */}
 			<PageBanner pageTitle='My Projects' bannerBg={bg} />
 			<main id='skills-bootcamp' className='padding-lg'>
-				<div className='container'>
+				<Container>
 					<h2 className='section-title'>Skills Bootcamp Projects</h2>
-					<Button onClick={handleAddProject} className='add-project-btn'>
-						Add a new project
-					</Button>
 
 					{bootcampProjects.session && (
-						<button
-							className='btn btn-primary mb-5'
-							type='button'
-							data-bs-toggle='modal'
-							data-bs-target='#AddProject'
-							onClick={handleAddPorject}
-						>
-							Add new project
-						</button>
+						<Button onClick={handleAddProject} className='add-project-btn mb-5'>
+							Add a new project <MdAdd />
+						</Button>
 					)}
 
-					<div className='row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4'>
+					<Row className='row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4'>
 						{myProjects}
-					</div>
-				</div>
+					</Row>
+				</Container>
 			</main>
 		</>
 	)

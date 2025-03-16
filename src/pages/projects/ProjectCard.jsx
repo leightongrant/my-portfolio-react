@@ -1,11 +1,17 @@
 import { RiExternalLinkFill } from 'react-icons/ri'
-import { HiArrowNarrowLeft, HiLink } from 'react-icons/hi'
+import { HiLink } from 'react-icons/hi'
 import slugify from '../../utils/slugify'
 import { useOutletContext } from 'react-router'
 import supabaseClient from '../../lib/supabase'
 import { useNavigate } from 'react-router'
 import { useModalStore } from '../../lib/zustand'
 import { useToastStore } from '../../lib/zustand'
+import Col from 'react-bootstrap/Col'
+import Card from 'react-bootstrap/Card'
+import Button from 'react-bootstrap/Button'
+import Stack from 'react-bootstrap/Stack'
+import { Link } from 'react-router'
+import { RiDeleteBinFill, RiEdit2Fill } from 'react-icons/ri'
 
 function ProjectCard(props) {
 	const [bootcampProjects] = useOutletContext()
@@ -39,9 +45,9 @@ function ProjectCard(props) {
 	}
 
 	return (
-		<div className='col mb-4'>
-			<div className='card shadow bg-light'>
-				<img
+		<Col className='mb-4'>
+			<Card className='shadow bg-light'>
+				<Card.Img
 					src={props.img}
 					className='card-img-top'
 					alt={props.title}
@@ -49,106 +55,65 @@ function ProjectCard(props) {
 					height={194}
 					style={{ objectFit: 'cover', objectPosition: '0 0' }}
 				/>
-				<div className='card-body'>
-					<h6 className='card-title'>{props.title}</h6>
-					<p className='card-text fs-6'>{props.about}</p>
-				</div>
-				<div className='card-footer'>
-					<div className='d-flex justify-content-center gap-2'>
-						<a
-							href={props.app_url}
+				<Card.Body>
+					<Card.Title as={'h6'}>{props.title}</Card.Title>
+					<Card.Text className='card-text fs-6'>{props.about}</Card.Text>
+				</Card.Body>
+				<Card.Footer className='card-footer py-3'>
+					<Stack
+						direction='horizontal'
+						gap={2}
+						className='justify-content-center'
+					>
+						<Link
+							to={props.app_url}
 							target='_blank'
 							rel='noreferrer'
-							className='btn btn-sm projectBtn'
+							className='btn btn-sm projectBtn flex-grow-1'
 						>
 							App <RiExternalLinkFill />
-						</a>
-						<a
-							href={props.repo_url}
+						</Link>
+						<Link
+							to={props.repo_url}
 							target='_blank'
 							rel='noreferrer'
-							className='btn btn-sm projectBtn'
+							className='btn btn-sm projectBtn flex-grow-1'
 						>
 							Repo <RiExternalLinkFill />
-						</a>
-						<button
+						</Link>
+						<Button
 							type='button'
-							className='btn btn-sm projectBtn'
+							className='btn btn-sm projectBtn flex-grow-1'
 							onClick={e => {
 								e.preventDefault()
 								navigate(`/projects/${slugify(props.title)}`)
 							}}
 						>
 							Details <HiLink />
-						</button>
-					</div>
+						</Button>
+					</Stack>
 					{bootcampProjects.session && (
-						<div className='d-flex justify-content-center gap-2 mt-2'>
-							<button
+						<Stack className='justify-content-center mt-2' gap={2}>
+							<Button
 								type='button'
 								className='btn btn-danger btn-sm'
 								onClick={() => handleDelete(props.id)}
 							>
-								Delete Project
-							</button>
-							<button
+								Delete Project <RiDeleteBinFill />
+							</Button>
+							<Button
 								type='button'
 								className='btn btn-warning btn-sm'
 								onClick={e => handleEdit(e, props.id)}
 							>
-								Edit Project
-							</button>
-						</div>
+								Edit Project <RiEdit2Fill />
+							</Button>
+						</Stack>
 					)}
-				</div>
-			</div>
-		</div>
+				</Card.Footer>
+			</Card>
+		</Col>
 	)
 }
 
-function Details(props) {
-	const navigate = useNavigate()
-	return (
-		<div className='' style={{ maxWidth: '800px', height: 'auto' }}>
-			<div>
-				<img
-					src={props.img}
-					className='border p-0 img-fluid shadow rounded'
-					alt={props.title}
-				/>
-			</div>
-			<div className=''>
-				<h4 className='my-3'>Description</h4>
-				<p className='card-text'>{props.description}</p>
-
-				<h4 className='my-3'>Links</h4>
-				<a
-					href={props.app_url}
-					target='_blank'
-					rel='noreferrer'
-					className='btn btn-sm projectBtn'
-				>
-					App <RiExternalLinkFill />
-				</a>
-				<a
-					href={props.repo_url}
-					target='_blank'
-					rel='noreferrer'
-					className='btn btn-sm projectBtn ms-2'
-				>
-					Repo <RiExternalLinkFill />
-				</a>
-
-				<button
-					type='button'
-					className='btn btn-sm projectBtn ms-2'
-					onClick={() => navigate('/projects')}
-				>
-					<HiArrowNarrowLeft /> Back to Projects
-				</button>
-			</div>
-		</div>
-	)
-}
-
-export { ProjectCard, Details }
+export { ProjectCard }

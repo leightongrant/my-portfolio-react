@@ -1,13 +1,73 @@
-import { useOutletContext } from 'react-router'
-import { Details } from './ProjectCard'
 import { useParams } from 'react-router'
-import slugify from '../../utils/slugify'
 // import { Helmet } from 'react-helmet-async'
 import PageBanner from '../../components/pagebanner/PageBanner'
+import { RiExternalLinkFill } from 'react-icons/ri'
+import { HiArrowNarrowLeft } from 'react-icons/hi'
+import slugify from '../../utils/slugify'
+import { useOutletContext, Link, useNavigate } from 'react-router'
+import Button from 'react-bootstrap/Button'
+import Stack from 'react-bootstrap/Stack'
+import Image from 'react-bootstrap/Image'
+import { Container } from 'react-bootstrap'
+function Details(props) {
+	const navigate = useNavigate()
+	return (
+		<main className='padding-lg'>
+			<Container>
+				<Stack gap={5}>
+					<Stack>
+						<Image
+							src={props.img}
+							className='border p-0 img-fluid shadow rounded'
+							alt={props.title}
+							width={640}
+							height={480}
+						/>
+					</Stack>
+					<Stack>
+						<h4 className='my-3'>Description</h4>
+						<p className='card-text' style={{ textWrap: 'balance' }}>
+							{props.description}
+						</p>
+					</Stack>
+					<Stack>
+						<h4 className='my-3'>Links</h4>
+						<Stack direction='horizontal'>
+							<Link
+								href={props.app_url}
+								target='_blank'
+								rel='noreferrer'
+								className='btn btn-sm projectBtn'
+							>
+								App <RiExternalLinkFill />
+							</Link>
+							<Link
+								href={props.repo_url}
+								target='_blank'
+								rel='noreferrer'
+								className='btn btn-sm projectBtn ms-2'
+							>
+								Repo <RiExternalLinkFill />
+							</Link>
+
+							<Button
+								type='button'
+								className='btn btn-sm projectBtn ms-2'
+								onClick={() => navigate('/projects')}
+							>
+								<HiArrowNarrowLeft /> Back to Projects
+							</Button>
+						</Stack>
+					</Stack>
+				</Stack>
+			</Container>
+		</main>
+	)
+}
 
 function ProjectDetails() {
 	const [bootcampProjects] = useOutletContext()
-	const { data, error, status } = bootcampProjects
+	const { data, error } = bootcampProjects
 	const { id } = useParams()
 
 	if (!data) return <h2>Loading...</h2>
@@ -37,12 +97,7 @@ function ProjectDetails() {
 				<title>Leighton Grant's Portfolio | {id.replaceAll('-', ' ')}</title>
 			</Helmet> */}
 			<PageBanner pageTitle={id.replaceAll('-', ' ')} />
-			<main className='padding-lg'>
-				<div className='container'></div>
-				<div className='container my-5'>
-					<div className='d-flex justify-content-center'>{projectDetails}</div>
-				</div>
-			</main>
+			{projectDetails}
 		</>
 	)
 }
