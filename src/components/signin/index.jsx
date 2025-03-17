@@ -1,38 +1,33 @@
 import Stack from 'react-bootstrap/Stack'
 import { FaSignInAlt, FaSignOutAlt } from 'react-icons/fa'
-import { useEffect } from 'react'
 import { IconContext } from 'react-icons'
 import supabaseClient from '../../lib/supabase'
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
 import Tooltip from 'react-bootstrap/Tooltip'
+import { useModalStore } from '../../lib/zustand'
+import { useAuthStore } from '../../lib/zustand'
 
-const SignIn = ({ bootcampProjects }) => {
-	useEffect(() => {
-		const authBtn = document.querySelector('.supabase-auth-ui_ui-button')
-		authBtn.setAttribute('data-bs-dismiss', 'modal')
-	}, [])
+const SignIn = () => {
+	const showModal = useModalStore(state => state.showModal)
+	const setMode = useModalStore(state => state.setMode)
+	const session = useAuthStore(state => state.session)
 
 	async function signOut() {
-		try {
-			const { error } = await supabaseClient.auth.signOut()
-			if (error) console.log(error)
-		} catch (error) {
-			console.log(error)
-		}
+		await supabaseClient.auth.signOut()
 	}
 
-	function handleClick() {
-		const authBtn = document.querySelector('.supabase-auth-ui_ui-button')
-		authBtn.setAttribute('data-bs-dismiss', 'modal')
+	async function signIn() {
+		setMode('login')
+		showModal()
 	}
 
 	const renderTooltip = props => (
 		<Tooltip id='tooltip' {...props}>
-			{bootcampProjects.session ? 'Logout' : 'Login'}
+			{session ? 'Logout' : 'Login'}
 		</Tooltip>
 	)
 
-	if (bootcampProjects.session) {
+	if (session) {
 		return (
 			<OverlayTrigger
 				placement='bottom'
@@ -56,11 +51,7 @@ const SignIn = ({ bootcampProjects }) => {
 		>
 			<Stack className='align-items-right justify-content-center'>
 				<IconContext.Provider value={{ className: 'loginBtn fs-3' }}>
-					<FaSignInAlt
-						data-bs-toggle='modal'
-						data-bs-target='#loginModal'
-						onClick={handleClick}
-					/>
+					<FaSignInAlt onClick={signIn} />
 				</IconContext.Provider>
 			</Stack>
 		</OverlayTrigger>

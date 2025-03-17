@@ -2,6 +2,9 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './pages/home/Home'
 import { lazy } from 'react'
 import MainLayout from './layout'
+import { useAuthStore } from './lib/zustand'
+import supabaseClient from './lib/supabase'
+import { useEffect } from 'react'
 
 const Projects = lazy(() => import('./pages/projects/Projects'))
 const Thanks = lazy(() => import('./pages/thanks/Thanks'))
@@ -11,6 +14,21 @@ const Contact = lazy(() => import('./pages/contact/Contact'))
 const About = lazy(() => import('./pages/about/About'))
 
 export default function App() {
+	const setSession = useAuthStore(state => state.setSession)
+
+	useEffect(() => {
+		supabaseClient.auth.getSession().then(({ data: { session } }) => {
+			setSession(session)
+		})
+
+		const {
+			data: { subscription },
+		} = supabaseClient.auth.onAuthStateChange((_event, session) => {
+			setSession(session)
+		})
+		return () => subscription.unsubscribe()
+	}, [])
+
 	return (
 		<BrowserRouter>
 			<Routes>

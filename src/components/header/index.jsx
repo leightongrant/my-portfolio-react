@@ -84,11 +84,11 @@ const Header = ({ bootcampProjects }) => {
 					</Nav>
 					<div className='d-md-none'>
 						<hr />
-						{bootcampProjects && <SignIn bootcampProjects={bootcampProjects} />}
+						{bootcampProjects && <SignIn />}
 					</div>
 				</Navbar.Collapse>
 				<div className='d-none d-md-block'>
-					{bootcampProjects && <SignIn bootcampProjects={bootcampProjects} />}
+					{bootcampProjects && <SignIn />}
 				</div>
 			</Container>
 		</Navbar>

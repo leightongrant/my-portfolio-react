@@ -65,7 +65,11 @@ function About() {
 				</Container>
 			</main>
 
-			<section id='key-skills' className='bg-light padding-lg'>
+			<section
+				id='key-skills'
+				className='padding-lg'
+				style={{ backgroundColor: 'var(--lg-light)' }}
+			>
 				<Container>
 					<h2 className='title about-title text-center section-title'>
 						Key Skills

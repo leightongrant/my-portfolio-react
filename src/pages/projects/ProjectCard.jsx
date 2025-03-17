@@ -1,7 +1,6 @@
 import { RiExternalLinkFill } from 'react-icons/ri'
 import { HiLink } from 'react-icons/hi'
 import slugify from '../../utils/slugify'
-import { useOutletContext } from 'react-router'
 import supabaseClient from '../../lib/supabase'
 import { useNavigate } from 'react-router'
 import { useModalStore } from '../../lib/zustand'
@@ -12,10 +11,11 @@ import Button from 'react-bootstrap/Button'
 import Stack from 'react-bootstrap/Stack'
 import { Link } from 'react-router'
 import { RiDeleteBinFill, RiEdit2Fill } from 'react-icons/ri'
+import { useAuthStore } from '../../lib/zustand'
 
 function ProjectCard(props) {
-	const [bootcampProjects] = useOutletContext()
 	const navigate = useNavigate()
+	const session = useAuthStore(state => state.session)
 
 	const showToast = useToastStore(state => state.showToast)
 	const setResult = useToastStore(state => state.setResult)
@@ -92,7 +92,7 @@ function ProjectCard(props) {
 							Details <HiLink />
 						</Button>
 					</Stack>
-					{bootcampProjects.session && (
+					{session && (
 						<Stack className='justify-content-center mt-2' gap={2}>
 							<Button
 								type='button'

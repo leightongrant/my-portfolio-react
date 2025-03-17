@@ -6,12 +6,13 @@ import { lazy } from 'react'
 import Header from '../components/header'
 import { useToastStore } from '../lib/zustand'
 
-const Login = lazy(() => import('../components/modals/Login'))
+// const Login = lazy(() => import('../components/modals/Login'))
 const MainModal = lazy(() => import('../components/modals'))
 const MainToast = lazy(() => import('../components/toasts'))
 
 function MainLayout() {
 	const result = useToastStore(state => state.result)
+
 	const [bootcampProjects, setBootcampProjects] = useState({
 		data: null,
 		error: null,
@@ -20,20 +21,6 @@ function MainLayout() {
 		mode: '',
 		session: null,
 	})
-
-	useEffect(() => {
-		supabaseClient.auth.getSession().then(({ data: { session } }) => {
-			setBootcampProjects(obj => ({ ...obj, session: session }))
-		})
-
-		const {
-			data: { subscription },
-		} = supabaseClient.auth.onAuthStateChange((_event, session) => {
-			setBootcampProjects(obj => ({ ...obj, session: session }))
-		})
-
-		return () => subscription.unsubscribe()
-	}, [])
 
 	useEffect(() => {
 		fetchProjects()
@@ -76,7 +63,6 @@ function MainLayout() {
 				</div>
 				<Footer />
 			</div>
-			<Login bootcampProjects={bootcampProjects} />
 			<MainModal />
 			<MainToast />
 		</>

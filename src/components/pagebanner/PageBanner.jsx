@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react'
+import Container from 'react-bootstrap/Container'
+import Stack from 'react-bootstrap/Stack'
 export default function PageBanner({ pageTitle, bannerBg }) {
 	const [height, setHeight] = useState(50)
 
@@ -21,15 +23,15 @@ export default function PageBanner({ pageTitle, bannerBg }) {
 	}
 	return (
 		<section style={{ marginTop: height }}>
-			<div style={bgImage}>
-				<div className='banner-padding ' style={overlay}>
-					<div className='container'>
+			<Stack style={bgImage}>
+				<Stack className='banner-padding' style={overlay}>
+					<Container>
 						<h1 className=' text-light text-capitalize'>
 							{pageTitle ? pageTitle : ''}
 						</h1>
-					</div>
-				</div>
-			</div>
+					</Container>
+				</Stack>
+			</Stack>
 		</section>
 	)
 }

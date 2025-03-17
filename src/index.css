@@ -1,8 +1,9 @@
 :root {
-	--lg-dark: #292b3a;
-	--lg-light: #f8f9fa;
-	--lg-hover: #363336;
-	--lg-active: #405069;
+	--lg-dark: hsla(240, 15%, 19%, 1);
+	--lg-light: hsla(240, 15%, 95%, 1);
+	--lg-hover: hsla(240, 15%, 29%, 1);
+	--lg-active: hsla(221, 22%, 33%, 1);
+	--lg-accent: hsla(0, 6%, 78%, 1);
 }
 body {
 	font-family: 'Lato', sans-serif;
@@ -10,6 +11,7 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 	font-size: 1.25em;
 }
+
 h1,
 h2,
 h3,
@@ -22,24 +24,29 @@ h6 {
 }
 
 h1 {
-	font-size: 3em;
+	font-size: 2.8em;
 	letter-spacing: 0.05em;
 }
 
 h2 {
-	font-size: 2.5em;
+	font-size: 2.2em;
+	letter-spacing: 0.05em;
 }
 h3 {
-	font-size: 2.2em;
+	font-size: 1.8em;
+	letter-spacing: 0.05em;
 }
 h4 {
-	font-size: 1.8em;
+	font-size: 1.5em;
+	letter-spacing: 0.05em;
 }
 h5 {
-	font-size: 1.5em;
+	font-size: 1.2em;
+	letter-spacing: 0.05em;
 }
 h6 {
-	font-size: 1.2em;
+	font-size: 1em;
+	letter-spacing: 0.05em;
 }
 
 a {
@@ -48,14 +55,11 @@ a {
 a:hover {
 	color: var(--lg-hover);
 }
-button {
-	background-color: var(--lg-dark);
-}
-code {
-	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-		monospace;
-}
+
 /*Buttons*/
+.sign-in-btn:hover {
+	background-color: var(--lg-hover) !important;
+}
 .add-project-btn {
 	background-color: var(--lg-dark);
 	color: var(--lg-light);
@@ -108,11 +112,6 @@ code {
 	color: white;
 }
 
-/* Footer */
-#footer {
-	background-color: var(--lg-dark);
-	color: var(--lg-light);
-}
 /* Projects */
 .project-card:hover {
 	transform: scale(1.05);
@@ -133,32 +132,9 @@ code {
 }
 
 /* Hero */
-#hero {
-	background-image: url('./assets/hero-1.webp');
-	background-position: center;
-	background-size: cover;
-	min-height: 100%;
-}
 
-#heroImage {
-	outline: 5px solid var(--lg-dark);
-	margin-top: 83px;
-}
-
-.HeroButton {
-	color: var(--lg-light);
-	background-color: var(--lg-dark);
-	text-transform: uppercase;
-}
-
-.HeroButton:hover {
-	color: var(--lg-light);
-	background-color: var(--lg-hover);
-}
-
-.hero-info {
-	background-color: rgba(255, 255, 255, 0.6);
-	padding: 40px 0;
+.btn-about:hover {
+	background-color: var(--lg-hover) !important;
 }
 
 /* Contact */
@@ -191,10 +167,15 @@ code {
 	border-radius: 5px;
 }
 
-a.social-button {
-	line-height: 0;
-}
-
 #contact-details {
 	background-color: var(--lg-light);
+}
+
+/*Footer*/
+.footer-icon {
+	color: var(--lg-accent);
+}
+
+.footer-icon:hover {
+	color: var(--lg-light);
 }

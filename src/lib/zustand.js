@@ -1,5 +1,4 @@
 import { create } from 'zustand'
-
 export const useModalStore = create(set => ({
 	show: false,
 	mode: '',
@@ -18,4 +17,9 @@ export const useToastStore = create(set => ({
 	showToast: () => set({ show: true }),
 	closeToast: () => set({ show: false }),
 	toggle: () => set(state => ({ show: !state.show })),
+}))
+
+export const useAuthStore = create(set => ({
+	session: null,
+	setSession: session => set({ session }),
 }))

@@ -9,11 +9,11 @@ import { useModalStore } from '../../lib/zustand'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import { MdAdd } from 'react-icons/md'
-import { Stack } from 'react-bootstrap'
+import { useAuthStore } from '../../lib/zustand'
 
 const Projects = () => {
 	const [bootcampProjects] = useOutletContext()
-
+	const session = useAuthStore(state => state.session)
 	const showModal = useModalStore(state => state.showModal)
 	const setMode = useModalStore(state => state.setMode)
 
@@ -71,7 +71,7 @@ const Projects = () => {
 				<Container>
 					<h2 className='section-title'>Skills Bootcamp Projects</h2>
 
-					{bootcampProjects.session && (
+					{session && (
 						<Button onClick={handleAddProject} className='add-project-btn mb-5'>
 							Add a new project <MdAdd />
 						</Button>
