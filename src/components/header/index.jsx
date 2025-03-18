@@ -35,6 +35,9 @@ const Header = ({ bootcampProjects }) => {
 			expand='md'
 			className='shadow-sm'
 			bg={path === '/' ? 'transparent' : 'light'}
+			style={{
+				backdropFilter: 'blur(10px)',
+			}}
 		>
 			<Container fluid>
 				<Navbar.Brand href='/'>
