@@ -1,14 +1,11 @@
-import {
-	BsEnvelopeFill,
-	BsPhoneFill,
-	BsFilePdfFill,
-	BsDownload,
-} from 'react-icons/bs'
-import ContactForm from '../../components/contactform/ContactForm'
 import PageBanner from '../../components/pagebanner/PageBanner'
-import Cv from '../../assets/LeightonGrant.pdf'
 import bg from '../../assets/contact-bg.webp'
 import Container from 'react-bootstrap/Container'
+import ContactForm from '../../components/forms/ContactForm'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
+import { Stack } from 'react-bootstrap'
+import { GitHub, LinkedIn, Email, Phone } from '../../components/social'
 // import { Helmet } from 'react-helmet-async'
 
 const Contact = () => {
@@ -24,86 +21,42 @@ const Contact = () => {
 			</Helmet> */}
 			<PageBanner pageTitle='Contact Me' bannerBg={bg} />
 			<main>
-				<Container>
-					<ContactForm />
-				</Container>
-			</main>
-
-			<section id='contact-details' className='padding-lg'>
-				<Container>
-					<h2 className='section-title'>Other Contact Info</h2>
-					<div className='container my-5 contact-info'>
-						<div className='row row-cols-1 row-cols-md-2 row-cols-lg-4 g-3  d-flex justify-content-between'>
-							<div className='col'>
-								<div className='card py-3 shadow'>
-									<div className='card-body d-flex justify-content-center flex-column align-items-center gap-4'>
-										<span className='fs-4'>
-											<a
-												href='mailto:oneal.grant@outlook.com'
-												style={{ textDecoration: 'none' }}
-											>
-												<BsEnvelopeFill />
-											</a>
-										</span>
-										<h6 className='card-title'>EMAIL</h6>
-										<div className='border border-top-3 border-secondary w-50'></div>
-										<p className='card-text'>
-											<a
-												href='mailto:dev@leightongrant.me'
-												style={{ textDecoration: 'none' }}
-											>
+				<section className='padding-lg'>
+					<Container>
+						<Row className='row-cols-1 row-cols-lg-2 g-5'>
+							<Col>
+								<Container>
+									<Stack gap={4}>
+										<h3 className='fs-2'>Send a message</h3>
+										<ContactForm />
+									</Stack>
+								</Container>
+							</Col>
+							<Col>
+								<Container>
+									<Stack gap={4} className='d-inline-flex'>
+										<h3 className='fs-2'>Other</h3>
+										<Stack gap={2}>
+											<GitHub className='contact-icon fs-3 link-underline link-underline-opacity-0'>
+												github.com/leightongrant
+											</GitHub>
+											<LinkedIn className='contact-icon fs-3 link-underline link-underline-opacity-0'>
+												linkedin.com/in/leightongrant
+											</LinkedIn>
+											<Email className='contact-icon fs-3 link-underline link-underline-opacity-0'>
 												dev@leightongrant.me
-											</a>
-										</p>
-									</div>
-								</div>
-							</div>
-							<div className='col'>
-								<div className='card py-3 shadow'>
-									<div className='card-body d-flex justify-content-center flex-column align-items-center gap-4'>
-										<span className='fs-4'>
-											<a
-												href='tel:07886028826'
-												style={{ textDecoration: 'none' }}
-											>
-												<BsPhoneFill />
-											</a>
-										</span>
-										<h6 className='card-title'>PHONE</h6>
-										<div className='border border-top-3 border-secondary w-50'></div>
-										<p className='card-text'>
-											<a
-												href='tel:07886028826'
-												style={{ textDecoration: 'none' }}
-											>
+											</Email>
+											<Phone className='contact-icon fs-3 link-underline link-underline-opacity-0'>
 												+447886028826
-											</a>
-										</p>
-									</div>
-								</div>
-							</div>
-							<div className='col'>
-								<div className='card py-3 shadow'>
-									<div className='card-body d-flex justify-content-center flex-column align-items-center gap-4'>
-										<span className='fs-4'>
-											<a href={Cv} download style={{ textDecoration: 'none' }}>
-												<BsFilePdfFill />
-											</a>
-										</span>
-										<h6 className='card-title'>CV</h6>
-										<div className='border border-top-3 border-secondary w-50'></div>
-										<p className='card-text'>
-											<a href={Cv} download style={{ textDecoration: 'none' }}>
-												<BsDownload />
-											</a>
-										</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</Container>
-			</section>
+											</Phone>
+										</Stack>
+									</Stack>
+								</Container>
+							</Col>
+						</Row>
+					</Container>
+				</section>
+			</main>
 		</>
 	)
 }
