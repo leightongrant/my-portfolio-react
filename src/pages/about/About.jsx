@@ -100,8 +100,12 @@ function About() {
 									An understanding of version control systems such as Git/GitHub
 								</ListGroup.Item>
 								<ListGroup.Item>
-									Knowledge of performance testing frameworks including Mocha
-									and Jest
+									Knowledge of performance testing frameworks including Vite and
+									Jest
+								</ListGroup.Item>
+								<ListGroup.Item>
+									Experience working with APIs, including integrating and
+									utilising them effectively in projects.
 								</ListGroup.Item>
 								<ListGroup.Item>
 									Experience with browser-based debugging and performance
