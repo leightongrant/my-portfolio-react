@@ -3,14 +3,25 @@ import Stack from 'react-bootstrap/Stack'
 import { GitHub, LinkedIn, Email, Phone } from '../social'
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
+
+/**
+ * A footer component for the website.
+ *
+ * Displays the copyright year and a stack of social links.
+ *
+ * @returns {ReactElement} - The footer component.
+ */
 const Footer = () => {
-	let year = new Date()?.getFullYear() ?? 2025
+	const year = new Date().getFullYear() ?? 2025
 
 	return (
 		<footer
 			id='footer'
 			className='py-3'
-			style={{ backgroundColor: 'var(--lg-dark)', color: 'var(--lg-accent)' }}
+			style={{
+				backgroundColor: 'var(--lg-dark)',
+				color: 'var(--lg-accent)',
+			}}
 		>
 			<Container>
 				<Row className='row-cols-1 row-cols-md-2 align-items-baseline g-2'>
@@ -30,10 +41,10 @@ const Footer = () => {
 							className='flex-grow-1 align-items-center justify-content-center justify-content-md-end'
 							gap={2}
 						>
-							<GitHub className={'footer-icon'} />
-							<LinkedIn className={'footer-icon'} />
-							<Email className={'footer-icon'} />
-							<Phone className={'footer-icon'} />
+							<GitHub className='footer-icon' />
+							<LinkedIn className='footer-icon' />
+							<Email className='footer-icon' />
+							<Phone className='footer-icon' />
 						</Stack>
 					</Col>
 				</Row>
