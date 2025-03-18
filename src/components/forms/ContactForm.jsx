@@ -1,40 +1,70 @@
 import { useNavigate } from 'react-router'
-import Container from 'react-bootstrap/Container'
 import Form from 'react-bootstrap/Form'
 import Stack from 'react-bootstrap/Stack'
 import Button from 'react-bootstrap/Button'
 import { useState } from 'react'
+/**
+ * A component that renders a contact form with fields for name, email, and
+ * message. The form is submitted to the root URL of the site.
+ *
+ * @return {ReactElement} A React component that renders a contact form.
+ */
 const ContactForm = () => {
 	const navigate = useNavigate()
 	const [name, setName] = useState('')
 	const [email, setEmail] = useState('')
 	const [message, setMessage] = useState('')
 
+	/**
+	 * Submits the contact form to the root URL of the site.
+	 *
+	 * @function
+	 * @param {Event} e - The event that triggered the form submission.
+	 *
+	 * @returns {Promise<void>} - A promise that the form submission has been
+	 *   handled.
+	 */
 	function handleSubmit(e) {
-		e.preventDefault()
+		e?.preventDefault()
 
-		const myForm = e.target
-		const formData = new FormData(myForm)
-		const formDataString = new URLSearchParams(formData).toString()
+		try {
+			const myForm = e?.target
+			if (!myForm) {
+				throw new Error('No form found.')
+			}
 
-		fetch('/', {
-			method: 'POST',
-			headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-			body: formDataString,
-		})
-			.then(() => {
-				navigate('/thanks')
+			const formData = new FormData(myForm)
+			const formDataString = new URLSearchParams(formData).toString()
+
+			fetch('/', {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+				body: formDataString,
 			})
-			.catch(error => alert(error))
+				.then(response => {
+					if (response.ok) {
+						navigate('/thanks')
+					} else {
+						throw new Error('Network response was not OK.')
+					}
+				})
+				.catch(error => {
+					console.error('Error:', error?.message)
+					alert(error?.message)
+				})
+		} catch (error) {
+			console.error('Error:', error?.message)
+			alert(error?.message)
+		}
 	}
 
 	const handleChange = e => {
-		const { name, value } = e.target
-		if (name === 'name') {
+		const { name: inputName, value } = e.target
+		if (inputName === 'name') {
 			setName(value)
-		} else if (name === 'email') {
+		} else if (inputName === 'email') {
 			setEmail(value)
-		} else if (name === 'message') {
+		} else if (inputName === 'message') {
 			setMessage(value)
 		}
 	}
