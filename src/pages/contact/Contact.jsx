@@ -35,7 +35,7 @@ const Contact = () => {
 							<Col>
 								<Container>
 									<Stack gap={4} className='d-inline-flex'>
-										<h3 className='fs-2'>Other</h3>
+										<h3 className='fs-2'>Social & Professional Links</h3>
 										<Stack gap={2}>
 											<GitHub className='contact-icon fs-3 link-underline link-underline-opacity-0'>
 												github.com/leightongrant
