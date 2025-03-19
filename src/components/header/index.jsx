@@ -6,12 +6,22 @@ import Nav from 'react-bootstrap/Nav'
 import Container from 'react-bootstrap/Container'
 import Image from 'react-bootstrap/Image'
 import { HiMenu, HiOutlineX } from 'react-icons/hi'
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import { Link } from 'react-router'
 
 const Header = ({ bootcampProjects }) => {
 	const path = useResolvedPath().pathname
 	const [isOpen, setIsOpen] = useState(false)
+
+	const navRef = useRef(null)
+	const buttonRef = useRef(null)
+
+	//TODO: fix this - close menu when link is clicked
+	const handleCollapse = () => {
+		buttonRef.current.classList.add('collapsed')
+		navRef.current.classList.remove('show')
+		setIsOpen(false)
+	}
 
 	const navBarToggleStyle = {
 		backgroundColor: 'transparent',
@@ -55,10 +65,12 @@ const Header = ({ bootcampProjects }) => {
 					bsPrefix='navbar-toggler-custom'
 					className='d-md-none'
 					style={navBarToggleStyle}
+					ref={buttonRef}
 				/>
 				<Navbar.Collapse
 					id='navbar-nav'
 					className='justify-content-center text-uppercase fs-6'
+					ref={navRef}
 				>
 					<Nav className='gap-3'>
 						<Link to='/' className={`nav-link ${path === '/' && 'active'}`}>

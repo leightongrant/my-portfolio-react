@@ -8,8 +8,7 @@ import heroBackground from '../../assets/hero-1.webp'
 const Hero = () => {
 	return (
 		<main
-			id='hero'
-			className='hero-info h-100'
+			className='section-padding h-100'
 			style={{
 				backgroundImage: `url(${heroBackground})`,
 				backgroundSize: 'cover',

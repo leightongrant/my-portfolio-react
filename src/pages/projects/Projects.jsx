@@ -26,7 +26,7 @@ const Projects = () => {
 
 	if (error !== null) {
 		return (
-			<div style={{ marginTop: '88px' }}>
+			<div className='py-5'>
 				<div className='container h-75 d-flex flex-column align-items-center justify-content-center gap-5'>
 					<LuServerOff style={{ fontSize: '4em' }} />
 					<h5 style={{ textWrap: 'balance' }} className='text-center'>
@@ -67,9 +67,11 @@ const Projects = () => {
 				<title>Leighton Grant's Portfolio | Projects</title>
 			</Helmet> */}
 			<PageBanner pageTitle='My Projects' bannerBg={bg} />
-			<main id='skills-bootcamp' className='padding-lg'>
+			<main id='skills-bootcamp' className='section-padding'>
 				<Container>
-					<h2 className='section-title'>Skills Bootcamp Projects</h2>
+					<h2 className='title-padding text-center'>
+						Skills Bootcamp Projects
+					</h2>
 
 					{session && (
 						<Button onClick={handleAddProject} className='add-project-btn mb-5'>
@@ -77,7 +79,7 @@ const Projects = () => {
 						</Button>
 					)}
 
-					<Row className='row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4'>
+					<Row className='row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4'>
 						{myProjects}
 					</Row>
 				</Container>

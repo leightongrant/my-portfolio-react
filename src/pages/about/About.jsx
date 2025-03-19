@@ -21,9 +21,9 @@ function About() {
 				<title>Leighton Grant's Portfolio | About</title>
 			</Helmet> */}
 			<PageBanner pageTitle='About me' bannerBg={bg} />
-			<main className='about-page padding-lg' id='about-me'>
+			<main className='about-page section-padding' id='about-me'>
 				<Container>
-					<h2 className='text-center section-title'>Frontend Web Developer</h2>
+					<h2 className='text-center title-padding'>Frontend Web Developer</h2>
 					<Row className='row-cols-1 row-cols-lg-2 g-5'>
 						<Col>
 							<Image
@@ -67,13 +67,11 @@ function About() {
 
 			<section
 				id='key-skills'
-				className='padding-lg'
+				className='section-padding'
 				style={{ backgroundColor: 'var(--lg-light)' }}
 			>
 				<Container>
-					<h2 className='title about-title text-center section-title'>
-						Key Skills
-					</h2>
+					<h2 className='text-center title-padding'>Key Skills</h2>
 					<Row className='row-cols-1 row-cols-lg-2 g-5'>
 						<Col>
 							<ListGroup>

@@ -1,37 +1,35 @@
-import { useEffect, useState } from 'react'
 import Container from 'react-bootstrap/Container'
 import Stack from 'react-bootstrap/Stack'
+/**
+ * PageBanner renders a banner with a title and background image.
+ *
+ * @param {{ pageTitle: string, bannerBg: string }} props
+ * @prop {string} [pageTitle] Title to render in the banner. If not provided, no title is rendered.
+ * @prop {string} [bannerBg] URL of the background image for the banner. If not provided,
+ * a default gradient is used.
+ * @returns {JSX.Element}
+ */
 export default function PageBanner({ pageTitle, bannerBg }) {
-	const [height, setHeight] = useState(50)
-
-	useEffect(() => {
-		const mainNav = document.getElementById('main-nav')
-		if (mainNav) {
-			setHeight(mainNav.offsetHeight)
-		}
-	}, [])
-
 	const bgImage = {
 		backgroundImage: bannerBg
 			? `url(${bannerBg})`
-			: `linear-gradient(to left,hsla(240, 10%, 90%, 1), hsla(240, 15%, 19%, 1))`,
+			: `linear-gradient(to left,var(--lg-light), var(--lg-dark))`,
 		backgroundSize: 'cover',
 		backgroundPosition: 'bottom',
+		marginTop: 61,
 	}
 	const overlay = {
-		backgroundColor: 'hsla(240, 15%, 19%, 0.7)',
+		backgroundColor: 'var(--lg-dark-75)',
 	}
 	return (
-		<section style={{ marginTop: height }}>
-			<Stack style={bgImage}>
-				<Stack className='banner-padding' style={overlay}>
-					<Container>
-						<h1 className=' text-light text-capitalize'>
-							{pageTitle ? pageTitle : ''}
-						</h1>
-					</Container>
-				</Stack>
+		<Stack style={bgImage}>
+			<Stack className='banner-padding' style={overlay}>
+				<Container>
+					<h1 className=' text-light text-capitalize'>
+						{pageTitle ? pageTitle : ''}
+					</h1>
+				</Container>
 			</Stack>
-		</section>
+		</Stack>
 	)
 }

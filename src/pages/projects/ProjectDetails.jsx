@@ -12,7 +12,7 @@ import { Container } from 'react-bootstrap'
 function Details(props) {
 	const navigate = useNavigate()
 	return (
-		<main className='padding-lg'>
+		<main className='section-padding'>
 			<Container>
 				<Stack gap={5}>
 					<Stack>
@@ -52,7 +52,7 @@ function Details(props) {
 
 							<Button
 								type='button'
-								className='btn btn-sm projectBtn ms-2'
+								className='btn btn-sm projectBtn ms-2 border-0'
 								onClick={() => navigate('/projects')}
 							>
 								<HiArrowNarrowLeft /> Back to Projects
