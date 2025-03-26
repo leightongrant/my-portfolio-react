@@ -4,13 +4,15 @@ import PageBanner from '../../components/pagebanner/PageBanner'
 import { RiExternalLinkFill } from 'react-icons/ri'
 import { HiArrowNarrowLeft } from 'react-icons/hi'
 import slugify from '../../utils/slugify'
-import { useOutletContext, Link, useNavigate } from 'react-router'
+import { useOutletContext, useNavigate, Link } from 'react-router'
 import Button from 'react-bootstrap/Button'
 import Stack from 'react-bootstrap/Stack'
 import Image from 'react-bootstrap/Image'
 import { Container } from 'react-bootstrap'
+
 function Details(props) {
 	const navigate = useNavigate()
+
 	return (
 		<main className='section-padding'>
 			<Container>
@@ -34,7 +36,7 @@ function Details(props) {
 						<h4 className='my-3'>Links</h4>
 						<Stack direction='horizontal'>
 							<Link
-								href={props.app_url}
+								to={props.app_url}
 								target='_blank'
 								rel='noreferrer'
 								className='btn btn-sm projectBtn'
@@ -42,7 +44,7 @@ function Details(props) {
 								App <RiExternalLinkFill />
 							</Link>
 							<Link
-								href={props.repo_url}
+								to={props.repo_url}
 								target='_blank'
 								rel='noreferrer'
 								className='btn btn-sm projectBtn ms-2'
