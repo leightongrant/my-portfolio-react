@@ -167,6 +167,19 @@ a:hover {
 	color: white;
 }
 
+.active-breadcrumb {
+	pointer-events: none;
+	color: gray;
+	text-decoration: none;
+}
+.breadcrumb {
+	font-size: 0.75em;
+	margin-bottom: 0 !important;
+}
+.breadcrumb-item + .breadcrumb-item::before {
+	content: '▸' !important;
+}
+
 /* Projects */
 .project-card:hover {
 	transform: scale(1.05);

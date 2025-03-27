@@ -6,6 +6,7 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import { Stack } from 'react-bootstrap'
 import { GitHub, LinkedIn, Email, Phone } from '../../components/social'
+import Breadcrumbs from '../../components/breadcrumb'
 // import { Helmet } from 'react-helmet-async'
 
 const Contact = () => {
@@ -20,6 +21,7 @@ const Contact = () => {
 				<title>Leighton Grant's Portfolio | Contact</title>
 			</Helmet> */}
 			<PageBanner pageTitle='Contact Me' bannerBg={bg} />
+			<Breadcrumbs />
 			<main className='section-padding'>
 				<Container>
 					<Row className='row-cols-1 row-cols-lg-2 g-5'>

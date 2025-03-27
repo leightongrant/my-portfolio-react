@@ -7,6 +7,7 @@ import Col from 'react-bootstrap/Col'
 import Image from 'react-bootstrap/Image'
 import keySkills from '../../../src/assets/key-skills.webp'
 import ListGroup from 'react-bootstrap/ListGroup'
+import Breadcrumbs from '../../components/breadcrumb'
 // import { Helmet } from 'react-helmet-async'
 
 function About() {
@@ -21,6 +22,7 @@ function About() {
 				<title>Leighton Grant's Portfolio | About</title>
 			</Helmet> */}
 			<PageBanner pageTitle='About me' bannerBg={bg} />
+			<Breadcrumbs />
 			<main className='about-page section-padding' id='about-me'>
 				<Container>
 					<h2 className='text-center title-padding'>Frontend Web Developer</h2>

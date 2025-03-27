@@ -9,6 +9,7 @@ import Button from 'react-bootstrap/Button'
 import Stack from 'react-bootstrap/Stack'
 import Image from 'react-bootstrap/Image'
 import { Container } from 'react-bootstrap'
+import Breadcrumbs from '../../components/breadcrumb'
 
 function Details(props) {
 	const navigate = useNavigate()
@@ -99,6 +100,7 @@ function ProjectDetails() {
 				<title>Leighton Grant's Portfolio | {id.replaceAll('-', ' ')}</title>
 			</Helmet> */}
 			<PageBanner pageTitle={id.replaceAll('-', ' ')} />
+			<Breadcrumbs />
 			{projectDetails}
 		</>
 	)

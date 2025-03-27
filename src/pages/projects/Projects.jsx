@@ -10,6 +10,7 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import { MdAdd } from 'react-icons/md'
 import { useAuthStore } from '../../lib/zustand'
+import Breadcrumbs from '../../components/breadcrumb'
 
 const Projects = () => {
 	const [bootcampProjects] = useOutletContext()
@@ -67,6 +68,7 @@ const Projects = () => {
 				<title>Leighton Grant's Portfolio | Projects</title>
 			</Helmet> */}
 			<PageBanner pageTitle='My Projects' bannerBg={bg} />
+			<Breadcrumbs />
 			<main id='skills-bootcamp' className='section-padding'>
 				<Container>
 					<h2 className='title-padding text-center'>
