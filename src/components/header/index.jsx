@@ -78,21 +78,21 @@ const Header = ({ bootcampProjects }) => {
 						</Link>
 						<Link
 							to='/about'
-							className={`nav-link ${path === '/about' && 'active'}`}
+							className={`nav-link ${/about/.test(path) && 'active'}`}
 						>
 							About
 						</Link>
 
 						<Link
 							to='/projects'
-							className={`nav-link ${path === '/projects' && 'active'}`}
+							className={`nav-link ${/projects/.test(path) && 'active'}`}
 						>
 							Projects
 						</Link>
 
 						<Link
 							to='/contact'
-							className={`nav-link ${path === '/contact' && 'active'}`}
+							className={`nav-link ${/contact/.test(path) && 'active'}`}
 						>
 							Contact
 						</Link>
