@@ -17,11 +17,11 @@ const Header = ({ bootcampProjects }) => {
 	const buttonRef = useRef(null)
 
 	//TODO: fix this - close menu when link is clicked
-	const handleCollapse = () => {
-		buttonRef.current.classList.add('collapsed')
-		navRef.current.classList.remove('show')
-		setIsOpen(false)
-	}
+	// const handleCollapse = () => {
+	// 	buttonRef.current.classList.add('collapsed')
+	// 	navRef.current.classList.remove('show')
+	// 	setIsOpen(false)
+	// }
 
 	const navBarToggleStyle = {
 		backgroundColor: 'transparent',
