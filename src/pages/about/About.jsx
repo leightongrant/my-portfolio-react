@@ -8,19 +8,10 @@ import Image from 'react-bootstrap/Image'
 import keySkills from '../../../src/assets/key-skills.webp'
 import ListGroup from 'react-bootstrap/ListGroup'
 import Breadcrumbs from '../../components/breadcrumb'
-// import { Helmet } from 'react-helmet-async'
 
 function About() {
 	return (
 		<>
-			{/* <Helmet>
-				<meta
-					name='keywords'
-					content='HTML, CSS, JavaScript, React, Portfolio'
-				/>
-				<link rel='canonical' href='https://leightongrant.me/about' />
-				<title>Leighton Grant's Portfolio | About</title>
-			</Helmet> */}
 			<PageBanner pageTitle='About me' bannerBg={bg} />
 			<Breadcrumbs />
 			<main className='about-page section-padding' id='about-me'>

@@ -2,7 +2,6 @@ import { ProjectCard } from './ProjectCard'
 import PageBanner from '../../components/pagebanner/PageBanner'
 import bg from '../../assets/projects-bg.webp'
 import { useOutletContext } from 'react-router'
-// import { Helmet } from 'react-helmet-async'
 import { LuServerOff } from 'react-icons/lu'
 import Button from 'react-bootstrap/Button'
 import { useModalStore } from '../../lib/zustand'
@@ -59,14 +58,6 @@ const Projects = () => {
 
 	return (
 		<>
-			{/* <Helmet>
-				<meta
-					name='keywords'
-					content='HTML, CSS, JavaScript, React, Portfolio'
-				/>
-				<link rel='canonical' href='https://leightongrant.me/projects' />
-				<title>Leighton Grant's Portfolio | Projects</title>
-			</Helmet> */}
 			<PageBanner pageTitle='My Projects' bannerBg={bg} />
 			<Breadcrumbs />
 			<main id='skills-bootcamp' className='section-padding'>

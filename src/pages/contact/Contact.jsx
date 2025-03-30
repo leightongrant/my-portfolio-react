@@ -7,19 +7,10 @@ import Col from 'react-bootstrap/Col'
 import { Stack } from 'react-bootstrap'
 import { GitHub, LinkedIn, Email, Phone } from '../../components/social'
 import Breadcrumbs from '../../components/breadcrumb'
-// import { Helmet } from 'react-helmet-async'
 
 const Contact = () => {
 	return (
 		<>
-			{/* <Helmet>
-				<meta
-					name='keywords'
-					content='HTML, CSS, JavaScript, React, Portfolio'
-				/>
-				<link rel='canonical' href='https://leightongrant.me/contact' />
-				<title>Leighton Grant's Portfolio | Contact</title>
-			</Helmet> */}
 			<PageBanner pageTitle='Contact Me' bannerBg={bg} />
 			<Breadcrumbs />
 			<main className='section-padding'>
