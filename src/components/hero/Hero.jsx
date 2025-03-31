@@ -39,7 +39,10 @@ const Hero = () => {
 					<h1 className='fw-bold my-2 text-center display-1'>
 						Leighton Grant
 						<br />
-						<span className='fs-4 fw-normal my-2 text-center letter-spacing-tight'>
+						<span
+							className='fs-4 fw-normal my-2 text-center letter-spacing-tight'
+							style={{ fontFamily: 'Lato, sans-serif' }}
+						>
 							Frontend Web Developer
 						</span>
 					</h1>
