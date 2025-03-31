@@ -119,6 +119,9 @@ a:hover {
 .banner-padding {
 	padding: 2em 0;
 }
+.banner-title {
+	font-family: 'Young Serif', serif;
+}
 
 @media (min-width: 768px) {
 	.section-padding {
