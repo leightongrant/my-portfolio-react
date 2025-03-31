@@ -10,6 +10,7 @@ import Row from 'react-bootstrap/Row'
 import { MdAdd } from 'react-icons/md'
 import { useAuthStore } from '../../lib/zustand'
 import Breadcrumbs from '../../components/breadcrumb'
+import Metadata from '../../metadata'
 
 const Projects = () => {
 	const [bootcampProjects] = useOutletContext()
@@ -58,13 +59,19 @@ const Projects = () => {
 
 	return (
 		<>
+			<Metadata
+				title='Projects'
+				description='Explore my portfolio of projects, showcasing my expertise in frontend web development with React.'
+				keywords='Frontend Web Development, React, JavaScript, HTML, CSS, Responsive Design, User Experience (UX), Web Applications, Portfolio, Web Developer, Project Showcase'
+				canonical='https://leightongrant.me/projects'
+			/>
 			<PageBanner pageTitle='My Projects' bannerBg={bg} />
 			<Breadcrumbs />
-			<main id='skills-bootcamp' className='section-padding'>
+			<main id='skills-bootcamp' className='section-padding px-3'>
 				<Container>
-					<h2 className='title-padding text-center'>
+					<h1 className='title-padding text-center display-5'>
 						Skills Bootcamp Projects
-					</h2>
+					</h1>
 
 					{session && (
 						<Button onClick={handleAddProject} className='add-project-btn mb-5'>

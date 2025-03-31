@@ -51,12 +51,16 @@ function ProjectCard(props) {
 					src={props.img}
 					className='card-img-top'
 					alt={props.title}
+					loading='eager'
+					title={props.title}
 					width={259}
 					height={194}
 					style={{ objectFit: 'cover', objectPosition: '0 0' }}
 				/>
 				<Card.Body>
-					<Card.Title as={'h6'}>{props.title}</Card.Title>
+					<Card.Title as={'h2'} className='display-6 fs-5'>
+						{props.title}
+					</Card.Title>
 					<Card.Text className='card-text fs-6'>{props.about}</Card.Text>
 				</Card.Body>
 				<Card.Footer className='card-footer py-3'>

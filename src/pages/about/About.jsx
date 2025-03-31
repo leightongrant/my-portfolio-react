@@ -8,21 +8,35 @@ import Image from 'react-bootstrap/Image'
 import keySkills from '../../../src/assets/key-skills.webp'
 import ListGroup from 'react-bootstrap/ListGroup'
 import Breadcrumbs from '../../components/breadcrumb'
+import Metadata from '../../metadata'
 
 function About() {
 	return (
 		<>
+			<Metadata
+				title='About'
+				description='As a highly motivated and detail-oriented frontend web developer, I specialize in crafting modern web solutions that deliver exceptional user experiences.'
+				keywords='Frontend Web Developer, Web Developer, HTML, CSS, JavaScript, React, Responsive Web Design,Problem-Solving, Nodejs, Git, GitHub'
+				canonical='https://leightongrant.me/about'
+			/>
 			<PageBanner pageTitle='About me' bannerBg={bg} />
 			<Breadcrumbs />
-			<main className='about-page section-padding' id='about-me'>
+			<main className='about-page section-padding px-3' id='about-me'>
 				<Container>
-					<h2 className='text-center title-padding'>Frontend Web Developer</h2>
+					<h1
+						className='text-center title-padding display-5'
+						style={{ textWrap: 'balance' }}
+					>
+						Passionate Frontend Web Developer Crafting Modern Web Solutions
+					</h1>
 					<Row className='row-cols-1 row-cols-lg-2 g-5'>
 						<Col>
 							<Image
 								className='img-fluid rounded'
 								src={profile}
 								alt='Leighton Grant Frontend Web Developer'
+								title='Leighton Grant Frontend Web Developer'
+								loading='eager'
 								width={800}
 								height={800}
 							/>
@@ -30,28 +44,32 @@ function About() {
 
 						<Col className=' about-info'>
 							<p className='lead'>
-								Hi, my name is Leighton Grant and I am a qualified front-end
-								developer residing in the UK. I am excited to join a company
-								that has an innovative and supportive spirit.
+								Hi, I'm Leighton Grant, a passionate Frontend Web Developer
+								based in the UK. I specialise in building modern, responsive
+								websites and web applications using HTML, CSS, JavaScript, and
+								React. My goal is to create seamless and intuitive user
+								experiences that meet the needs of both businesses and their
+								users.
 							</p>
 							<p>
-								Trained through the Harvard and MIT-created course provider,
-								EdX, I have acquired a range of skills that will set the tone
-								for my career in front-end development.
+								My journey into web development began with a personal passion
+								for coding, which I pursued for over five years in my spare
+								time. This passion led me to pursue formal training through EdX,
+								a reputable online learning platform created by Harvard and MIT,
+								where I gained a comprehensive understanding of web development
+								principles and best practices.
 							</p>
 							<p>
-								Prior to acquiring my professional qualification, I had
-								undertaken personal coding projects for over 5 years in my spare
-								time. So, why coding? Making the decision to switch careers came
-								because I relocated from London to Lincolnshire, having
-								previously worked as an electronics technician for many years.
+								Before transitioning to web development, I worked as an
+								electronics technician. This experience equipped me with
+								valuable problem-solving skills and a meticulous attention to
+								detail, which I now apply to my work as a developer.
 							</p>
 							<p>
-								Solving problems using code is a great passion of mine and armed
-								with a cup of coffee, I am keen to delve into the realm of
-								professional problem-solving. Supplied with the eagerness to
-								pursue front-end development professionally, I am ready for the
-								next chapter in my career.
+								I'm excited to collaborate with forward-thinking teams and
+								contribute to projects that push the boundaries of web
+								development. I am eager to use my skills and passion to create
+								innovative solutions.
 							</p>
 						</Col>
 					</Row>
@@ -60,11 +78,11 @@ function About() {
 
 			<section
 				id='key-skills'
-				className='section-padding'
+				className='section-padding px-3'
 				style={{ backgroundColor: 'var(--lg-light)' }}
 			>
 				<Container>
-					<h2 className='text-center title-padding'>Key Skills</h2>
+					<h2 className='text-center title-padding display-5'>Key Skills</h2>
 					<Row className='row-cols-1 row-cols-lg-2 g-5'>
 						<Col>
 							<ListGroup>
@@ -113,9 +131,11 @@ function About() {
 						<Col>
 							<Image
 								src={keySkills}
-								alt='Leighton Grant Frontend Web Developer'
+								alt='Frontend Web Developer'
 								width={800}
 								height={800}
+								title='Frontend Web Developer'
+								loading='lazy'
 								className='img-fluid rounded'
 							/>
 						</Col>
