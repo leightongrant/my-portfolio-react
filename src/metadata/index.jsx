@@ -3,8 +3,8 @@ const Metadata = ({
 	description,
 	keywords,
 	canonical,
-	imageAlt = 'Leighton Grant Portfolio',
-	image = 'https://leightongrant.me/og-image.webp',
+	imageAlt,
+	image,
 }) => (
 	<>
 		<title>{`Leighton Grant's Portfolio | ${title}`}</title>
@@ -26,6 +26,7 @@ const Metadata = ({
 		<meta name='twitter:description' content={description} />
 		<meta name='twitter:image' content={image} />
 		<meta name='twitter:image:alt' content={imageAlt} />
+		<meta name='robots' content='index, follow' />
 	</>
 )
 

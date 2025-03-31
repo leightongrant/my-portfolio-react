@@ -43,7 +43,7 @@ const Hero = () => {
 							className='fs-4 fw-normal my-2 text-center letter-spacing-tight'
 							style={{ fontFamily: 'Lato, sans-serif' }}
 						>
-							Frontend Web Developer
+							&nbsp;Frontend Web Developer
 						</span>
 					</h1>
 
