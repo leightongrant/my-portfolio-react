@@ -24,7 +24,10 @@ const Metadata = ({
 		<meta name='twitter:card' content='summary_large_image' />
 		<meta name='twitter:title' content={title} />
 		<meta name='twitter:description' content={description} />
-		<meta name='twitter:image' content={image} />
+		<meta
+			name='twitter:image'
+			content='https://leightongrant.me/og-image.webp'
+		/>
 		<meta name='twitter:image:alt' content={imageAlt} />
 		<meta name='robots' content='index, follow' />
 	</>
