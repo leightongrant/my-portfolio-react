@@ -25,9 +25,9 @@ export default function PageBanner({ pageTitle, bannerBg }) {
 		<Stack style={bgImage}>
 			<Stack className='banner-padding' style={overlay}>
 				<Container>
-					<h1 className=' text-light text-capitalize'>
+					<div className='display-4 text-light text-capitalize banner-title'>
 						{pageTitle ? pageTitle : ''}
-					</h1>
+					</div>
 				</Container>
 			</Stack>
 		</Stack>
