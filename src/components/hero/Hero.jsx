@@ -24,10 +24,11 @@ const Hero = () => {
 						id='heroImage'
 						src={ProfilePhoto}
 						alt='Leighton Grant'
+						title='Leighton Grant'
+						loading='eager'
 						className='img-fluid rounded-circle'
 						width={250}
 						height={250}
-						data-aos='fade-in'
 						style={{
 							borderColor: 'var(--lg-dark',
 							borderWidth: '5px',
@@ -35,17 +36,16 @@ const Hero = () => {
 						}}
 					/>
 
-					<h1 className='fw-bold my-2 text-center' data-aos='fade-in'>
+					<h1 className='fw-bold my-2 text-center display-1'>
 						Leighton Grant
+						<br />
+						<span className='fs-4 fw-normal my-2 text-center letter-spacing-tight'>
+							Frontend Web Developer
+						</span>
 					</h1>
-
-					<p className='fs-4 fw-normal my-2 text-center' data-aos='fade-in'>
-						Frontend Web Developer
-					</p>
 
 					<Link
 						to='/about'
-						data-aos='fade-in'
 						style={{
 							backgroundColor: 'var(--lg-dark)',
 							color: 'var(--lg-light)',
