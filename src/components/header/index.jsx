@@ -56,6 +56,8 @@ const Header = ({ bootcampProjects }) => {
 						width={53}
 						height={35}
 						alt='leightongrant.me logo'
+						title='leightongrant.me logo'
+						loading='eager'
 					/>
 				</Navbar.Brand>
 				<Navbar.Toggle
