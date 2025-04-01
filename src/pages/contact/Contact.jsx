@@ -17,6 +17,8 @@ const Contact = () => {
 				description={`Let's connect! Whether you're interested in collaborating on a project, discussing a new idea, or just want to say hello, I'd love to hear from you.`}
 				keywords='Contact, Web Developer, Frontend Engineer, Collaboration, Project Inquiry, Career Opportunities, Networking, Get in Touch'
 				canonical='https://leightongrant.me/contact'
+				image='https://leightongrant.me/og-image.webp'
+				imageAlt='Leighton Grant Portfolio'
 			/>
 			<PageBanner pageTitle='Contact Me' bannerBg={bg} />
 			<Breadcrumbs />

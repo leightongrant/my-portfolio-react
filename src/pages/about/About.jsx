@@ -18,6 +18,8 @@ function About() {
 				description='As a highly motivated and detail-oriented frontend web developer, I specialize in crafting modern web solutions that deliver exceptional user experiences.'
 				keywords='Frontend Web Developer, Web Developer, HTML, CSS, JavaScript, React, Responsive Web Design,Problem-Solving, Nodejs, Git, GitHub'
 				canonical='https://leightongrant.me/about'
+				image='https://leightongrant.me/og-image.webp'
+				imageAlt='Leighton Grant Portfolio'
 			/>
 			<PageBanner pageTitle='About me' bannerBg={bg} />
 			<Breadcrumbs />

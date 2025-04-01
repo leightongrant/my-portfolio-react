@@ -23,6 +23,8 @@ function Details(props) {
 				description={props.description}
 				keywords='HTML, CSS, JavaScript, React, Portfolio'
 				canonical={`https://leightongrant.me/projects/${slugify(props.title)}`}
+				image='https://leightongrant.me/og-image.webp'
+				imageAlt='Leighton Grant Portfolio'
 			/>
 			<main className='section-padding px-3'>
 				<Container>
