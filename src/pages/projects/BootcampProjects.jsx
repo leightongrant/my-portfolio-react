@@ -74,7 +74,6 @@ const BootcampProjects = () => {
 							title={project.title}
 							img={project.img}
 							about={project.about}
-							description={project.description}
 							app_url={project.app_url}
 							repo_url={project.repo_url}
 							key={project.id}
