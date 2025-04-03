@@ -78,6 +78,7 @@ const BootcampProjects = () => {
 							app_url={project.app_url}
 							repo_url={project.repo_url}
 							key={project.id}
+							id={project.id}
 						/>
 					))}
 				</Row>
