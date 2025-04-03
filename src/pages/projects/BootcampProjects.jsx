@@ -3,7 +3,11 @@ import { Row } from 'react-bootstrap'
 import { useState, useEffect } from 'react'
 import supabaseClient from '../../lib/supabase'
 import Container from 'react-bootstrap/Container'
-import { Loading, ServerError } from '../../components/placeholders'
+import {
+	Loading,
+	ServerError,
+	ProjectsSkeleton,
+} from '../../components/placeholders'
 import { MdAdd } from 'react-icons/md'
 import Button from 'react-bootstrap/Button'
 import { useModalStore } from '../../lib/zustand'
@@ -29,16 +33,14 @@ const BootcampProjects = () => {
 
 	async function fetchProjects() {
 		setLoading(true)
-		const res = await supabaseClient.from('bootcamp').select()
-		if (res.status > 199 && res.status < 300) {
-			setData(res.data)
+		const { status, data, error } = await supabaseClient
+			.from('bootcamp')
+			.select()
+		if (status > 199 && status < 300) {
+			setData(data)
 			setLoading(false)
-		}
-		if (res.status > 299 && res.status < 600) {
-			setError(res.error)
-		}
-		if (res.status === 0) {
-			setError(0)
+		} else {
+			setError(error)
 		}
 	}
 
@@ -47,7 +49,7 @@ const BootcampProjects = () => {
 	}
 
 	if (loading) {
-		return <Loading />
+		return <ProjectsSkeleton />
 	}
 
 	return (
@@ -69,17 +71,20 @@ const BootcampProjects = () => {
 					)}
 				</Row>
 				<Row className='row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4'>
-					{data.map(project => (
-						<ProjectCard
-							title={project.title}
-							img={project.img}
-							about={project.about}
-							app_url={project.app_url}
-							repo_url={project.repo_url}
-							key={project.id}
-							id={project.id}
-						/>
-					))}
+					{data.map(project => {
+						const { title, img, about, app_url, repo_url, id } = project
+						return (
+							<ProjectCard
+								title={title}
+								img={img}
+								about={about}
+								app_url={app_url}
+								repo_url={repo_url}
+								key={id}
+								id={id}
+							/>
+						)
+					})}
 				</Row>
 			</Container>
 		</main>
