@@ -23,20 +23,16 @@ const Details = () => {
 
 	useEffect(() => {
 		async function fetchProject() {
-			const res = await supabaseClient
+			const { status, data, error } = await supabaseClient
 				.from('bootcamp')
 				.select()
 				.eq('id', projectId)
 
-			if (res.status > 199 && res.status < 300) {
-				setData(res.data[0])
+			if (status > 199 && status < 300) {
+				setData(data[0])
 				setLoading(false)
-			}
-			if (res.status > 299 && res.status < 600) {
-				setError(res.error)
-			}
-			if (res.status === 0) {
-				setError(0)
+			} else {
+				setError(error)
 			}
 		}
 
