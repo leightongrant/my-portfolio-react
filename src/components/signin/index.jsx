@@ -6,11 +6,16 @@ import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
 import Tooltip from 'react-bootstrap/Tooltip'
 import { useModalStore } from '../../lib/zustand'
 import { useAuthStore } from '../../lib/zustand'
+import { BiSolidUser } from 'react-icons/bi'
 
 const SignIn = () => {
 	const showModal = useModalStore(state => state.showModal)
 	const setMode = useModalStore(state => state.setMode)
 	const session = useAuthStore(state => state.session)
+
+	if (session) {
+		console.log(session)
+	}
 
 	async function signOut() {
 		await supabaseClient.auth.signOut()
@@ -36,7 +41,8 @@ const SignIn = () => {
 			>
 				<Stack className='align-items-right justify-content-center'>
 					<IconContext.Provider value={{ className: 'logoutBtn fs-3 ' }}>
-						<FaSignOutAlt onClick={signOut} />
+						{/* <FaSignOutAlt onClick={signOut} /> */}
+						<BiSolidUser onClick={signOut} />
 					</IconContext.Provider>
 				</Stack>
 			</OverlayTrigger>
