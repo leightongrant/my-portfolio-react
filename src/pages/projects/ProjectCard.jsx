@@ -13,29 +13,56 @@ import { Link } from 'react-router'
 import { RiDeleteBinFill, RiEdit2Fill } from 'react-icons/ri'
 import { useAuthStore } from '../../lib/zustand'
 
-function ProjectCard({ title, img, about, app_url, repo_url, id }) {
-	const navigate = useNavigate()
-	const session = useAuthStore(state => state.session)
-
+export const Confirm = () => {
+	const closeModal = useModalStore(state => state.closeModal)
+	const projectId = useModalStore(state => state.projectId)
 	const showToast = useToastStore(state => state.showToast)
 	const setResult = useToastStore(state => state.setResult)
-	const showModal = useModalStore(state => state.showModal)
-	const setMode = useModalStore(state => state.setMode)
-	const setProjectId = useModalStore(state => state.setProjectId)
 
 	async function handleDelete(id) {
-		const res = await supabaseClient.from('bootcamp').select()
-		if (res.status === 200) {
+		const { status, error } = await supabaseClient.from('bootcamp').select()
+		if (status === 200) {
 			await supabaseClient.from('bootcamp').delete().eq('id', id)
 			setResult({
 				message: `Project deleted successfully`,
 				status: 'success',
 			})
+			closeModal()
 			showToast()
 			return
 		}
-		setResult({ message: res.error.message, status: res.status })
+		setResult({ message: error.message, status: status })
 		showToast()
+	}
+
+	return (
+		<Stack className='flex-row gap-2'>
+			<Button
+				variant='danger'
+				className='margin-auto'
+				onClick={() => handleDelete(projectId)}
+			>
+				Confirm
+			</Button>
+			<Button variant='secondary' className='margin-auto' onClick={closeModal}>
+				Cancel
+			</Button>
+		</Stack>
+	)
+}
+
+function ProjectCard({ title, img, about, app_url, repo_url, id }) {
+	const navigate = useNavigate()
+	const session = useAuthStore(state => state.session)
+
+	const showModal = useModalStore(state => state.showModal)
+	const setMode = useModalStore(state => state.setMode)
+	const setProjectId = useModalStore(state => state.setProjectId)
+
+	const handleConfirm = () => {
+		setProjectId(id)
+		setMode('deleteProject')
+		showModal()
 	}
 
 	async function handleEdit(_, id) {
@@ -102,10 +129,11 @@ function ProjectCard({ title, img, about, app_url, repo_url, id }) {
 							<Button
 								type='button'
 								className='btn btn-danger btn-sm'
-								onClick={() => handleDelete(id)}
+								onClick={handleConfirm}
 							>
 								Delete Project <RiDeleteBinFill />
 							</Button>
+
 							<Button
 								type='button'
 								className='btn btn-warning btn-sm'
