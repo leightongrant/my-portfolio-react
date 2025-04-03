@@ -1,56 +1,18 @@
 import { Outlet } from 'react-router-dom'
 import Footer from '../components/footer/Footer'
-import { useState, useEffect } from 'react'
-import supabaseClient from '../lib/supabase'
 import { lazy } from 'react'
 import Header from '../components/header'
-import { useToastStore } from '../lib/zustand'
+// import { useToastStore } from '../lib/zustand'
 
-// const Login = lazy(() => import('../components/modals/Login'))
 const MainModal = lazy(() => import('../components/modals'))
 const MainToast = lazy(() => import('../components/toasts'))
 
 function MainLayout() {
-	const result = useToastStore(state => state.result)
-
-	const [bootcampProjects, setBootcampProjects] = useState({
-		data: null,
-		error: null,
-		status: null,
-		selected: '',
-		mode: '',
-		session: null,
-	})
-
-	useEffect(() => {
-		fetchProjects()
-	}, [result.message])
-
-	async function fetchProjects() {
-		setBootcampProjects(obj => ({ ...obj, status: 'loading' }))
-		const res = await supabaseClient.from('bootcamp').select()
-		if (res.status > 199 && res.status < 300) {
-			setBootcampProjects(obj => ({
-				...obj,
-				data: res.data,
-				status: res.status,
-			}))
-		}
-		if (res.status > 299 && res.status < 600) {
-			setBootcampProjects(obj => ({ ...obj, error: res.error }))
-		}
-		if (res.status === 0) {
-			setBootcampProjects(obj => ({ ...obj, error: 0 }))
-		}
-	}
+	// const result = useToastStore(state => state.result)
 
 	return (
 		<>
-			<Header
-				bootcampProjects={bootcampProjects}
-				setBootcampProjects={setBootcampProjects}
-			/>
-
+			<Header />
 			<div
 				style={{
 					display: 'grid',
@@ -59,7 +21,7 @@ function MainLayout() {
 				}}
 			>
 				<div>
-					<Outlet context={[bootcampProjects, setBootcampProjects]} />
+					<Outlet />
 				</div>
 				<Footer />
 			</div>
