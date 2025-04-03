@@ -13,7 +13,7 @@ import { Link } from 'react-router'
 import { RiDeleteBinFill, RiEdit2Fill } from 'react-icons/ri'
 import { useAuthStore } from '../../lib/zustand'
 
-function ProjectCard(props) {
+function ProjectCard({ title, img, about, app_url, repo_url, id }) {
 	const navigate = useNavigate()
 	const session = useAuthStore(state => state.session)
 
@@ -48,20 +48,20 @@ function ProjectCard(props) {
 		<Col className='mb-4'>
 			<Card className='shadow bg-light project-card'>
 				<Card.Img
-					src={props.img}
+					src={img}
 					className='card-img-top'
-					alt={props.title}
+					alt={title}
 					loading='eager'
-					title={props.title}
+					title={title}
 					width={259}
 					height={194}
 					style={{ objectFit: 'cover', objectPosition: '0 0' }}
 				/>
 				<Card.Body>
 					<Card.Title as={'h2'} className='display-6 fs-5'>
-						{props.title}
+						{title}
 					</Card.Title>
-					<Card.Text className='card-text fs-6'>{props.about}</Card.Text>
+					<Card.Text className='card-text fs-6'>{about}</Card.Text>
 				</Card.Body>
 				<Card.Footer className='card-footer py-3'>
 					<Stack
@@ -70,7 +70,7 @@ function ProjectCard(props) {
 						className='justify-content-center'
 					>
 						<Link
-							to={props.app_url}
+							to={app_url}
 							target='_blank'
 							rel='noreferrer'
 							className='btn btn-sm projectBtn flex-grow-1 border-0'
@@ -78,7 +78,7 @@ function ProjectCard(props) {
 							App <RiExternalLinkFill />
 						</Link>
 						<Link
-							to={props.repo_url}
+							to={repo_url}
 							target='_blank'
 							rel='noreferrer'
 							className='btn btn-sm projectBtn flex-grow-1 border-0'
@@ -90,8 +90,8 @@ function ProjectCard(props) {
 							className='btn btn-sm projectBtn flex-grow-1 border-0'
 							onClick={e => {
 								e.preventDefault()
-								setProjectId(props.id)
-								navigate(`/projects/${slugify(props.title)}`)
+								setProjectId(id)
+								navigate(`/projects/${slugify(title)}`)
 							}}
 						>
 							Details <HiLink />
@@ -102,14 +102,14 @@ function ProjectCard(props) {
 							<Button
 								type='button'
 								className='btn btn-danger btn-sm'
-								onClick={() => handleDelete(props.id)}
+								onClick={() => handleDelete(id)}
 							>
 								Delete Project <RiDeleteBinFill />
 							</Button>
 							<Button
 								type='button'
 								className='btn btn-warning btn-sm'
-								onClick={e => handleEdit(e, props.id)}
+								onClick={e => handleEdit(e, id)}
 							>
 								Edit Project <RiEdit2Fill />
 							</Button>
