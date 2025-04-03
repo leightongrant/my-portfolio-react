@@ -9,7 +9,7 @@ import { HiMenu, HiOutlineX } from 'react-icons/hi'
 import { useRef, useState } from 'react'
 import { Link } from 'react-router'
 
-const Header = ({ bootcampProjects }) => {
+const Header = () => {
 	const path = useResolvedPath().pathname
 	const [isOpen, setIsOpen] = useState(false)
 
@@ -101,11 +101,11 @@ const Header = ({ bootcampProjects }) => {
 					</Nav>
 					<div className='d-md-none'>
 						<hr />
-						{bootcampProjects && <SignIn />}
+						<SignIn />
 					</div>
 				</Navbar.Collapse>
 				<div className='d-none d-md-block'>
-					{bootcampProjects && <SignIn />}
+					<SignIn />
 				</div>
 			</Container>
 		</Navbar>
