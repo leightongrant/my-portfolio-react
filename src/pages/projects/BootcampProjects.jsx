@@ -3,15 +3,12 @@ import { Row } from 'react-bootstrap'
 import { useState, useEffect } from 'react'
 import supabaseClient from '../../lib/supabase'
 import Container from 'react-bootstrap/Container'
-import {
-	Loading,
-	ServerError,
-	ProjectsSkeleton,
-} from '../../components/placeholders'
+import { ServerError, ProjectsSkeleton } from '../../components/placeholders'
 import { MdAdd } from 'react-icons/md'
 import Button from 'react-bootstrap/Button'
 import { useModalStore } from '../../lib/zustand'
 import { useAuthStore } from '../../lib/zustand'
+import { useToastStore } from '../../lib/zustand'
 
 const BootcampProjects = () => {
 	let [data, setData] = useState([])
@@ -21,6 +18,7 @@ const BootcampProjects = () => {
 	const session = useAuthStore(state => state.session)
 	const showModal = useModalStore(state => state.showModal)
 	const setMode = useModalStore(state => state.setMode)
+	const result = useToastStore(state => state.result)
 
 	const handleAddProject = () => {
 		setMode('addProject')
@@ -29,7 +27,7 @@ const BootcampProjects = () => {
 
 	useEffect(() => {
 		fetchProjects()
-	}, [])
+	}, [result.message])
 
 	async function fetchProjects() {
 		setLoading(true)
