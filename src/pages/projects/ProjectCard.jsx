@@ -90,6 +90,7 @@ function ProjectCard(props) {
 							className='btn btn-sm projectBtn flex-grow-1 border-0'
 							onClick={e => {
 								e.preventDefault()
+								setProjectId(props.id)
 								navigate(`/projects/${slugify(props.title)}`)
 							}}
 						>
