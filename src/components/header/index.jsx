@@ -42,15 +42,17 @@ const Header = () => {
 			}}
 		>
 			<Container fluid>
-				<Navbar.Brand href='/'>
-					<Image
-						src={logo}
-						width={53}
-						height={35}
-						alt='leightongrant.me logo'
-						title='leightongrant.me logo'
-						loading='eager'
-					/>
+				<Navbar.Brand>
+					<Link to='/' onClick={() => setExpanded(false)}>
+						<Image
+							src={logo}
+							width={53}
+							height={35}
+							alt='leightongrant.me logo'
+							title='leightongrant.me logo'
+							loading='eager'
+						/>
+					</Link>
 				</Navbar.Brand>
 				<Navbar.Toggle
 					aria-controls='navbar-nav'
