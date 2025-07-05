@@ -1,26 +1,26 @@
 import Stack from 'react-bootstrap/Stack'
 import { FaSignInAlt, FaSignOutAlt } from 'react-icons/fa'
 import { IconContext } from 'react-icons'
-import supabaseClient from '../../lib/supabase'
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
 import Tooltip from 'react-bootstrap/Tooltip'
 import { useModalStore } from '../../lib/zustand'
-import { useAuthStore } from '../../lib/zustand'
+import { useFirebaseStore } from '../../lib/zustand.js'
 import { BiSolidUser } from 'react-icons/bi'
 import Dropdown from 'react-bootstrap/Dropdown'
+import { logOut } from '../../lib/firebase.js'
 
-function UserMenu({ children, session }) {
-	let {
-		user: { email },
-	} = session
+function UserMenu({ children, user }) {
+	let { email } = user
 	return (
 		<Dropdown align={{ md: 'end' }}>
 			<Dropdown.Toggle variant='transparent'>{children}</Dropdown.Toggle>
 			<Dropdown.Menu>
 				<Dropdown.Item>User: {email}</Dropdown.Item>
 				<Dropdown.Divider />
-				<Dropdown.Item onClick={() => supabaseClient.auth.signOut()}>
-					<IconContext.Provider value={{ className: 'logoutBtn fs-3 ' }}>
+				<Dropdown.Item onClick={logOut}>
+					<IconContext.Provider
+						value={{ className: 'logoutBtn fs-3 ' }}
+					>
 						<FaSignOutAlt /> Sign Out
 					</IconContext.Provider>
 				</Dropdown.Item>
@@ -32,23 +32,29 @@ function UserMenu({ children, session }) {
 const SignIn = () => {
 	const showModal = useModalStore(state => state.showModal)
 	const setMode = useModalStore(state => state.setMode)
-	const session = useAuthStore(state => state.session)
-	async function signIn() {
+	const user = useFirebaseStore(state => state.user)
+
+	async function signInModal() {
 		setMode('login')
 		showModal()
 	}
 
 	const renderTooltip = props => (
-		<Tooltip id='tooltip' {...props}>
-			{session ? 'Logout' : 'Login'}
+		<Tooltip
+			id='tooltip'
+			{...props}
+		>
+			{user ? 'Logout' : 'Login'}
 		</Tooltip>
 	)
 
-	if (session) {
+	if (user) {
 		return (
 			<Stack className='align-items-right justify-content-center'>
-				<UserMenu session={session}>
-					<IconContext.Provider value={{ className: 'logoutBtn fs-3 ' }}>
+				<UserMenu user={user}>
+					<IconContext.Provider
+						value={{ className: 'logoutBtn fs-3 ' }}
+					>
 						<BiSolidUser />
 					</IconContext.Provider>
 				</UserMenu>
@@ -64,7 +70,7 @@ const SignIn = () => {
 		>
 			<Stack className='align-items-right justify-content-center'>
 				<IconContext.Provider value={{ className: 'loginBtn fs-3' }}>
-					<FaSignInAlt onClick={signIn} />
+					<FaSignInAlt onClick={signInModal} />
 				</IconContext.Provider>
 			</Stack>
 		</OverlayTrigger>

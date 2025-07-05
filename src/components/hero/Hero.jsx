@@ -27,8 +27,8 @@ const Hero = () => {
 						title='Leighton Grant'
 						loading='eager'
 						className='img-fluid rounded-circle'
-						width={250}
-						height={250}
+						width={200}
+						height={200}
 						style={{
 							borderColor: 'var(--lg-dark',
 							borderWidth: '5px',

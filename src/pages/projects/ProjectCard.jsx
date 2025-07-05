@@ -3,7 +3,7 @@ import { HiLink } from 'react-icons/hi'
 import slugify from '../../utils/slugify'
 import supabaseClient from '../../lib/supabase'
 import { useNavigate } from 'react-router'
-import { useModalStore } from '../../lib/zustand'
+import { useFirebaseStore, useModalStore } from '../../lib/zustand'
 import { useToastStore } from '../../lib/zustand'
 import Col from 'react-bootstrap/Col'
 import Card from 'react-bootstrap/Card'
@@ -11,7 +11,6 @@ import Button from 'react-bootstrap/Button'
 import Stack from 'react-bootstrap/Stack'
 import { Link } from 'react-router'
 import { RiDeleteBinFill, RiEdit2Fill } from 'react-icons/ri'
-import { useAuthStore } from '../../lib/zustand'
 
 export const Confirm = () => {
 	const closeModal = useModalStore(state => state.closeModal)
@@ -44,7 +43,11 @@ export const Confirm = () => {
 			>
 				Confirm
 			</Button>
-			<Button variant='secondary' className='margin-auto' onClick={closeModal}>
+			<Button
+				variant='secondary'
+				className='margin-auto'
+				onClick={closeModal}
+			>
 				Cancel
 			</Button>
 		</Stack>
@@ -53,7 +56,7 @@ export const Confirm = () => {
 
 function ProjectCard({ title, img, about, app_url, repo_url, id }) {
 	const navigate = useNavigate()
-	const session = useAuthStore(state => state.session)
+	const user = useFirebaseStore(state => state.user)
 
 	const showModal = useModalStore(state => state.showModal)
 	const setMode = useModalStore(state => state.setMode)
@@ -85,7 +88,10 @@ function ProjectCard({ title, img, about, app_url, repo_url, id }) {
 					style={{ objectFit: 'cover', objectPosition: '0 0' }}
 				/>
 				<Card.Body>
-					<Card.Title as={'h2'} className='display-6 fs-5'>
+					<Card.Title
+						as={'h2'}
+						className='display-6 fs-5'
+					>
 						{title}
 					</Card.Title>
 					<Card.Text className='card-text fs-6'>{about}</Card.Text>
@@ -124,8 +130,11 @@ function ProjectCard({ title, img, about, app_url, repo_url, id }) {
 							Details <HiLink />
 						</Button>
 					</Stack>
-					{session && (
-						<Stack className='justify-content-center mt-2' gap={2}>
+					{user && (
+						<Stack
+							className='justify-content-center mt-2'
+							gap={2}
+						>
 							<Button
 								type='button'
 								className='btn btn-danger btn-sm'

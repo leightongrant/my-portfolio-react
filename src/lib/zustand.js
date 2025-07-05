@@ -23,3 +23,8 @@ export const useAuthStore = create(set => ({
 	session: null,
 	setSession: session => set({ session }),
 }))
+
+export const useFirebaseStore = create(set => ({
+	user: null,
+	setUser: user => set({ user }),
+}))
