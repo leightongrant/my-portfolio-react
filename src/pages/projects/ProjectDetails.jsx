@@ -1,7 +1,10 @@
 import { useParams } from 'react-router'
 import PageBanner from '../../components/pagebanner/PageBanner'
 import Breadcrumbs from '../../components/breadcrumb'
-import Details from './Details'
+import { lazy, Suspense } from 'react'
+import { Loading } from '../../components/placeholders'
+
+const Details = lazy(() => import('./Details'))
 
 function ProjectDetails() {
 	const { id } = useParams()
@@ -9,7 +12,10 @@ function ProjectDetails() {
 		<>
 			<PageBanner pageTitle={id.replaceAll('-', ' ')} />
 			<Breadcrumbs />
-			<Details />
+
+			<Suspense fallback={<Loading />}>
+				<Details />
+			</Suspense>
 		</>
 	)
 }
