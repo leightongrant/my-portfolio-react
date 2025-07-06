@@ -1,19 +1,15 @@
 import { ProjectCard } from './ProjectCard'
 import { Row } from 'react-bootstrap'
-import { useState, useEffect } from 'react'
 import Container from 'react-bootstrap/Container'
 import { ServerError, ProjectsSkeleton } from '../../components/placeholders'
 import { MdAdd } from 'react-icons/md'
 import Button from 'react-bootstrap/Button'
 import { useFirebaseStore, useModalStore } from '../../lib/zustand'
 import { useToastStore } from '../../lib/zustand'
-import { getProjects } from '../../lib/firebase.js'
+import { getProjects } from '../../lib/firebase'
+import { useFirestoreQuery } from '../../hooks/useFirestoreQuery'
 
 const BootcampProjects = () => {
-	let [firestoreData, setFirestoreData] = useState([])
-	let [error, setError] = useState(null)
-	let [loading, setLoading] = useState(false)
-
 	const showModal = useModalStore(state => state.showModal)
 	const setMode = useModalStore(state => state.setMode)
 	const result = useToastStore(state => state.result)
@@ -24,20 +20,11 @@ const BootcampProjects = () => {
 		showModal()
 	}
 
-	useEffect(() => {
-		setLoading(true)
-		getProjects()
-			.then(data => {
-				if (!data) throw new Error('Problem getting data')
-				setFirestoreData(data)
-				setLoading(false)
-			})
-			.catch(err => {
-				console.log(err)
-				setError(err.message)
-				setLoading(false)
-			})
-	}, [result])
+	const {
+		data: firestoreData,
+		error,
+		loading,
+	} = useFirestoreQuery(getProjects, [result])
 
 	if (error) {
 		return <ServerError />
@@ -69,7 +56,7 @@ const BootcampProjects = () => {
 					)}
 				</Row>
 				<Row className='row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4'>
-					{firestoreData.map(project => {
+					{firestoreData?.map(project => {
 						const { title, img_url, about, app_url, repo_url, id } =
 							project
 						return (

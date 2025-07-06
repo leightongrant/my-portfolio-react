@@ -7,43 +7,14 @@ import Button from 'react-bootstrap/Button'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Metadata from '../../metadata'
-import { useNavigate, Link } from 'react-router'
+import { useNavigate, Link } from 'react-router-dom'
 import slugify from '../../utils/slugify'
-import { useEffect, useState } from 'react'
-import { useModalStore } from '../../lib/zustand'
-import { Loading, ServerError } from '../../components/placeholders'
-import { getProject } from '../../lib/firebase'
 
-const Details = () => {
+const Details = ({ project }) => {
 	const navigate = useNavigate()
-	let [project, setProject] = useState([])
-	let [error, setError] = useState(null)
-	let [loading, setLoading] = useState(true)
-	const projectId = useModalStore(state => state.projectId)
 
-	useEffect(() => {
-		getProject(projectId)
-			.then(project => {
-				if (!project) throw new Error('Project not found')
-				setProject(project)
-				setLoading(false)
-			})
-			.catch(error => {
-				console.log(error)
-				setError(error.message)
-				setLoading(false)
-			})
-	}, [projectId])
-
-	if (loading) {
-		return <Loading />
-	}
-
-	if (error) {
-		return <ServerError />
-	}
-
-	let { title, app_url, repo_url, img_url, description } = project
+	// The parent component now handles loading and error states.
+	const { id, title, app_url, repo_url, img_url, description } = project
 
 	return (
 		<>
@@ -53,7 +24,7 @@ const Details = () => {
 				keywords='HTML, CSS, JavaScript, React, Portfolio'
 				canonical={`https://leightongrant.me/projects/${slugify(
 					title
-				)}`}
+				)}-${id}`}
 				image='https://leightongrant.me/og-image.webp'
 				imageAlt='Leighton Grant Portfolio'
 			/>

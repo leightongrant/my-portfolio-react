@@ -8,7 +8,7 @@ import Col from 'react-bootstrap/Col'
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 import Stack from 'react-bootstrap/Stack'
-import { Link } from 'react-router'
+import { Link } from 'react-router-dom'
 import { RiDeleteBinFill, RiEdit2Fill } from 'react-icons/ri'
 import { deleteProject } from '../../lib/firebase'
 
@@ -123,8 +123,8 @@ function ProjectCard({ title, img, about, app_url, repo_url, id }) {
 							className='btn btn-sm projectBtn flex-grow-1 border-0'
 							onClick={e => {
 								e.preventDefault()
-								setProjectId(id)
-								navigate(`/projects/${slugify(title)}`)
+								const slug = slugify(title)
+								navigate(`/projects/${slug}-${id}`)
 							}}
 						>
 							Details <HiLink />
