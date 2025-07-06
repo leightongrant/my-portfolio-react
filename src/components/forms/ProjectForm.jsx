@@ -2,18 +2,17 @@ import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import FloatingLabel from 'react-bootstrap/FloatingLabel'
 import { useState, useEffect } from 'react'
-import supabaseClient from '../../lib/supabase'
 import { useModalStore } from '../../lib/zustand'
 import { useToastStore } from '../../lib/zustand'
+import { addProject, getProject, updateProject } from '../../lib/firebase'
 
 let formDataObj = {
 	title: '',
 	about: '',
 	app_url: '',
 	repo_url: '',
-	img: '',
+	img_url: '',
 	description: '',
-	updated_at: Date.now(),
 }
 
 const ProjectForm = () => {
@@ -27,9 +26,16 @@ const ProjectForm = () => {
 
 	useEffect(() => {
 		if (mode === 'editProject') {
-			getCurrentProject(projectId)
+			getProject(projectId)
+				.then(project => {
+					if (!project) throw new Error('Project not found')
+					setFormData(project)
+				})
+				.catch(error => {
+					console.log(error.message)
+				})
 		}
-	}, [mode])
+	}, [mode, projectId])
 
 	function handleChange(e) {
 		const { value, id } = e.target
@@ -46,75 +52,57 @@ const ProjectForm = () => {
 			setFormData(stateObj => ({ ...stateObj, repo_url: value }))
 		}
 		if (id === 'screenshot-url') {
-			setFormData(stateObj => ({ ...stateObj, img: value }))
+			setFormData(stateObj => ({ ...stateObj, img_url: value }))
 		}
 		if (id === 'description') {
 			setFormData(stateObj => ({ ...stateObj, description: value }))
 		}
 	}
 
-	async function getCurrentProject(id) {
-		const res = await supabaseClient.from('bootcamp').select().eq('id', id)
-		if (res.status === 200) {
-			const { title, about, app_url, repo_url, img, description } = res.data[0]
-			setFormData(obj => ({
-				...obj,
-				title: title,
-				about: about,
-				app_url: app_url,
-				repo_url: repo_url,
-				img: img,
-				description: description,
-			}))
-		}
-	}
-
-	async function handleSubmit(e) {
+	async function addDocument(e) {
 		e.preventDefault()
-		const res = await supabaseClient.from('bootcamp').select()
-		if (res.status === 200) {
-			if (mode === 'addProject') {
-				const result = await supabaseClient.from('bootcamp').insert(formData)
-				if (result.status === 201) {
+		if (mode === 'addProject') {
+			addProject(formData)
+				.then(doc => {
+					if (!doc) throw new Error('Problems adding new document')
 					setResult({
-						message: `Project added successfully`,
+						message: `Project added successfully - id: ${doc.id}`,
 						status: 'success',
 					})
 					showToast()
 					closeModal()
-				} else {
-					setResult({ message: result.error.message, status: result.status })
+				})
+				.catch(error => {
+					setResult({
+						message: error.message,
+						status: 400,
+					})
 					showToast()
-				}
-				return
-			}
+				})
+		}
 
-			const result = await supabaseClient
-				.from('bootcamp')
-				.update(formData)
-				.eq('id', projectId)
-
-			if (result.status === 204) {
+		if (mode === 'editProject') {
+			updateProject(projectId, formData).then(() => {
 				setResult({
 					message: `Project updated successfully`,
 					status: 'success',
 				})
 				showToast()
 				closeModal()
-			} else {
-				setResult({ message: result.error.message, status: result.status })
-				showToast()
-			}
-			return
+			})
 		}
-
-		setResult({ message: res.error.message, status: res.status })
-		showToast()
 	}
 
 	return (
-		<Form className='fs-6' onSubmit={handleSubmit}>
-			<FloatingLabel className='mb-3' label='Title' controlId='title'>
+		<Form
+			className='fs-6'
+			onSubmit={addDocument}
+		>
+			<FloatingLabel
+				className='mb-3'
+				label='Title'
+				controlId='title'
+			>
 				<Form.Control
 					type='text'
 					className='form-control'
@@ -125,7 +113,11 @@ const ProjectForm = () => {
 				/>
 			</FloatingLabel>
 
-			<FloatingLabel className='mb-3' label='About' controlId='about'>
+			<FloatingLabel
+				className='mb-3'
+				label='About'
+				controlId='about'
+			>
 				<Form.Control
 					type='text'
 					className='form-control '
@@ -135,7 +127,11 @@ const ProjectForm = () => {
 					onChange={handleChange}
 				/>
 			</FloatingLabel>
-			<FloatingLabel className='mb-3' label='App URL' controlId='app-url'>
+			<FloatingLabel
+				className='mb-3'
+				label='App URL'
+				controlId='app-url'
+			>
 				<Form.Control
 					type='url'
 					className='form-control'
@@ -145,7 +141,11 @@ const ProjectForm = () => {
 					onChange={handleChange}
 				/>
 			</FloatingLabel>
-			<FloatingLabel className='mb-3' label='Repo URL' controlId='repo-url'>
+			<FloatingLabel
+				className='mb-3'
+				label='Repo URL'
+				controlId='repo-url'
+			>
 				<Form.Control
 					type='url'
 					className='form-control'
@@ -165,7 +165,7 @@ const ProjectForm = () => {
 					className='form-control'
 					placeholder='Screenshot URL'
 					required
-					value={formData.img}
+					value={formData.img_url}
 					onChange={handleChange}
 				/>
 			</FloatingLabel>

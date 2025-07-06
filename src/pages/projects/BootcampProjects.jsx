@@ -1,16 +1,16 @@
 import { ProjectCard } from './ProjectCard'
 import { Row } from 'react-bootstrap'
 import { useState, useEffect } from 'react'
-import supabaseClient from '../../lib/supabase'
 import Container from 'react-bootstrap/Container'
 import { ServerError, ProjectsSkeleton } from '../../components/placeholders'
 import { MdAdd } from 'react-icons/md'
 import Button from 'react-bootstrap/Button'
 import { useFirebaseStore, useModalStore } from '../../lib/zustand'
 import { useToastStore } from '../../lib/zustand'
+import { getProjects } from '../../lib/firebase.js'
 
 const BootcampProjects = () => {
-	let [data, setData] = useState([])
+	let [firestoreData, setFirestoreData] = useState([])
 	let [error, setError] = useState(null)
 	let [loading, setLoading] = useState(false)
 
@@ -25,21 +25,19 @@ const BootcampProjects = () => {
 	}
 
 	useEffect(() => {
-		fetchProjects()
-	}, [result.message])
-
-	async function fetchProjects() {
 		setLoading(true)
-		const { status, data, error } = await supabaseClient
-			.from('bootcamp')
-			.select()
-		if (status > 199 && status < 300) {
-			setData(data)
-			setLoading(false)
-		} else {
-			setError(error)
-		}
-	}
+		getProjects()
+			.then(data => {
+				if (!data) throw new Error('Problem getting data')
+				setFirestoreData(data)
+				setLoading(false)
+			})
+			.catch(err => {
+				console.log(err)
+				setError(err.message)
+				setLoading(false)
+			})
+	}, [result])
 
 	if (error) {
 		return <ServerError />
@@ -71,13 +69,13 @@ const BootcampProjects = () => {
 					)}
 				</Row>
 				<Row className='row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4'>
-					{data.map(project => {
-						const { title, img, about, app_url, repo_url, id } =
+					{firestoreData.map(project => {
+						const { title, img_url, about, app_url, repo_url, id } =
 							project
 						return (
 							<ProjectCard
 								title={title}
-								img={img}
+								img={img_url}
 								about={about}
 								app_url={app_url}
 								repo_url={repo_url}

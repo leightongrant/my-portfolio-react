@@ -1,7 +1,7 @@
 import { RiExternalLinkFill } from 'react-icons/ri'
 import { HiLink } from 'react-icons/hi'
 import slugify from '../../utils/slugify'
-import supabaseClient from '../../lib/supabase'
+// import supabaseClient from '../../lib/supabase'
 import { useNavigate } from 'react-router'
 import { useFirebaseStore, useModalStore } from '../../lib/zustand'
 import { useToastStore } from '../../lib/zustand'
@@ -11,6 +11,7 @@ import Button from 'react-bootstrap/Button'
 import Stack from 'react-bootstrap/Stack'
 import { Link } from 'react-router'
 import { RiDeleteBinFill, RiEdit2Fill } from 'react-icons/ri'
+import { deleteProject } from '../../lib/firebase'
 
 export const Confirm = () => {
 	const closeModal = useModalStore(state => state.closeModal)
@@ -19,19 +20,19 @@ export const Confirm = () => {
 	const setResult = useToastStore(state => state.setResult)
 
 	async function handleDelete(id) {
-		const { status, error } = await supabaseClient.from('bootcamp').select()
-		if (status === 200) {
-			await supabaseClient.from('bootcamp').delete().eq('id', id)
-			setResult({
-				message: `Project deleted successfully`,
-				status: 'success',
+		deleteProject(id)
+			.then(() => {
+				setResult({
+					message: `Project deleted successfully`,
+					status: 'success',
+				})
+				closeModal()
+				showToast()
 			})
-			closeModal()
-			showToast()
-			return
-		}
-		setResult({ message: error.message, status: status })
-		showToast()
+			.catch(error => {
+				setResult({ message: error.message, status: 404 })
+				showToast()
+			})
 	}
 
 	return (
