@@ -1,7 +1,6 @@
 import { RiExternalLinkFill } from 'react-icons/ri'
 import { HiLink } from 'react-icons/hi'
 import slugify from '../../utils/slugify'
-// import supabaseClient from '../../lib/supabase'
 import { useNavigate } from 'react-router'
 import { useFirebaseStore, useModalStore } from '../../lib/zustand'
 import { useToastStore } from '../../lib/zustand'

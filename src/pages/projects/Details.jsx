@@ -10,33 +10,29 @@ import Metadata from '../../metadata'
 import { useNavigate, Link } from 'react-router'
 import slugify from '../../utils/slugify'
 import { useEffect, useState } from 'react'
-import supabaseClient from '../../lib/supabase'
 import { useModalStore } from '../../lib/zustand'
 import { Loading, ServerError } from '../../components/placeholders'
+import { getProject } from '../../lib/firebase'
 
 const Details = () => {
 	const navigate = useNavigate()
-	let [data, setData] = useState([])
+	let [project, setProject] = useState([])
 	let [error, setError] = useState(null)
 	let [loading, setLoading] = useState(true)
 	const projectId = useModalStore(state => state.projectId)
 
 	useEffect(() => {
-		async function fetchProject() {
-			const { status, data, error } = await supabaseClient
-				.from('bootcamp')
-				.select()
-				.eq('id', projectId)
-
-			if (status > 199 && status < 300) {
-				setData(data[0])
+		getProject(projectId)
+			.then(project => {
+				if (!project) throw new Error('Project not found')
+				setProject(project)
 				setLoading(false)
-			} else {
-				setError(error)
-			}
-		}
-
-		fetchProject()
+			})
+			.catch(error => {
+				console.log(error)
+				setError(error.message)
+				setLoading(false)
+			})
 	}, [projectId])
 
 	if (loading) {
@@ -47,7 +43,7 @@ const Details = () => {
 		return <ServerError />
 	}
 
-	let { title, app_url, repo_url, img, description } = data
+	let { title, app_url, repo_url, img_url, description } = project
 
 	return (
 		<>
@@ -55,7 +51,9 @@ const Details = () => {
 				title={title}
 				description={description}
 				keywords='HTML, CSS, JavaScript, React, Portfolio'
-				canonical={`https://leightongrant.me/projects/${slugify(title)}`}
+				canonical={`https://leightongrant.me/projects/${slugify(
+					title
+				)}`}
 				image='https://leightongrant.me/og-image.webp'
 				imageAlt='Leighton Grant Portfolio'
 			/>
@@ -66,7 +64,7 @@ const Details = () => {
 						<Col>
 							<Stack>
 								<Image
-									src={img}
+									src={img_url}
 									className='border p-0 img-fluid shadow rounded'
 									alt={title}
 									title={title}
@@ -79,7 +77,10 @@ const Details = () => {
 						<Col>
 							<Stack>
 								<h4 className='mb-3'>Description</h4>
-								<p className='card-text' style={{ textWrap: 'balance' }}>
+								<p
+									className='card-text'
+									style={{ textWrap: 'balance' }}
+								>
 									{description}
 								</p>
 							</Stack>
