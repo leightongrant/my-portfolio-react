@@ -38,7 +38,9 @@ const ContactForm = () => {
 
 			fetch('/', {
 				method: 'POST',
-				headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+				headers: {
+					'Content-Type': 'application/x-www-form-urlencoded',
+				},
 				body: formDataString,
 			})
 				.then(response => {
@@ -70,9 +72,18 @@ const ContactForm = () => {
 	}
 
 	return (
-		<Form name='contact' method='POST' onSubmit={handleSubmit}>
+		<Form
+			name='contact'
+			method='POST'
+			onSubmit={handleSubmit}
+			data-netlify={true}
+		>
 			<Stack gap={4}>
-				<input type='hidden' name='form-name' value='contact' />
+				<input
+					type='hidden'
+					name='form-name'
+					value='contact'
+				/>
 				<Form.Group controlId='name'>
 					<Form.Label>Name</Form.Label>
 					<Form.Control
